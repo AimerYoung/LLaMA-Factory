@@ -1,0 +1,8420 @@
+=== Beginning of Record ===
+
+Question:
+已知椭圆$ \ frac { x ^ {2 } } {4 } + \ frac { y ^ {2 } } {2 } =1$的焦点为$F$，短轴端点为$P$，若直线$P F$与圆$O$ : $x ^ {2 } + y ^ {2 } = R ^ {2 } ( R >0 ) $相切，则圆$O$的半径为 ? 
+
+Predicted Annotation:
+F: Point
+G: Ellipse
+H: Circle
+P: Point
+R: Number
+Endpoint(MinorAxis(G))=P
+Expression(G) = (x^2/4 + y^2/2 = 1)
+Expression(H) = (x^2 + y^2 = R^2)
+Focus(G) = F
+IsTangent(LineOf(P,F),H)
+R>0
+Radius(H) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Ellipse 
+ O : Circle 
+ P : Point 
+ R : Number 
+ Expression ( G ) = ( x ^2 /4 + y ^2 /2 =1 ) 
+ Expression ( O ) = ( x ^2 + y ^2 = R ^2 ) 
+ IsTangent ( LineOf ( P , F ) , O ) 
+ OneOf ( Endpoint ( MinorAxis ( G ) ) ) = P 
+ OneOf ( Focus ( G ) ) = F 
+ R >0 
+ Radius ( O ) = ?
+
+Diff Result (< pred, > gold):
+< Endpoint(MinorAxis(G))=P
+< Focus(G) = F
+---
+> OneOf ( Endpoint ( MinorAxis ( G ) ) ) = P
+> OneOf ( Focus ( G ) ) = F
+
+Comparison Result:
+Common: 10
+Gold Sentences: 12
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$F (1 ,0 ) $为抛物线$P$ : $y ^ {2 } =2 p x ( p >0 ) $的焦点，过点$F$且斜率为$k$的直线$l$与曲线$P$交于$B$、$C$两点，过$O$与$B C$中点$M$的直线与曲线$P$交于$N$点，则$ \ frac { S_ { \ Delta O M C } } { S_ { \ Delta O B N } } $ 的取值范围是 ? 
+
+Predicted Annotation:
+B: Point
+C: Point
+F: Point
+G: Line
+M: Point
+N: Point
+O: Origin
+P: Parabola
+k: Number
+l: Line
+p: Number
+Coordinate(F) = (1, 0)
+Expression(P) = (y^2 = 2*(p*x))
+Focus(P) = F
+Intersection(G, P) = N
+Intersection(l, P) = {B, C}
+MidPoint(LineSegmentOf(B, C)) = M
+PointOnCurve(F, l)
+PointOnCurve(M, G)
+Slope(l) = k
+p>0
+Range(Area(TriangleOf(O, M, C))/Area(TriangleOf(O, B, N))) =?
+
+
+Gold Annotation:
+B : Point 
+ C : Point 
+ F : Point 
+ L : Line 
+ M : Point 
+ N : Point 
+ O : Origin 
+ P : Parabola 
+ k : Number 
+ l : Line 
+ p : Number 
+ Coordinate ( F ) = (1 ,0 ) 
+ Expression ( P ) = ( y ^2 =2 * ( p * x ) ) 
+ Focus ( P ) = F 
+ Intersection ( L , P ) = N 
+ Intersection ( l , P ) = { B , C } 
+ MidPoint ( LineSegmentOf ( B , C ) ) = M 
+ PointOnCurve ( F , l ) 
+ PointOnCurve ( M , L ) 
+ PointOnCurve ( O , L ) 
+ Slope ( l ) = k 
+ p >0 
+ Range ( Area ( TriangleOf ( O , M , C ) ) / Area ( TriangleOf ( O , B , N ) ) ) = ?
+
+Diff Result (< pred, > gold):
+> PointOnCurve ( O , L )
+
+Comparison Result:
+Common: 22
+Gold Sentences: 23
+Predicted Sentences: 22
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左 , 右焦点分别为$F_ {1 } $、$F_ {2 } $，直线$x - c =0$与双曲线$C$的一个交点为点$P$，与双曲线$C$的一条渐近线交于点$Q$、$O$为坐标原点，若$ \ overrightarrow { O P } = \ frac {1 } {3 } \ overrightarrow { O F_ {2 } } + \ frac {2 } {3 } \ overrightarrow { O Q } $，则双曲线$C$的离心率为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+F1: Point
+F2: Point
+G: Line
+O: Origin
+P: Point
+Q: Point
+a: Number
+b: Number
+c: Number
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(G) = (x - c = 0)
+Intersection(G, C) = P
+Intersection(G, OneOf(Asymptote(C))) = Q
+LeftFocus(C) = F1
+RightFocus(C) = F2
+VectorOf(O, P) = (2/3)*VectorOf(O, Q) + (1/3)*VectorOf(O, F2)
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ G : Line 
+ O : Origin 
+ P : Point 
+ Q : Point 
+ a : Number 
+ b : Number 
+ c : Number 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( G ) = ( - c + x =0 ) 
+ Intersection ( G , OneOf ( Asymptote ( C ) ) ) = Q 
+ LeftFocus ( C ) = F1 
+ OneOf ( Intersection ( G , C ) ) = P 
+ RightFocus ( C ) = F2 
+ VectorOf ( O , P ) = (1 /3 ) * VectorOf ( O , F2 ) + (2 /3 ) * VectorOf ( O , Q ) 
+ a >0 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Intersection(G, C) = P
+---
+> OneOf ( Intersection ( G , C ) ) = P
+
+Comparison Result:
+Common: 19
+Gold Sentences: 20
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } {16 } + \ frac { y ^ {2 } } { b ^ {2 } } =1 (0 < b <4 ) $的左焦点为$F$，以$F$为一端点、该椭圆上的动点为另一端点的所有线段的长度中，最大值记为$M$，最小值记为$m$ . 若$M =7 m$，则$b$ = ? 
+
+Predicted Annotation:
+F: Point
+G: Ellipse
+K: Point
+M: Number
+m: Number
+b: Number
+0 < b
+Expression(G) = (x^2/16 + y^2/b^2 = 1)
+LeftFocus(G) = F
+MidPoint(Length(LineSegmentOf(F,K)))=M
+OneOf(Endpoint(LineSegmentOf(F,K)))=K
+PointOnCurve(K,G)
+Min(Length(LineSegmentOf(F,K)))=m
+Max(Length(LineSegmentOf(F,K)))=M
+b < 4
+b =?
+
+
+Gold Annotation:
+F : Point 
+ G : Ellipse 
+ M : Number 
+ P : Point 
+ b : Number 
+ m : Number 
+0 < b 
+ Expression ( G ) = ( x ^2 /16 + y ^2 / b ^2 =1 ) 
+ LeftFocus ( G ) = F 
+ M =7 * m 
+ Max ( Length ( LineSegmentOf ( F , P ) ) ) = M 
+ Min ( Length ( LineSegmentOf ( F , P ) ) ) = m 
+ PointOnCurve ( P , G ) 
+ b <4 
+ b = ?
+
+Diff Result (< pred, > gold):
+< MidPoint(Length(LineSegmentOf(F,K)))=M
+< OneOf(Endpoint(LineSegmentOf(F,K)))=K
+---
+> M =7 * m
+
+Comparison Result:
+Common: 14
+Gold Sentences: 15
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$A$、$B$、$P$是双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1$上不同的三点，且$A$、$B$连线经过坐标原点，若直线$P A$ , $P B$的斜率乘积$k_ { P A } \ cdot k_ { P B } =3$，则该双曲线的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Hyperbola
+O:Origin
+P: Point
+a: Number
+b: Number
+k1:Number
+k2:Number
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Negation(A=B)
+PointOnCurve(A,G)
+PointOnCurve(B,G)
+PointOnCurve(O,LineSegmentOf(A,B))
+PointOnCurve(P,G)
+Slope(LineOf(P,A))=k1
+Slope(LineOf(P,B))=k2
+k1*k2=3
+Eccentricity(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Hyperbola 
+ O : Origin 
+ P : Point 
+ a : Number 
+ b : Number 
+ k1 : Number 
+ k2 : Number 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Negation ( A = B ) 
+ Negation ( A = P ) 
+ Negation ( B = P ) 
+ PointOnCurve ( A , G ) 
+ PointOnCurve ( B , G ) 
+ PointOnCurve ( O , LineSegmentOf ( A , B ) ) 
+ PointOnCurve ( P , G ) 
+ Slope ( LineOf ( P , A ) ) = k1 
+ Slope ( LineOf ( P , B ) ) = k2 
+ k1 * k2 =3 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+> Negation ( A = P )
+> Negation ( B = P )
+
+Comparison Result:
+Common: 19
+Gold Sentences: 21
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若直线$x -2 y +2 =0$经过椭圆的一个焦点和一个顶点，则焦点在$x$轴的椭圆标准方程为 ? 
+
+Predicted Annotation:
+G: Ellipse
+H: Line
+P:Point
+Expression(H) = (x - 2*y + 2 = 0)
+PointOnCurve(Focus(G),H)
+PointOnCurve(OneOf(Vertex(G)),H)
+PointOnCurve(P,G)
+Expression(G) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ l : Line 
+ Expression ( l ) = ( x -2 * y +2 =0 ) 
+ PointOnCurve ( Focus ( G ) , xAxis ) 
+ PointOnCurve ( OneOf ( Focus ( G ) ) , l ) 
+ PointOnCurve ( OneOf ( Vertex ( G ) ) , l ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< P:Point
+< PointOnCurve(Focus(G),H)
+< PointOnCurve(P,G)
+---
+> PointOnCurve ( Focus ( G ) , xAxis )
+> PointOnCurve ( OneOf ( Focus ( G ) ) , l )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 7
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } {4 } + \ frac { y ^ {2 } } {2 } =1$的弦被点$ (1 ,1 ) $平分，则这条弦所在的直线方程是 ? 
+
+Predicted Annotation:
+G: Ellipse
+H: LineSegment
+I: Point
+Coordinate(I) = (1, 1)
+Expression(G) = (x^2/4 + y^2/2 = 1)
+IsChordOf(H, G)
+MidPoint(H) = I
+Expression(OverlappingLine(H)) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ H : LineSegment 
+ Coordinate ( MidPoint ( H ) ) = (1 ,1 ) 
+ Expression ( G ) = ( x ^2 /4 + y ^2 /2 =1 ) 
+ IsChordOf ( H , G ) 
+ Expression ( OverlappingLine ( H ) ) = ?
+
+Diff Result (< pred, > gold):
+< I: Point
+< Coordinate(I) = (1, 1)
+< MidPoint(H) = I
+---
+> Coordinate ( MidPoint ( H ) ) = (1 ,1 )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - y ^ {2 } =1 ( a >0 ) $上一点$M$作直线$l$，与双曲线的两条渐近线分别交于$P$、$Q$，且$M$为线段$P Q$的中点，若$ \ triangle P O Q$ ( $O$为坐标原点 ) 的面积为$2$，则双曲线的离心率为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+M: Point
+O: Origin
+P: Point
+Q: Point
+a: Number
+l1: Line
+l2: Line
+l: Line
+Area(TriangleOf(P, O, Q)) = 2
+Asymptote(G) = {l1, l2}
+Expression(G) = (-y^2 + x^2/a^2 = 1)
+Intersection(l, l1) = P
+Intersection(l, l2) = Q
+MidPoint(LineSegmentOf(P, Q)) = M
+PointOnCurve(M, l)
+a>0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ M : Point 
+ O : Origin 
+ P : Point 
+ Q : Point 
+ a : Number 
+ l1 : Line 
+ l2 : Line 
+ l : Line 
+ Area ( TriangleOf ( P , O , Q ) ) =2 
+ Asymptote ( G ) = { l1 , l2 } 
+ Expression ( G ) = ( - y ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( l , l1 ) = P 
+ Intersection ( l , l2 ) = Q 
+ MidPoint ( LineSegmentOf ( P , Q ) ) = M 
+ PointOnCurve ( M , G ) = True 
+ PointOnCurve ( M , l ) = True 
+ a >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+> PointOnCurve ( M , G ) = True
+
+Comparison Result:
+Common: 18
+Gold Sentences: 19
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+$P$是以$F_ {1 } $ , $F_ {2 } $为焦点的椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $上的任意一点，若$ \ angle PF_ {1 } F_ {2 } = \ alpha$ , $ \ angle PF_ {2 } F_ {1 } = \ beta$，且$ \ cos \ alpha = \ frac { \ sqrt {5 } } {5 } $ , $ \ sin ( \ alpha + \ beta ) = \ frac {3 } {5 } $，则此椭圆的离心率为 ? 
+
+Predicted Annotation:
+F1: Point
+F2: Point
+G: Ellipse
+P: Point
+alpha:Number
+b: Number
+cos(alpha) = sqrt(5)/5
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+Focus(G)={F1,F2}
+AngleOf(P, F1, F2) = alpha
+AngleOf(P, F2, F1) = beta
+PointOnCurve(P, G)
+a > b
+b > 0
+Sin(alpha + beta) = 3/5
+Eccentricity(G) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ P : Point 
+ a : Number 
+ alpha : Number 
+ b : Number 
+ beta : Number 
+ AngleOf ( P , F1 , F2 ) = alpha 
+ AngleOf ( P , F2 , F1 ) = beta 
+ Cos ( alpha ) = sqrt (5 ) /5 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Focus ( G ) = { F1 , F2 } 
+ PointOnCurve ( P , G ) 
+ Sin ( alpha + beta ) =3 /5 
+ a > b 
+ b >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< cos(alpha) = sqrt(5)/5
+< Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+< AngleOf(P, F2, F1) = beta
+< a > b
+< Sin(alpha + beta) = 3/5
+---
+> a : Number
+> beta : Number
+> AngleOf ( P , F2 , F1 ) = beta
+> Cos ( alpha ) = sqrt (5 ) /5
+> Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 )
+> Sin ( alpha + beta ) =3 /5
+> a > b
+
+Comparison Result:
+Common: 11
+Gold Sentences: 18
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+动点$P$到两圆$x ^ {2 } + y ^ {2 } -2 =0$与$x ^ {2 } + y ^ {2 } -8 x +10 =0$所引的切线长相等，则动点$P$的轨迹方程是 ? 
+
+Predicted Annotation:
+C:Circle
+D:Circle
+P: Point
+Expression(C)=(x^2+y^2-2=0)
+Expression(D)=(x^2+y^2-8*x+10=0)
+IsParallel(TangentOnPoint(P,C),TangentOnPoint(P,D))
+LocusEquation(P) =?
+
+
+Gold Annotation:
+C : Circle 
+ G : Circle 
+ P : Point 
+ Expression ( C ) = ( x ^2 + y ^2 -8 * x +10 =0 ) 
+ Expression ( G ) = ( x ^2 + y ^2 -2 =0 ) 
+ Length ( TangentOfPoint ( P , G ) ) = Length ( TangentOfPoint ( P , C ) ) 
+ LocusEquation ( P ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(C)=(x^2+y^2-2=0)
+< Expression(D)=(x^2+y^2-8*x+10=0)
+< IsParallel(TangentOnPoint(P,C),TangentOnPoint(P,D))
+---
+> Expression ( C ) = ( x ^2 + y ^2 -8 * x +10 =0 )
+> Expression ( G ) = ( x ^2 + y ^2 -2 =0 )
+> Length ( TangentOfPoint ( P , G ) ) = Length ( TangentOfPoint ( P , C ) )
+
+Comparison Result:
+Common: 4
+Gold Sentences: 7
+Predicted Sentences: 7
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知过抛物线$T$ : $y ^ {2 } =8 x$的焦点$F$且互相垂直的直线$l_ {1 } $ , $l_ {2 } $分别交抛物线于点$A$、$B$和点$C$ , $D$ , 线段$A B$ , $C D$的中点分别为$P$，$Q$，则$ | F P | \ cdot | F Q | $的最小值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Point
+D: Point
+F: Point
+P: Point
+Q: Point
+T: Parabola
+l1: Line
+l2: Line
+Expression(T) = (y^2 = 8*x)
+Focus(T) = F
+Intersection(l1, T) = {A, B}
+Intersection(l2, T) = {C, D}
+IsPerpendicular(l1, l2)
+MidPoint(LineSegmentOf(A, B)) = P
+MidPoint(LineSegmentOf(C, D)) = Q
+PointOnCurve(F, l1)
+Min(Abs(LineSegmentOf(F, P))*Abs(LineSegmentOf(F, Q))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Point 
+ D : Point 
+ F : Point 
+ P : Point 
+ Q : Point 
+ T : Parabola 
+ l1 : Line 
+ l2 : Line 
+ Expression ( T ) = ( y ^2 =8 * x ) 
+ Focus ( T ) = F 
+ Intersection ( l1 , T ) = { A , B } 
+ Intersection ( l2 , T ) = { C , D } 
+ IsPerpendicular ( l1 , l2 ) 
+ MidPoint ( LineSegmentOf ( A , B ) ) = P 
+ MidPoint ( LineSegmentOf ( C , D ) ) = Q 
+ PointOnCurve ( F , l1 ) 
+ PointOnCurve ( F , l2 ) 
+ Min ( Abs ( LineSegmentOf ( F , P ) ) * Abs ( LineSegmentOf ( F , Q ) ) ) = ?
+
+Diff Result (< pred, > gold):
+> PointOnCurve ( F , l2 )
+
+Comparison Result:
+Common: 19
+Gold Sentences: 20
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过椭圆$4 x ^ {2 } + y ^ {2 } =1$的一个焦点$F_ {1 } $的直线与椭圆交于$A$、$B$两点，则$A$与$B$和椭圆的另一个焦点$F_ {2 } $构成的三角形的周长为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F1: Point
+F2: Point
+G: Ellipse
+H: Line
+Expression(G) = (4*x^2 + y^2 = 1)
+Intersection(H, G) = {A, B}
+Negation(F1=F2)
+OneOf(Focus(G))=F1
+OneOf(Focus(G))=F2
+PointOnCurve(F1, H)
+Perimeter(TriangleOf(A, B, F2)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ l : Line 
+ Expression ( G ) = (4 * x ^2 + y ^2 =1 ) 
+ Focus ( G ) = { F1 , F2 } 
+ Intersection ( l , G ) = { A , B } 
+ PointOnCurve ( F1 , l ) 
+ Perimeter ( TriangleOf ( A , B , F2 ) ) = ?
+
+Diff Result (< pred, > gold):
+< Negation(F1=F2)
+< OneOf(Focus(G))=F1
+< OneOf(Focus(G))=F2
+---
+> Focus ( G ) = { F1 , F2 }
+
+Comparison Result:
+Common: 10
+Gold Sentences: 11
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$S$与椭圆$ \ frac { x ^ {2 } } {9 } + \ frac { y ^ {2 } } {34 } =1$的焦点相同 , 如果$y = \ frac {3 } {4 } x$是双曲线$S$的一条渐近线那么双曲线$S$的方程为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Ellipse
+Expression(H) = (x^2/9 + y^2/34 = 1)
+Expression(y = (3/4)*x)
+Focus(G) = Focus(H)
+Expression(S) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ S : Hyperbola 
+ Expression ( G ) = ( x ^2 /9 + y ^2 /34 =1 ) 
+ Expression ( OneOf ( Asymptote ( S ) ) ) = ( y = (3 /4 ) * x ) 
+ Focus ( S ) = Focus ( G ) 
+ Expression ( S ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(y = (3/4)*x)
+< Expression(S) =?
+---
+> Expression ( OneOf ( Asymptote ( S ) ) ) = ( y = (3 /4 ) * x )
+> Expression ( S ) = ?
+
+Comparison Result:
+Common: 4
+Gold Sentences: 6
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的两条渐近线均和圆$C$ : $x ^ {2 } + y ^ {2 } -6 x +5 =0$相切，且双曲线的右焦点为圆$C$的圆心，则该双曲线的方程为 ? 
+
+Predicted Annotation:
+C: Circle
+G: Hyperbola
+a: Number
+b: Number
+l1: Line
+l2: Line
+Center(C) = RightFocus(G)
+Expression(C) = (-6*x + x^2 + y^2 + 5 = 0)
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+IsTangent(l1,C)
+IsTangent(l2,C)
+a>0
+b>0
+Expression(G) =?
+
+
+Gold Annotation:
+C : Circle 
+ G : Hyperbola 
+ a : Number 
+ b : Number 
+ Center ( C ) = RightFocus ( G ) 
+ Expression ( C ) = ( -6 * x + x ^2 + y ^2 +5 =0 ) 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsTangent ( Asymptote ( G ) , C ) 
+ a >0 
+ b >0 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< l1: Line
+< l2: Line
+< IsTangent(l1,C)
+< IsTangent(l2,C)
+---
+> IsTangent ( Asymptote ( G ) , C )
+
+Comparison Result:
+Common: 10
+Gold Sentences: 11
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+连接抛物线$y ^ {2 } =4 x$的焦点$F$与点$M (0 ,1 ) $所得的线段与抛物线交于点$A$，设点$O$为坐标原点，则$ \ angle OAM$的面积为 ? 
+
+Predicted Annotation:
+A: Point
+F: Point
+G: Parabola
+M: Point
+O: Origin
+Coordinate(M) = (0, 1)
+Expression(G) = (y^2 = 4*x)
+Focus(G) = F
+Intersection(LineSegmentOf(F,M),G)=A
+Area(TriangleOf(O, A, M)) =?
+
+
+Gold Annotation:
+A : Point 
+ F : Point 
+ G : Parabola 
+ M : Point 
+ O : Origin 
+ Coordinate ( M ) = (0 ,1 ) 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ Focus ( G ) = F 
+ Intersection ( LineSegmentOf ( F , M ) , G ) = A 
+ Area ( AngleOf ( O , A , M ) ) = ?
+
+Diff Result (< pred, > gold):
+< Area(TriangleOf(O, A, M)) =?
+---
+> Area ( AngleOf ( O , A , M ) ) = ?
+
+Comparison Result:
+Common: 9
+Gold Sentences: 10
+Predicted Sentences: 10
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$P$为抛物线$y ^ {2 } =4 x$上的动点，过$P$分别作$y$轴与直线$x - y +4 =0$的垂线，垂足分别为$A$、$B$， 则$PA$ + $PB$的最小值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Parabola
+H: Line
+L1:Line
+L2:Line
+P: Point
+Expression(G) = (y^2 = 4*x)
+Expression(H) = (x - y + 4 = 0)
+FootPoint(L1,H)=A
+FootPoint(L2,H)=B
+IsPerpendicular(L1,H)
+IsPerpendicular(L2,H)
+PointOnCurve(P,G)
+PointOnCurve(P,L1)
+PointOnCurve(P,L2)
+Min(LineSegmentOf(P, A) + LineSegmentOf(P, B)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Parabola 
+ H : Line 
+ L1 : Line 
+ L2 : Line 
+ P : Point 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ Expression ( H ) = ( x - y +4 =0 ) 
+ FootPoint ( L1 , yAxis ) = A 
+ FootPoint ( L2 , H ) = B 
+ IsPerpendicular ( L1 , yAxis ) 
+ IsPerpendicular ( L2 , H ) 
+ PointOnCurve ( P , G ) 
+ PointOnCurve ( P , L1 ) 
+ PointOnCurve ( P , L2 ) 
+ Min ( LineSegmentOf ( P , A ) + LineSegmentOf ( P , B ) ) = ?
+
+Diff Result (< pred, > gold):
+< FootPoint(L1,H)=A
+< IsPerpendicular(L1,H)
+---
+> FootPoint ( L1 , yAxis ) = A
+> IsPerpendicular ( L1 , yAxis )
+
+Comparison Result:
+Common: 15
+Gold Sentences: 17
+Predicted Sentences: 17
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$ \ triangle ABC$的顶点$B$、$C$在椭圆$ \ frac { x ^ {2 } } {3 } + y ^ {2 } =1$上，顶点$A$与椭圆的焦点$F_ {1 } $重合，且椭圆的另外一个焦点$F_ {2 } $在$BC$边上，则$ \ triangle ABC$的周长是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Point
+F1: Point
+F2: Point
+G: Ellipse
+Expression(G) = (x^2/3 + y^2 = 1)
+Focus(G) = {F1,F2}
+Negation(F1=F2)
+PointOnCurve(B, G)
+PointOnCurve(C, G)
+PointOnCurve(F2, LineSegmentOf(B, C))
+Vertex(TriangleOf(A, B, C)) = {B, C}
+Perimeter(TriangleOf(A, B, C)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ A = F1 
+ Expression ( G ) = ( x ^2 /3 + y ^2 =1 ) 
+ Focus ( G ) = { F1 , F2 } 
+ PointOnCurve ( B , G ) 
+ PointOnCurve ( C , G ) 
+ PointOnCurve ( F2 , LineSegmentOf ( B , C ) ) 
+ Perimeter ( TriangleOf ( A , B , C ) ) = ?
+
+Diff Result (< pred, > gold):
+< Negation(F1=F2)
+< Vertex(TriangleOf(A, B, C)) = {B, C}
+---
+> A = F1
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$y ^ {2 } =2 p x ( p >0 ) $的焦点为$F$，点$A$、$B$在抛物线上，且$ \ angle A F B =120 ^ { \ circ } $，过弦$A B$中点$M$作准线$l$的垂线，垂足为$M_ {1 } $，则$ \ frac { | M M_ {1 } | } { | A B | } $的最大值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+G: Parabola
+M1: Point
+M: Point
+l: Line
+p: Number
+AngleOf(A, F, B) = ApplyUnit(120, degree)
+Directrix(G) = l
+Expression(G) = (y^2 = 2*(p*x))
+Focus(G) = F
+FootPoint(l, Directrix(G)) = M1
+IsChordOf(LineSegmentOf(A, B), G)
+IsPerpendicular(l, Directrix(G))
+MidPoint(LineSegmentOf(A, B)) = M
+PointOnCurve(A, G)
+PointOnCurve(B, G)
+PointOnCurve(M, l)
+p>0
+Max(Abs(LineSegmentOf(M, M1))/Abs(LineSegmentOf(A, B))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Parabola 
+ L : Line 
+ M1 : Point 
+ M : Point 
+ l : Line 
+ p : Number 
+ AngleOf ( A , F , B ) = ApplyUnit (120 , degree ) 
+ Directrix ( G ) = l 
+ Expression ( G ) = ( y ^2 =2 * p * x ) 
+ Focus ( G ) = F 
+ FootPoint ( L , l ) = M1 
+ IsChordOf ( LineSegmentOf ( A , B ) , G ) 
+ IsPerpendicular ( L , l ) 
+ MidPoint ( LineSegmentOf ( A , B ) ) = M 
+ PointOnCurve ( A , G ) 
+ PointOnCurve ( B , G ) 
+ PointOnCurve ( M , L ) 
+ p >0 
+ Max ( Abs ( LineSegmentOf ( M , M1 ) ) / Abs ( LineSegmentOf ( A , B ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< FootPoint(l, Directrix(G)) = M1
+< IsPerpendicular(l, Directrix(G))
+< PointOnCurve(M, l)
+---
+> L : Line
+> FootPoint ( L , l ) = M1
+> IsPerpendicular ( L , l )
+> PointOnCurve ( M , L )
+
+Comparison Result:
+Common: 18
+Gold Sentences: 22
+Predicted Sentences: 21
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过点$ (0 ,3 b ) $的直线$l$与双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的一条斜率为正的渐近线平行，若双曲线$C$的右支上的点到直线$l$的距离恒大于$b$，则双曲线$C$的离心率的最大值是 ? 
+
+Predicted Annotation:
+C: Hyperbola
+G: Point
+a: Number
+b: Number
+l: Line
+Coordinate(G) = (0, 3*b)
+Distance(G, l) > b
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+IsParallel(l,OneOf(Asymptote(C)))
+PointOnCurve(G, l)
+Slope(OneOf(Asymptote(C)))>0
+a>0
+b>0
+Max(Eccentricity(C)) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ L1 : Line 
+ P0 : Point 
+ P : Point 
+ a : Number 
+ b : Number 
+ l : Line 
+ Coordinate ( P ) = (0 ,3 * b ) 
+ Distance ( P0 , l ) > b 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsParallel ( l , L1 ) 
+ OneOf ( Asymptote ( C ) ) = L1 
+ PointOnCurve ( P , l ) 
+ PointOnCurve ( P0 , RightPart ( C ) ) 
+ Slope ( L1 ) >0 
+ a >0 
+ b >0 
+ Max ( Eccentricity ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< Distance(G, l) > b
+< IsParallel(l,OneOf(Asymptote(C)))
+< Slope(OneOf(Asymptote(C)))>0
+---
+> L1 : Line
+> P0 : Point
+> Distance ( P0 , l ) > b
+> IsParallel ( l , L1 )
+> OneOf ( Asymptote ( C ) ) = L1
+> PointOnCurve ( P0 , RightPart ( C ) )
+> Slope ( L1 ) >0
+
+Comparison Result:
+Common: 11
+Gold Sentences: 18
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的焦点为$F_ {1 } $、$F_ {2 } $，两条准线与$x$轴的交点分别为$M$、$N$，若$M N \ leq2 F_ {1 } F_ {2 } $，则该椭圆的离心率的取值范围是 ? 
+
+Predicted Annotation:
+F1: Point
+F2: Point
+G: Ellipse
+M: Point
+N: Point
+a: Number
+b: Number
+l1: Line
+l2: Line
+Directrix(G) = {l1,l2}
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+Focus(G) = {F1,F2}
+LineSegmentOf(M, N) <= 2*LineSegmentOf(F1, F2)
+Intersection(l1, xAxis) = M
+Intersection(l2, xAxis) = N
+a > b
+b > 0
+Range(Eccentricity(G)) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ M : Point 
+ N : Point 
+ Z1 : Line 
+ Z2 : Line 
+ a : Number 
+ b : Number 
+ Directrix ( G ) = { Z1 , Z2 } 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Focus ( G ) = { F1 , F2 } 
+ Intersection ( Z1 , xAxis ) = M 
+ Intersection ( Z2 , xAxis ) = N 
+ LineSegmentOf ( M , N ) < =2 * LineSegmentOf ( F1 , F2 ) 
+ a > b 
+ b >0 
+ Range ( Eccentricity ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< LineSegmentOf(M, N) <= 2*LineSegmentOf(F1, F2)
+
+Comparison Result:
+Common: 17
+Gold Sentences: 17
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$C$的方程为$y ^ {2 } =4 x$ , 经过点$ (4 ,0 ) $的直线与抛物线$C$交于$A$、$B$两点，分别过点$A$、$B$作抛物线的切线，则两条切线的交点的轨迹方程是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Parabola
+G: Line
+H: Point
+l1:Line
+l2:Line
+Coordinate(H) = (4, 0)
+Expression(C) = (y^2 = 4*x)
+Intersection(G, C) = {A, B}
+PointOnCurve(H, G)
+TangentOfPoint(A, C) = l1
+TangentOfPoint(B, C) = l2
+LocusEquation(Intersection(l1,l2)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ G : Line 
+ H : Point 
+ Coordinate ( H ) = (4 ,0 ) 
+ Expression ( C ) = ( y ^2 =4 * x ) 
+ Intersection ( G , C ) = { A , B } 
+ PointOnCurve ( H , G ) = True 
+ LocusEquation ( Intersection ( TangentOfPoint ( A , C ) , TangentOfPoint ( B , C ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< l1:Line
+< l2:Line
+< TangentOfPoint(A, C) = l1
+< TangentOfPoint(B, C) = l2
+< LocusEquation(Intersection(l1,l2)) =?
+---
+> LocusEquation ( Intersection ( TangentOfPoint ( A , C ) , TangentOfPoint ( B , C ) ) ) = ?
+
+Comparison Result:
+Common: 9
+Gold Sentences: 10
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知动点$P ( x , y ) $ ( 其中$y \ geq0$ ) 到$x$轴的距离比它到点$F (0 ,1 ) $的距离少$1$，则动点$P$的轨迹方程为 ? 
+
+Predicted Annotation:
+F: Point
+P: Point
+x1:Number
+y1:Number
+Coordinate(F) = (0, 1)
+Coordinate(P) = (x1, y1)
+Distance(P, xAxis) = Distance(P, F) - 1
+y1>=0
+LocusEquation(P) =?
+
+
+Gold Annotation:
+F : Point 
+ P : Point 
+ x1 : Number 
+ y1 : Number 
+ Coordinate ( F ) = (0 ,1 ) 
+ Coordinate ( P ) = ( x1 , y1 ) 
+ Distance ( P , xAxis ) = Distance ( P , F ) -1 
+ y1 > =0 
+ LocusEquation ( P ) = ?
+
+Diff Result (< pred, > gold):
+< y1>=0
+
+Comparison Result:
+Common: 8
+Gold Sentences: 8
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$C$ : $y ^ {2 } =2 p x ( p >0 ) $的焦点为$F$，准线$l$与$x$轴的交点为$A$、$P$是抛物线$C$上的点，且$P F \ perp x$轴 . 若以$A F$为直径的圆截直线$A P$所得的弦长为$2$，则实数$p$的值为 ? 
+
+Predicted Annotation:
+A: Point
+C: Parabola
+F: Point
+G: Circle
+P: Point
+l: Line
+p: Real
+Directrix(C) = l
+Expression(C) = (y^2 = 2*(p*x))
+Focus(C) = F
+InterceptChord(LineSegmentOf(A,P),G)=2
+IsDiameter(LineSegmentOf(A,F),G)
+Intersection(l,xAxis) = A
+IsPerpendicular(LineSegmentOf(P,F),xAxis)
+PointOnCurve(P, C)
+p>0
+p =?
+
+
+Gold Annotation:
+A : Point 
+ C : Parabola 
+ F : Point 
+ G : Circle 
+ P : Point 
+ l : Line 
+ p : Real 
+ Directrix ( C ) = l 
+ Expression ( C ) = ( y ^2 =2 * ( p * x ) ) 
+ Focus ( C ) = F 
+ Intersection ( l , xAxis ) = A 
+ IsDiameter ( LineSegmentOf ( A , F ) , G ) 
+ IsPerpendicular ( LineSegmentOf ( P , F ) , xAxis ) 
+ Length ( InterceptChord ( LineOf ( A , P ) , G ) ) =2 
+ PointOnCurve ( P , C ) 
+ p >0 
+ p = ?
+
+Diff Result (< pred, > gold):
+< InterceptChord(LineSegmentOf(A,P),G)=2
+---
+> Length ( InterceptChord ( LineOf ( A , P ) , G ) ) =2
+
+Comparison Result:
+Common: 16
+Gold Sentences: 17
+Predicted Sentences: 17
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的左焦点$F_ {1 } $ , $O$为坐标原点 , 点$P$在椭圆上 , 点$Q$在椭圆的右准线上 , 若$ \ overrightarrow { PQ } =2 \ overrightarrow { F_ {1 } O } $ , $ \ overrightarrow { F_ {1 } Q } = \ lambda ( \ frac { \ overrightarrow { F_ {1 } P } } { | \ overrightarrow { F_ {1 } P } | } + \ frac { \ overrightarrow { F_ {1 } O } } { | \ overrightarrow { F_ {1 } O } | } ) ( \ lambda >0 ) $ , 则椭圆的离心率为 ? 
+
+Predicted Annotation:
+F1: Point
+G: Ellipse
+O: Origin
+P: Point
+Q: Point
+a: Number
+b: Number
+lambda:Number
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+LeftFocus(G)=F1
+PointOnCurve(P, G)
+PointOnCurve(Q,RightDirectrix(G))
+VectorOf(F1, Q) = lambda*(VectorOf(F1, O)/Abs(VectorOf(F1, O)) + VectorOf(F1, P)/Abs(VectorOf(F1, P)))
+VectorOf(F1, P) = 2*VectorOf(F1, O)
+a > b
+b > 0
+lambda>0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+F1 : Point 
+ G : Ellipse 
+ O : Origin 
+ P : Point 
+ Q : Point 
+ a : Number 
+ b : Number 
+ lambda : Number 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( P , G ) 
+ PointOnCurve ( Q , RightDirectrix ( G ) ) 
+ VectorOf ( F1 , Q ) = lambda * ( VectorOf ( F1 , O ) / Abs ( VectorOf ( F1 , O ) ) + VectorOf ( F1 , P ) / Abs ( VectorOf ( F1 , P ) ) ) 
+ VectorOf ( P , Q ) =2 * VectorOf ( F1 , O ) 
+ a > b 
+ b >0 
+ lambda >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< VectorOf(F1, P) = 2*VectorOf(F1, O)
+---
+> VectorOf ( P , Q ) =2 * VectorOf ( F1 , O )
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过抛物线$y ^ {2 } =2 p x ( p >0 ) $焦点$F$的直线与抛物线交于$P$、$Q$，由$P$、$Q$分别引其准线的垂线$P H_ {1 } $、$Q H_ {2 } $垂足分别为$H_ {1 } $ , $H_ {2 } $ , $H_ {1 } H_ {2 } $的中点为$M$，记$ | PF | = a$ , $ | QF | = b$，则$ | MF | $ = ? 
+
+Predicted Annotation:
+F: Point
+G: Parabola
+H1: Point
+H2: Point
+L1: Line
+L2: Line
+M: Point
+P: Point
+Q: Point
+a: Number
+b: Number
+p: Number
+Abs(LineSegmentOf(P, F)) = a
+Abs(LineSegmentOf(Q, F)) = b
+Directrix(G) = {L1, L2}
+Expression(G) = (y^2 = 2*(p*x))
+Focus(G) = F
+FootPoint(L1, Directrix(G)) = H1
+FootPoint(L2, Directrix(G)) = H2
+Intersection(L, G) = {P, Q}
+MidPoint(LineSegmentOf(H1, H2)) = M
+PointOnCurve(F, L)
+p>0
+Abs(LineSegmentOf(M, F)) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Parabola 
+ H1 : Point 
+ H2 : Point 
+ H : Line 
+ M : Point 
+ P : Point 
+ Q : Point 
+ a : Number 
+ b : Number 
+ p : Number 
+ Abs ( LineSegmentOf ( P , F ) ) = a 
+ Abs ( LineSegmentOf ( Q , F ) ) = b 
+ Expression ( G ) = ( y ^2 =2 * p * x ) 
+ Focus ( G ) = F 
+ FootPoint ( LineSegmentOf ( P , H1 ) , Directrix ( G ) ) = H1 
+ FootPoint ( LineSegmentOf ( P , H2 ) , Directrix ( G ) ) = H2 
+ Intersection ( H , G ) = { P , Q } 
+ IsPerpendicular ( LineSegmentOf ( P , H1 ) , Directrix ( G ) ) 
+ IsPerpendicular ( LineSegmentOf ( P , H2 ) , Directrix ( G ) ) 
+ MidPoint ( LineSegmentOf ( H1 , H2 ) ) = M 
+ PointOnCurve ( F , H ) = True 
+ PointOnCurve ( P , LineSegmentOf ( P , H1 ) ) 
+ PointOnCurve ( Q , LineSegmentOf ( P , H2 ) ) 
+ p >0 
+ Abs ( LineSegmentOf ( M , F ) ) = ?
+
+Diff Result (< pred, > gold):
+< L2: Line
+< Directrix(G) = {L1, L2}
+< FootPoint(L1, Directrix(G)) = H1
+< FootPoint(L2, Directrix(G)) = H2
+< Intersection(L, G) = {P, Q}
+< PointOnCurve(F, L)
+---
+> FootPoint ( LineSegmentOf ( P , H1 ) , Directrix ( G ) ) = H1
+> FootPoint ( LineSegmentOf ( P , H2 ) , Directrix ( G ) ) = H2
+> Intersection ( H , G ) = { P , Q }
+> IsPerpendicular ( LineSegmentOf ( P , H1 ) , Directrix ( G ) )
+> IsPerpendicular ( LineSegmentOf ( P , H2 ) , Directrix ( G ) )
+> PointOnCurve ( F , H ) = True
+> PointOnCurve ( P , LineSegmentOf ( P , H1 ) )
+> PointOnCurve ( Q , LineSegmentOf ( P , H2 ) )
+
+Comparison Result:
+Common: 18
+Gold Sentences: 26
+Predicted Sentences: 24
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } {2 } + y ^ {2 } =1$的弦被点$ ( \ frac {1 } {2 } , \ frac {1 } {2 } ) $平分，则这条弦所在的直线方程是 ? 
+
+Predicted Annotation:
+G: Ellipse
+H: LineSegment
+I: Point
+Coordinate(I) = (1/2, 1/2)
+Expression(G) = (x^2/2 + y^2 = 1)
+IsChordOf(H, G)
+MidPoint(H) = I
+Expression(OverlappingLine(H)) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ H : LineSegment 
+ Coordinate ( MidPoint ( H ) ) = (1 /2 ,1 /2 ) 
+ Expression ( G ) = ( x ^2 /2 + y ^2 =1 ) 
+ IsChordOf ( H , G ) = True 
+ Expression ( OverlappingLine ( H ) ) = ?
+
+Diff Result (< pred, > gold):
+< I: Point
+< Coordinate(I) = (1/2, 1/2)
+< MidPoint(H) = I
+---
+> Coordinate ( MidPoint ( H ) ) = (1 /2 ,1 /2 )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设直线$2 x + y -3 =0$与抛物线$ \ Gamma$ : $y ^ {2 } =8 x$交于$A$、$B$两点，过$A$、$B$的圆与抛物线$ \ Gamma$交于另外两点$C$，$D$，则直线$C D$的斜率$k$ = ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+C: Point
+D: Point
+Gamma: Parabola
+H: Circle
+k: Number
+l: Line
+Expression(Gamma) = (y^2 = 8*x)
+Expression(H) = (2*x + y - 3 = 0)
+Intersection(H, Gamma) = {C, D}
+Intersection(l, Gamma) = {A, B}
+PointOnCurve(A, H)
+PointOnCurve(B, H)
+Slope(LineOf(C, D)) = k
+k =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Point 
+ D : Point 
+ G : Line 
+ Gamma : Parabola 
+ H : Circle 
+ k : Number 
+ Expression ( G ) = (2 * x + y -3 =0 ) 
+ Expression ( Gamma ) = ( y ^2 =8 * x ) 
+ Intersection ( G , Gamma ) = { A , B } 
+ Intersection ( H , Gamma ) = { C , D } 
+ PointOnCurve ( A , H ) 
+ PointOnCurve ( B , H ) 
+ Slope ( LineOf ( C , D ) ) = k 
+ k = ?
+
+Diff Result (< pred, > gold):
+< Expression(H) = (2*x + y - 3 = 0)
+---
+> Expression ( G ) = (2 * x + y -3 =0 )
+
+Comparison Result:
+Common: 15
+Gold Sentences: 16
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若抛物线$y = x ^ {2 } +2 m x + m ^ {2 } - m$焦点坐标为$ (2001 ,2002 ) $，则它的顶点坐标为 ? 
+
+Predicted Annotation:
+G: Parabola
+m: Number
+Coordinate(Focus(G)) = (2001, 2002)
+Expression(G) = (y = m + m*x^2 + 2*m*x)
+Coordinate(Vertex(G)) =?
+
+
+Gold Annotation:
+G : Parabola 
+ m : Number 
+ Coordinate ( Focus ( G ) ) = (2001 ,2002 ) 
+ Expression ( G ) = ( y = - m + m ^2 +2 * ( m * x ) + x ^2 ) 
+ Coordinate ( Vertex ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(G) = (y = m + m*x^2 + 2*m*x)
+---
+> Expression ( G ) = ( y = - m + m ^2 +2 * ( m * x ) + x ^2 )
+
+Comparison Result:
+Common: 4
+Gold Sentences: 5
+Predicted Sentences: 5
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+以双曲线$ \ frac { x ^ {2 } } {4 } - \ frac { y ^ {2 } } {5 } =1$的顶点和焦点分别作焦点和两个顶点的椭圆标准方程是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Ellipse
+Expression(G) = (x^2/4 - y^2/5 = 1)
+Focus(G) = Focus(H)
+Vertex(G) = {Vertex(H),Vertex(H1)}
+Expression(H) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Ellipse 
+ Expression ( G ) = ( x ^2 /4 - y ^2 /5 =1 ) 
+ Focus ( G ) = Vertex ( H ) 
+ Vertex ( G ) = Focus ( H ) 
+ Expression ( H ) = ?
+
+Diff Result (< pred, > gold):
+< Focus(G) = Focus(H)
+< Vertex(G) = {Vertex(H),Vertex(H1)}
+---
+> Focus ( G ) = Vertex ( H )
+> Vertex ( G ) = Focus ( H )
+
+Comparison Result:
+Common: 4
+Gold Sentences: 6
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$C$ : $ \ frac { x ^ {2 } } {25 } + \ frac { y ^ {2 } } {9 } =1$的左焦点为$F$，点$M$是椭圆$C$上一点，点$N$是$M F$的中点，$O$是椭圆的中心，$O N =4$，则点$M$到椭圆$C$的左准线的距离为 ? 
+
+Predicted Annotation:
+C: Ellipse
+F: Point
+M: Point
+N: Point
+O: Origin
+Center(C) = O
+Expression(C) = (x^2/25 + y^2/9 = 1)
+LeftFocus(C) = F
+LineSegmentOf(O, N) = 4
+MidPoint(LineSegmentOf(M, F)) = N
+PointOnCurve(M, C)
+Distance(M, LeftDirectrix(C)) =?
+
+
+Gold Annotation:
+C : Ellipse 
+ F : Point 
+ M : Point 
+ N : Point 
+ O : Point 
+ Center ( C ) = O 
+ Expression ( C ) = ( x ^2 /25 + y ^2 /9 =1 ) 
+ LeftFocus ( C ) = F 
+ LineSegmentOf ( O , N ) =4 
+ MidPoint ( LineSegmentOf ( M , F ) ) = N 
+ PointOnCurve ( M , C ) 
+ Distance ( M , LeftDirectrix ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< O: Origin
+< Center(C) = O
+< LineSegmentOf(O, N) = 4
+---
+> O : Point
+> Center ( C ) = O
+> LineSegmentOf ( O , N ) =4
+
+Comparison Result:
+Common: 9
+Gold Sentences: 12
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C_ {1 } $ : $ \ frac { x ^ {2 } } {9 } - \ frac { y ^ {2 } } { m } =1 ( m >0 ) $的左、右焦点分别为$F_ {1 } $、$F_ {2 } $，渐近线方程为$ \ sqrt {7 } x \ pm3 y =0$，点$A$在圆$C_ {2 } $ : $x ^ {2 } + y ^ {2 } =16$上，若$ \ overrightarrow { F_ {1 } A } = \ overrightarrow { A B } $且点$B$是双曲线$C_ {1 } $右支上的点，则$ \ angle B F_ {2 } F_ {1 } $的正切值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C1: Hyperbola
+C2: Circle
+F1: Point
+F2: Point
+m: Number
+Expression(Asymptote(C1)) = (sqrt(7)*x+pm*3*y=0)
+Expression(C1) = (x^2/9 - y^2/m = 1)
+Expression(C2) = (x^2 + y^2 = 16)
+LeftFocus(C1) = F1
+PointOnCurve(A, C2)
+PointOnCurve(B, RightPart(C1))
+RightFocus(C1) = F2
+m>0
+Tan(AngleOf(B, F2, F1)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C1 : Hyperbola 
+ C2 : Circle 
+ F1 : Point 
+ F2 : Point 
+ m : Number 
+ Expression ( Asymptote ( C1 ) ) = ( sqrt (7 ) * x + pm *3 * y =0 ) 
+ Expression ( C1 ) = ( x ^2 /9 - y ^2 / m =1 ) 
+ Expression ( C2 ) = ( x ^2 + y ^2 =16 ) 
+ LeftFocus ( C1 ) = F1 
+ PointOnCurve ( A , C2 ) 
+ PointOnCurve ( B , RightPart ( C1 ) ) 
+ RightFocus ( C1 ) = F2 
+ VectorOf ( F1 , A ) = VectorOf ( A , B ) 
+ m >0 
+ Tan ( AngleOf ( B , F2 , F1 ) ) = ?
+
+Diff Result (< pred, > gold):
+> VectorOf ( F1 , A ) = VectorOf ( A , B )
+
+Comparison Result:
+Common: 16
+Gold Sentences: 17
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的左顶点和上顶点分别为$A$、$B$，左、右焦点分别是$F_ {1 } $、$F_ {2 } $，在线段$A B$上有且只有一个点$P$满足$P F_ {1 } \ perp P F_ {2 } $，则椭圆的离心率的平方是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Ellipse
+F1: Point
+F2: Point
+P: Point
+a: Number
+b: Number
+Expression(C) = (y^2/b^2 + x^2/a^2 = 1)
+IsPerpendicular(LineSegmentOf(P, F1), LineSegmentOf(P, F2))
+LeftFocus(C) = F1
+LeftVertex(C) = A
+NumIntersection(LineSegmentOf(A, B), C) = 1
+PointOnCurve(P, LineSegmentOf(A, B))
+RightFocus(C) = F2
+UpperVertex(C) = B
+a > b
+b > 0
+Eccentricity(C)^2 =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Ellipse 
+ F1 : Point 
+ F2 : Point 
+ P : Point 
+ a : Number 
+ b : Number 
+ Expression ( C ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsPerpendicular ( LineSegmentOf ( P , F1 ) , LineSegmentOf ( P , F2 ) ) 
+ LeftFocus ( C ) = F1 
+ LeftVertex ( C ) = A 
+ PointOnCurve ( P , LineSegmentOf ( A , B ) ) 
+ RightFocus ( C ) = F2 
+ UpperVertex ( C ) = B 
+ a > b 
+ b >0 
+ Eccentricity ( C ) ^2 = ?
+
+Diff Result (< pred, > gold):
+< NumIntersection(LineSegmentOf(A, B), C) = 1
+
+Comparison Result:
+Common: 18
+Gold Sentences: 18
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$C$ : $x ^ {2 } =2 y$的焦点为$F$，过$C$上一点$P (1 , y_ {0 } ) $的切线$l$与$y$轴交于$A$，则$ | AF | $ = ? 
+
+Predicted Annotation:
+A: Point
+C: Parabola
+F: Point
+P: Point
+l: Line
+y0:Number
+Coordinate(P) = (1, y0)
+Expression(C) = (x^2 = 2*y)
+Focus(C) = F
+Intersection(l, yAxis) = A
+PointOnCurve(P,C)
+TangentOfPoint(P,C)=l
+Abs(LineSegmentOf(A, F)) =?
+
+
+Gold Annotation:
+A : Point 
+ C : Parabola 
+ F : Point 
+ P : Point 
+ l : Line 
+ y0 : Number 
+ Coordinate ( P ) = (1 , y0 ) 
+ Expression ( C ) = ( x ^2 =2 * y ) 
+ Focus ( C ) = F 
+ Intersection ( l , yAxis ) = A 
+ PointOnCurve ( P , C ) 
+ TangentOnPoint ( P , C ) = l 
+ Abs ( LineSegmentOf ( A , F ) ) = ?
+
+Diff Result (< pred, > gold):
+< TangentOfPoint(P,C)=l
+---
+> TangentOnPoint ( P , C ) = l
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+以坐标轴为对称轴、两渐近线互相垂直、两准线间距离为$2$的双曲线方程是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+l1: Line
+l2: Line
+Asymptote(G) = {l1,l2}
+Distance(l1,l2) = 2
+IsPerpendicular(l1,l2)
+SymmetryAxis(G) = axis
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ K1 : Line 
+ K2 : Line 
+ Z1 : Line 
+ Z2 : Line 
+ Asymptote ( G ) = { Z1 , Z2 } 
+ Directrix ( G ) = { K1 , K2 } 
+ Distance ( K1 , K2 ) =2 
+ IsPerpendicular ( Z1 , Z2 ) 
+ SymmetryAxis ( G ) = axis 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Distance(l1,l2) = 2
+---
+> K1 : Line
+> K2 : Line
+> Directrix ( G ) = { K1 , K2 }
+> Distance ( K1 , K2 ) =2
+
+Comparison Result:
+Common: 7
+Gold Sentences: 11
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过点$ (0 ,3 ) $的直线与抛物线$y ^ {2 } =4 x$交于$A$、$B$两点，线段$A B$的垂直平分线经过点$ (4 ,0 ) $ , $F$为抛物线的焦点，则$ | A F | + | B F | $的值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+G: Parabola
+H: Line
+I: Point
+Coordinate(I) = (4, 0)
+Coordinate(J) = (0, 3)
+Expression(G) = (y^2 = 4*x)
+Focus(G) = F
+Intersection(H, G) = {A, B}
+PointOnCurve(I, PerpendicularBisector(LineSegmentOf(A,B)))
+PointOnCurve(J, H)
+Abs(LineSegmentOf(A, F)) + Abs(LineSegmentOf(B, F)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Point 
+ D : Point 
+ F : Point 
+ G : Parabola 
+ H : Line 
+ Coordinate ( C ) = (0 ,3 ) 
+ Coordinate ( D ) = (4 ,0 ) 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ Focus ( G ) = F 
+ Intersection ( H , G ) = { A , B } 
+ PointOnCurve ( C , H ) 
+ PointOnCurve ( D , PerpendicularBisector ( LineSegmentOf ( A , B ) ) ) 
+ Abs ( LineSegmentOf ( A , F ) ) + Abs ( LineSegmentOf ( B , F ) ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(J) = (0, 3)
+< PointOnCurve(J, H)
+---
+> C : Point
+> Coordinate ( C ) = (0 ,3 )
+> PointOnCurve ( C , H )
+
+Comparison Result:
+Common: 12
+Gold Sentences: 15
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知直线$l$ ( 斜率大于$0$ ) 的倾斜角的正弦值为$ \ frac { \ sqrt {2 } } {2 } $，在$x$轴上的截距为$ -2$，直线$l$与抛物线$C$ : $x ^ {2 } =2 p y ( p >0 ) $交于$A$、$B$两点若$ | A B | =16$，则$p$ = ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+C: Parabola
+l: Line
+p: Number
+Abs(LineSegmentOf(A, B)) = 16
+Expression(C) = (x^2 = 2*(p*y))
+Intercept(l, xAxis) = -2
+Inclination(l) = sqrt(2)/2
+Intersection(l, C) = {A, B}
+Slope(l)>0
+p>0
+p =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ l : Line 
+ p : Number 
+ Abs ( LineSegmentOf ( A , B ) ) =16 
+ Expression ( C ) = ( x ^2 =2 * p * y ) 
+ Intercept ( l , xAxis ) = -2 
+ Intersection ( l , C ) = { A , B } 
+ Sin ( Inclination ( l ) ) = sqrt (2 ) /2 
+ Slope ( l ) >0 
+ p >0 
+ p = ?
+
+Diff Result (< pred, > gold):
+< Inclination(l) = sqrt(2)/2
+---
+> Sin ( Inclination ( l ) ) = sqrt (2 ) /2
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆长轴$A B$的长为$4$ , $N$为椭圆上一点，满足$ | N A | =1$ , $ \ angle N A B =60 ^ { \ circ } $，则椭圆的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Ellipse
+N: Point
+Abs(LineSegmentOf(N, A)) = 1
+AngleOf(N, A, B) = ApplyUnit(60, degree)
+Length(LineSegmentOf(A, B)) = 4
+PointOnCurve(N, G)
+Eccentricity(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Ellipse 
+ N : Point 
+ Abs ( LineSegmentOf ( N , A ) ) =1 
+ Length ( LineSegmentOf ( A , B ) ) =4 
+ MajorAxis ( G ) = LineSegmentOf ( A , B ) 
+ PointOnCurve ( N , G ) 
+ TriangleOf ( N , A , B ) = ApplyUnit (60 , degree ) 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< AngleOf(N, A, B) = ApplyUnit(60, degree)
+---
+> MajorAxis ( G ) = LineSegmentOf ( A , B )
+> TriangleOf ( N , A , B ) = ApplyUnit (60 , degree )
+
+Comparison Result:
+Common: 8
+Gold Sentences: 10
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知点$A$、$B$为椭圆$C$ : $ \ frac { x ^ {2 } } {4 } + y ^ {2 } =1$的左右顶点，点$M$为$x$轴上一点，过$M$作$x$轴的垂线交椭圆$C$于$P$、$Q$两点，过$M$作$A P$的垂线交$B Q$于点$N$，则$ \ frac { S_ \ Delta { B M N } } { S_ \ Delta { B M Q } } $ = ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Ellipse
+L1:Line
+L2:Line
+M: Point
+N: Point
+P: Point
+Q: Point
+Expression(C) = (x^2/4 + y^2 = 1)
+Intersection(L1,C)={P,Q}
+Intersection(L2,LineSegmentOf(B,Q))=N
+IsPerpendicular(L1,LineSegmentOf(A,P))
+IsPerpendicular(L2,LineSegmentOf(A,P))
+LeftVertex(C)=A
+PointOnCurve(M,xAxis)
+PointOnCurve(M,L1)
+PointOnCurve(M,L2)
+RightVertex(C)=B
+Area(TriangleOf(B,M,N))/Area(TriangleOf(B,M,Q)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Ellipse 
+ M : Point 
+ N : Point 
+ P : Point 
+ Q : Point 
+ l1 : Line 
+ l : Line 
+ Expression ( C ) = ( x ^2 /4 + y ^2 =1 ) 
+ Intersection ( l , C ) = { P , Q } 
+ Intersection ( l1 , LineSegmentOf ( B , Q ) ) = N 
+ IsPerpendicular ( l , xAxis ) 
+ IsPerpendicular ( l1 , LineSegmentOf ( A , P ) ) 
+ LeftVertex ( C ) = A 
+ PointOnCurve ( M , l1 ) 
+ PointOnCurve ( M , xAxis ) 
+ PointOnCurve ( M , l ) 
+ RightVertex ( C ) = B 
+ Area ( TriangleOf ( B , M , N ) ) / Area ( TriangleOf ( B , M , Q ) ) = ?
+
+Diff Result (< pred, > gold):
+< IsPerpendicular(L1,LineSegmentOf(A,P))
+---
+> IsPerpendicular ( l , xAxis )
+
+Comparison Result:
+Common: 19
+Gold Sentences: 20
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若中心在原点，对称轴为坐标轴的椭圆的一个焦点为$ (2 ,0 ) $，且长轴长是短轴长的$ \ sqrt {3 } $倍，则标准方程为 ? 
+
+Predicted Annotation:
+G: Ellipse
+H: Point
+O: Origin
+Center(G) = O
+Coordinate(H) = (2, 0)
+Length(MajorAxis(G)) = sqrt(3)*Length(MinorAxis(G))
+OneOf(Focus(G)) = H
+SymmetryAxis(G) = axis
+Expression(G) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ O : Origin 
+ Center ( G ) = O 
+ Coordinate ( OneOf ( Focus ( G ) ) ) = (2 ,0 ) 
+ Length ( MajorAxis ( G ) ) = Length ( MinorAxis ( G ) ) * sqrt (3 ) 
+ SymmetryAxis ( G ) = axis 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< H: Point
+< Coordinate(H) = (2, 0)
+< OneOf(Focus(G)) = H
+---
+> Coordinate ( OneOf ( Focus ( G ) ) ) = (2 ,0 )
+
+Comparison Result:
+Common: 6
+Gold Sentences: 7
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若椭圆$ \ frac { x ^ {2 } } {5 } + \ frac { y ^ {2 } } {4 } =1$，则实数$x$的取值范围是 ? 
+
+Predicted Annotation:
+G: Ellipse
+x_: Real
+Expression(G) = (x^2/5 + y^2/4 = 1)
+Range(x_) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ x : Real 
+ Expression ( G ) = ( x ^2 /5 + y ^2 /4 =1 ) 
+ Range ( x ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(G) = (x^2/5 + y^2/4 = 1)
+---
+> Expression ( G ) = ( x ^2 /5 + y ^2 /4 =1 )
+
+Comparison Result:
+Common: 3
+Gold Sentences: 4
+Predicted Sentences: 4
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+一个点到点$ (4 ,0 ) $的距离等于它到$y$轴的距离，则这个点的轨迹方程为 ? 
+
+Predicted Annotation:
+G: Point
+H: Point
+Coordinate(H) = (4, 0)
+Distance(G, H) = Distance(G, yAxis)
+LocusEquation(G) =?
+
+
+Gold Annotation:
+G : Point 
+ P : Point 
+ Coordinate ( G ) = (4 ,0 ) 
+ Distance ( P , G ) = Distance ( P , yAxis ) 
+ LocusEquation ( P ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(H) = (4, 0)
+< Distance(G, H) = Distance(G, yAxis)
+< LocusEquation(G) =?
+---
+> Coordinate ( G ) = (4 ,0 )
+> Distance ( P , G ) = Distance ( P , yAxis )
+> LocusEquation ( P ) = ?
+
+Comparison Result:
+Common: 2
+Gold Sentences: 5
+Predicted Sentences: 5
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的离心率是$ \ frac { \ sqrt {3 } } {2 } $，斜率为$1$的直线过$M ( b ,0 ) $且与椭圆交于$A$、$B$两点，$O$为坐标原点，若$ \ overrightarrow { O A } \ cdot \ overrightarrow { O B } = \ frac {32 } {5 \ tan \ angle A O B } $，则椭圆的标准方程是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Ellipse
+H: Line
+M: Point
+O: Origin
+a: Number
+b: Number
+Coordinate(M) = (b, 0)
+DotProduct(VectorOf(O, A), VectorOf(O, B)) = 32/5*Tan(AngleOf(A, O, B))
+Eccentricity(G) = sqrt(3)/2
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+Intersection(H, G) = {A, B}
+PointOnCurve(M, H)
+Slope(H) = 1
+a > b
+b > 0
+Expression(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Ellipse 
+ H : Line 
+ M : Point 
+ O : Origin 
+ a : Number 
+ b : Number 
+ Coordinate ( M ) = ( b ,0 ) 
+ DotProduct ( VectorOf ( O , A ) , VectorOf ( O , B ) ) =32 / (5 * Tan ( AngleOf ( A , O , B ) ) ) 
+ Eccentricity ( G ) = sqrt (3 ) /2 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( H , G ) = { A , B } 
+ PointOnCurve ( M , H ) 
+ Slope ( H ) =1 
+ a > b 
+ b >0 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< DotProduct(VectorOf(O, A), VectorOf(O, B)) = 32/5*Tan(AngleOf(A, O, B))
+---
+> DotProduct ( VectorOf ( O , A ) , VectorOf ( O , B ) ) =32 / (5 * Tan ( AngleOf ( A , O , B ) ) )
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若双曲线$ \ frac { x ^ {2 } } {9 } - \ frac { y ^ {2 } } { b ^ {2 } } =1$满足$b \ geq9$，则该双曲线离心率的取值范围是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+b: Number
+Expression(G) = (x^2/9 - y^2/b^2 = 1)
+b>=9
+Range(Eccentricity(G)) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ b : Number 
+ Expression ( G ) = ( x ^2 /9 - y ^2 / b ^2 =1 ) 
+ b > =9 
+ Range ( Eccentricity ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< b>=9
+
+Comparison Result:
+Common: 4
+Gold Sentences: 4
+Predicted Sentences: 5
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知直线$y = k ( x -4 ) $与圆$O$ : $x ^ {2 } + y ^ {2 } =36$交于$M$、$N$两点，则线段$M N$的中点$G$的轨迹方程为 ? 
+
+Predicted Annotation:
+ G: Point
+M: Point
+N: Point
+O: Circle
+k: Number
+Expression(O) = (x^2 + y^2 = 36)
+Expression(Line) = (y = k*(x - 4))
+Intersection(Line, O) = {M, N}
+MidPoint(LineSegmentOf(M, N)) = G
+LocusEquation(G) =?
+
+
+Gold Annotation:
+G : Point 
+ L : Line 
+ M : Point 
+ N : Point 
+ O : Circle 
+ Expression ( L ) = ( y = k * ( x -4 ) ) 
+ Expression ( O ) = ( x ^2 + y ^2 =36 ) 
+ Intersection ( L , O ) = { M , N } 
+ MidPoint ( LineSegmentOf ( M , N ) ) = G 
+ LocusEquation ( G ) = ?
+
+Diff Result (< pred, > gold):
+< k: Number
+---
+> L : Line
+> Expression ( L ) = ( y = k * ( x -4 ) )
+> Intersection ( L , O ) = { M , N }
+
+Comparison Result:
+Common: 7
+Gold Sentences: 10
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知直线$a x + y +2 =0$与双曲线$x ^ {2 } - \ frac { y ^ {2 } } {4 } =1$的一条渐近线平行，则这两条平行直线之间的距离是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Line
+a: Number
+l1: Line
+l2: Line
+Expression(G) = (x^2 - y^2/4 = 1)
+Expression(H) = (a*x + y + 2 = 0)
+IsParallel(H, l1)
+IsParallel(H, l2)
+OneOf(Asymptote(G)) = l1
+OneOf(Asymptote(G)) = l2
+Distance(l1, l2) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Line 
+ a : Number 
+ l1 : Line 
+ Expression ( G ) = ( x ^2 - y ^2 /4 =1 ) 
+ Expression ( H ) = ( a * x + y +2 =0 ) 
+ IsParallel ( H , l1 ) 
+ OneOf ( Asymptote ( G ) ) = l1 
+ Distance ( H , l1 ) = ?
+
+Diff Result (< pred, > gold):
+< l2: Line
+< IsParallel(H, l2)
+< OneOf(Asymptote(G)) = l2
+< Distance(l1, l2) =?
+---
+> Distance ( H , l1 ) = ?
+
+Comparison Result:
+Common: 8
+Gold Sentences: 9
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+双曲线$2 x ^ {2 } -3 y ^ {2 } = k ( k <0 ) $的焦点坐标是 ( 用$k$表示 ) ? 
+
+Predicted Annotation:
+G: Hyperbola
+k: Number
+Expression(G) = (2*x^2 - 3*y^2 = k)
+k<0
+Coordinate(Focus(G)) = (k,?)
+k =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ k : Number 
+ Expression ( G ) = (2 * x ^2 -3 * y ^2 = k ) 
+ k <0 
+ Coordinate ( Focus ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< k =?
+---
+> Coordinate ( Focus ( G ) ) = ?
+
+Comparison Result:
+Common: 4
+Gold Sentences: 5
+Predicted Sentences: 5
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知焦点在$x$轴上的双曲线$ \ frac { x ^ {2 } } { m } - \ frac { y ^ {2 } } {2 - m ^ {2 } } =1$的两条渐近线互相垂直，则$m$ = ? 
+
+Predicted Annotation:
+G: Hyperbola
+l1: Line
+l2: Line
+Asymptote(G) = {l1, l2}
+Expression(G) = (-y^2/(2 - m^2) + x^2/m = 1)
+IsPerpendicular(l1, l2)
+PointOnCurve(Focus(G), xAxis)
+m =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ L1 : Line 
+ L2 : Line 
+ m : Number 
+ Asymptote ( G ) = { L1 , L2 } 
+ Expression ( G ) = ( - y ^2 / (2 - m ^2 ) + x ^2 / m =1 ) 
+ IsPerpendicular ( L1 , L2 ) 
+ PointOnCurve ( Focus ( G ) , xAxis ) 
+ m = ?
+
+Diff Result (< pred, > gold):
+< Expression(G) = (-y^2/(2 - m^2) + x^2/m = 1)
+< m =?
+---
+> m : Number
+> Expression ( G ) = ( - y ^2 / (2 - m ^2 ) + x ^2 / m =1 )
+> m = ?
+
+Comparison Result:
+Common: 6
+Gold Sentences: 9
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$A$、$B$、$P$是双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $上不同的三点，且$A$、$B$连线经过坐标原点$O$，若直线$P A$ , $P B$的斜率乘积$k_ { P A } \ cdot k_ { P B } =3$，则双曲线的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Hyperbola
+O: Origin
+P: Point
+a: Number
+b: Number
+k1:Number
+k2:Number
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Negation(A=B)
+PointOnCurve(A, G)
+PointOnCurve(B, G)
+PointOnCurve(O,LineSegmentOf(A,B))
+PointOnCurve(P, G)
+Slope(LineOf(P,A))=k1
+Slope(LineOf(P,B))=k2
+a>0
+b>0
+k1*k2=3
+Eccentricity(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Hyperbola 
+ O : Origin 
+ P : Point 
+ a : Number 
+ b : Number 
+ kPA : Number 
+ kPB : Number 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Negation ( A = B ) 
+ Negation ( A = P ) 
+ Negation ( B = P ) 
+ PointOnCurve ( A , G ) 
+ PointOnCurve ( B , G ) 
+ PointOnCurve ( O , LineSegmentOf ( A , B ) ) 
+ PointOnCurve ( P , G ) 
+ Slope ( LineOf ( P , A ) ) = kPA 
+ Slope ( LineOf ( P , B ) ) = kPB 
+ a >0 
+ b >0 
+ kPA * kPB =3 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+> Negation ( A = P )
+> Negation ( B = P )
+
+Comparison Result:
+Common: 21
+Gold Sentences: 23
+Predicted Sentences: 21
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知点$P$是双曲线$x ^ {2 } - \ frac { y ^ {2 } } {3 } =1$右支上一动点，$F_ {1 } $、$F_ {2 } $是双曲线的左、右焦点，动点$Q$满足下列条件： ( $1$ ) $ \ overrightarrow { Q F_ {2 } } \ cdot ( \ frac { \ overrightarrow { P F_ {1 } } } { | \ overrightarrow { P F_ {1 } } | } + \ frac { \ overrightarrow { P F_ {2 } } } { | \ overrightarrow { P F_ {2 } } | } ) =0$， ( $2$ ) $ \ overrightarrow { Q P } + \ lambda ( \ frac { \ overrightarrow { P F_ {1 } } } { | \ overrightarrow { P F_ {1 } } | } + \ frac { \ overrightarrow { P F_ {2 } } } { | \ overrightarrow { P F_ {2 } } | } ) =0$，则点$Q$的轨迹方程为 ? 
+
+Predicted Annotation:
+F1: Point
+F2: Point
+G: Hyperbola
+P: Point
+Q: Point
+lambda:Number
+DotProduct((VectorOf(Q,F2)/Abs(VectorOf(Q,F2))+VectorOf(P,F1)/Abs(VectorOf(P,F1)))/Abs(VectorOf(P,F1))+VectorOf(P,F2)/Abs(VectorOf(P,F2))=0)
+VectorOf(Q,P)+lambda*(VectorOf(P,F1)/Abs(VectorOf(P,F1))+VectorOf(P,F2)/Abs(VectorOf(P,F2)))=0
+Expression(G) = (x^2 - y^2/3 = 1)
+LeftFocus(G) = F1
+PointOnCurve(P, RightPart(G))
+RightFocus(G) = F2
+LocusEquation(Q) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Hyperbola 
+ P : Point 
+ Q : Point 
+ lambda : Number 
+ DotProduct ( VectorOf ( Q , F2 ) , ( VectorOf ( P , F1 ) / Abs ( VectorOf ( P , F1 ) ) + VectorOf ( P , F2 ) / Abs ( VectorOf ( P , F2 ) ) ) ) =0 
+ Expression ( G ) = ( x ^2 - y ^2 /3 =1 ) 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( P , RightPart ( G ) ) 
+ RightFocus ( G ) = F2 
+ VectorOf ( Q , P ) + lambda * ( VectorOf ( P , F1 ) / Abs ( VectorOf ( P , F1 ) ) + VectorOf ( P , F2 ) / Abs ( VectorOf ( P , F2 ) ) ) =0 
+ LocusEquation ( Q ) = ?
+
+Diff Result (< pred, > gold):
+< DotProduct((VectorOf(Q,F2)/Abs(VectorOf(Q,F2))+VectorOf(P,F1)/Abs(VectorOf(P,F1)))/Abs(VectorOf(P,F1))+VectorOf(P,F2)/Abs(VectorOf(P,F2))=0)
+---
+> DotProduct ( VectorOf ( Q , F2 ) , ( VectorOf ( P , F1 ) / Abs ( VectorOf ( P , F1 ) ) + VectorOf ( P , F2 ) / Abs ( VectorOf ( P , F2 ) ) ) ) =0
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+焦点为$ (0 ,6 ) $ , $ (0 , -6 ) $经过点$ (2 , -5 ) $的双曲线的标准方程是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Point
+I: Point
+Coordinate(H) = (0, 6)
+Coordinate(I) = (0, -6)
+Coordinate(K) = (2, -5)
+Focus(G) = {H, I}
+PointOnCurve(I, G)
+PointOnCurve(K, G)
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Point 
+ I : Point 
+ J : Point 
+ Coordinate ( H ) = (0 ,6 ) 
+ Coordinate ( I ) = (0 , -6 ) 
+ Coordinate ( J ) = (2 , -5 ) 
+ Focus ( G ) = { H , I } 
+ PointOnCurve ( J , G ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(K) = (2, -5)
+< PointOnCurve(I, G)
+< PointOnCurve(K, G)
+---
+> J : Point
+> Coordinate ( J ) = (2 , -5 )
+> PointOnCurve ( J , G )
+
+Comparison Result:
+Common: 7
+Gold Sentences: 10
+Predicted Sentences: 10
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+以抛物线$C$ : $y ^ {2 } =8 x$上的一点$A$为圆心作圆，若该圆经过抛物线$C$的顶点和焦点，那么该圆的方程为 ? 
+
+Predicted Annotation:
+A:Point
+C: Parabola
+G: Circle
+Center(G)=A
+Expression(C) = (y^2 = 8*x)
+PointOnCurve(A,G)
+PointOnCurve(Focus(C),G)
+PointOnCurve(Vertex(C),G)
+Expression(G) =?
+
+
+Gold Annotation:
+A : Point 
+ C : Parabola 
+ G : Circle 
+ Center ( G ) = A 
+ Expression ( C ) = ( y ^2 =8 * x ) 
+ PointOnCurve ( A , C ) 
+ PointOnCurve ( Focus ( C ) , G ) 
+ PointOnCurve ( Vertex ( C ) , G ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(A,G)
+---
+> PointOnCurve ( A , C )
+
+Comparison Result:
+Common: 8
+Gold Sentences: 9
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$y = \ frac {1 } {16 } x ^ {2 } $ , $A$ , $B$是该抛物线上两点，且$ | A B | =24$，则线段$A B$的中点$P$离$x$轴最近时 , 点的纵坐标为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Parabola
+P: Point
+Abs(LineSegmentOf(A, B)) = 24
+Expression(G) = (y = x^2/16)
+MidPoint(LineSegmentOf(A,B))=P
+PointOnCurve(A, G)
+PointOnCurve(B, G)
+WhenMin(Abs(xAxis(P)))
+YCoordinate(P) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Parabola 
+ P : Point 
+ Abs ( LineSegmentOf ( A , B ) ) =24 
+ Expression ( G ) = ( y = x ^2 /16 ) 
+ MidPoint ( LineSegmentOf ( A , B ) ) = P 
+ PointOnCurve ( A , G ) 
+ PointOnCurve ( B , G ) 
+ WhenMin ( Distance ( P , xAxis ) ) 
+ YCoordinate ( P ) = ?
+
+Diff Result (< pred, > gold):
+< WhenMin(Abs(xAxis(P)))
+---
+> WhenMin ( Distance ( P , xAxis ) )
+
+Comparison Result:
+Common: 10
+Gold Sentences: 11
+Predicted Sentences: 11
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$ \ Gamma$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + y ^ {2 } =1 ( a >1 ) $，直线$y = x +1$与$x$轴交于$P$点，与椭圆交于$A$、$B$两点，若$ \ overrightarrow { P A } +2 \ overrightarrow { P B } = \ overrightarrow {0 } $，则$a$ = ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Ellipse
+H: Line
+P: Point
+a: Number
+Expression(Gamma) = (y^2 + x^2/a^2 = 1)
+Expression(H) = (y = x + 1)
+Intersection(H, xAxis) = P
+Intersection(H, G) = {A, B}
+VectorOf(P, A) + 2*VectorOf(P, B) = 0
+a>1
+a =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ Gamma : Ellipse 
+ H : Line 
+ P : Point 
+ a : Number 
+ Expression ( Gamma ) = ( x ^2 / a ^2 + y ^2 =1 ) 
+ Expression ( H ) = ( y = x +1 ) 
+ Intersection ( H , xAxis ) = P 
+ Intersection ( H , Gamma ) = { A , B } 
+ VectorOf ( P , A ) +2 * VectorOf ( P , B ) =0 
+ a >1 
+ a = ?
+
+Diff Result (< pred, > gold):
+< Expression(Gamma) = (y^2 + x^2/a^2 = 1)
+---
+> Expression ( Gamma ) = ( x ^2 / a ^2 + y ^2 =1 )
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$C$ : $y ^ {2 } =4 x$，斜率为$ \ frac {1 } {3 } $的直线$l$与$C$相交于$A$、$B$两点若以点$E (1 ,1 ) $为圆心的圆是$ \ triangle O A B$的内切圆，则圆$E$的半径为 ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+C: Parabola
+E: Point
+G: Circle
+O: Origin
+l: Line
+Center(G)=E
+Coordinate(E) = (1, 1)
+Expression(C) = (y^2 = 4*x)
+Intersection(l, C) = {A, B}
+IsInscribedCircle(G, TriangleOf(O, A, B))
+Slope(l) = 1/3
+Radius(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ E1 : Point 
+ E : Circle 
+ O : Origin 
+ l : Line 
+ Center ( E ) = E1 
+ Coordinate ( E1 ) = (1 ,1 ) 
+ Expression ( C ) = ( y ^2 =4 * x ) 
+ InscribedCircle ( TriangleOf ( O , A , B ) ) = E 
+ Intersection ( l , C ) = { A , B } 
+ Slope ( l ) =1 /3 
+ Radius ( E ) = ?
+
+Diff Result (< pred, > gold):
+< IsInscribedCircle(G, TriangleOf(O, A, B))
+---
+> InscribedCircle ( TriangleOf ( O , A , B ) ) = E
+
+Comparison Result:
+Common: 13
+Gold Sentences: 14
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$F$为双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左焦点，过点$F$的直线与双曲线$C$的两条渐近线分别交于$Q$、$P$，且$2 \ overrightarrow { F Q } = \ overrightarrow { F P } $，以原点$O$为圆心的圆与直线$F P$相切，且切点恰为$Q$，则双曲线的离心率为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+F: Point
+G: Circle
+L1:Line
+L2:Line
+O:Origin
+P: Point
+Q: Point
+a: Number
+b: Number
+Center(G)=O
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(L1,C)=Q
+Intersection(L2,C)=P
+IsTangent(G,LineOf(F,P))
+LeftFocus(C) = F
+PointOnCurve(F,LineOf(F,P))
+VectorOf(F, Q) = 2*VectorOf(F, P)
+TangentPoint(G,LineOf(F,P))=Q
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ F : Point 
+ G : Circle 
+ H : Line 
+ O : Origin 
+ P : Point 
+ Q : Point 
+ Z1 : Line 
+ Z2 : Line 
+ a : Number 
+ b : Number 
+2 * VectorOf ( F , Q ) = VectorOf ( F , P ) 
+ Asymptote ( C ) = { Z1 , Z2 } 
+ Center ( G ) = O 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( H , Z1 ) = Q 
+ Intersection ( H , Z2 ) = P 
+ IsTangent ( G , LineOf ( F , P ) ) 
+ LeftFocus ( C ) = F 
+ PointOnCurve ( F , H ) 
+ TangentPoint ( G , LineOf ( F , P ) ) = Q 
+ a >0 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Intersection(L1,C)=Q
+< Intersection(L2,C)=P
+< PointOnCurve(F,LineOf(F,P))
+< VectorOf(F, Q) = 2*VectorOf(F, P)
+---
+> Z2 : Line
+> 2 * VectorOf ( F , Q ) = VectorOf ( F , P )
+> Asymptote ( C ) = { Z1 , Z2 }
+> Intersection ( H , Z1 ) = Q
+> Intersection ( H , Z2 ) = P
+> PointOnCurve ( F , H )
+
+Comparison Result:
+Common: 18
+Gold Sentences: 24
+Predicted Sentences: 22
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$y = ax ^ {2 } $与直线$l$ : $y = kx + b ( k \ neq0 ) $交于$A$ , $B$两点，且此两点的横坐标分别为$x_ {1 } $ , $x_ {2 } $，则直线$l$与$x$轴交点的横坐标等于（用$x_ {1 } $，$x_ {2 } $表示，不能出现$a$ , $b$ , $k$ ) ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Parabola
+k: Number
+b: Number
+l: Line
+a: Number
+x1:Number
+x2:Number
+Expression(G) = (y = a*x^2)
+Expression(l)=(y=k*x+b)
+Intersection(G,l)={A,B}
+Negation(a=0)
+Negation(b=0)
+Negation(k=0)
+XCoordinate(A)=x1
+XCoordinate(B)=x2
+Expression(l)=(XCoordinate(Intersection(l,xAxis))=x2)
+Expression(l)=(XCoordinate(Intersection(l,xAxis))=x1)
+a,b,k =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Parabola 
+ a : Number 
+ b : Number 
+ k : Number 
+ l : Line 
+ x1 : Number 
+ x2 : Number 
+ Expression ( G ) = ( y = a * x ^2 ) 
+ Expression ( l ) = ( y = b + k * x ) 
+ Intersection ( G , l ) = { A , B } 
+ Negation ( k =0 ) 
+ XCoordinate ( A ) = x1 
+ XCoordinate ( B ) = x2 
+ XCoordinate ( Intersection ( l , xAxis ) ) = ?
+
+Diff Result (< pred, > gold):
+< Negation(a=0)
+< Negation(b=0)
+< Expression(l)=(XCoordinate(Intersection(l,xAxis))=x2)
+< Expression(l)=(XCoordinate(Intersection(l,xAxis))=x1)
+---
+> XCoordinate ( Intersection ( l , xAxis ) ) = ?
+
+Comparison Result:
+Common: 15
+Gold Sentences: 16
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $右支上一点$P$、$F_ {1 } $、$F_ {2 } $分别为其左右焦点，圆$M$是$ \ Delta P F_ {1 } F_ {2 } $内切圆，且$P F_ {1 } $与圆$M$相切于点$A$ , $ | P A | = \ frac { c ^ {2 } } {2 a } $ ( $c$为半焦距 ) ，若$ \ frac { | P F_ {1 } | } { | PF_ {2 } | } >2$，则双曲线离心率的取值范围是 ? 
+
+Predicted Annotation:
+A: Point
+C: Hyperbola
+F1: Point
+F2: Point
+M: Circle
+P: Point
+a: Number
+b: Number
+c: Number
+Abs(LineSegmentOf(P, A)) = (c^2)/(2*a)
+Abs(LineSegmentOf(P, F1))/Abs(LineSegmentOf(F2, P)) > 2
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+InscribedCircle(TriangleOf(P, F1, F2)) = M
+IsTangent(LineSegmentOf(P, F1), M)
+LeftFocus(C) = F1
+PointOnCurve(P, RightPart(C))
+RightFocus(C) = F2
+a>0
+b>0
+Range(Eccentricity(C)) =?
+
+
+Gold Annotation:
+A : Point 
+ C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ M : Circle 
+ P : Point 
+ a : Number 
+ b : Number 
+ c : Number 
+ Abs ( LineSegmentOf ( P , F1 ) ) / Abs ( LineSegmentOf ( P , F2 ) ) >2 
+ Abs ( LineSegmentOf ( P , A ) ) = c ^2 /2 * a 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ HalfFocalLength ( C ) = c 
+ IsInscribedCircle ( M , TriangleOf ( P , F1 , F2 ) ) = True 
+ LeftFocus ( C ) = F1 
+ PointOnCurve ( P , RightPart ( C ) ) = True 
+ RightFocus ( C ) = F2 
+ TangentPoint ( LineSegmentOf ( P , F1 ) , M ) = A 
+ a >0 
+ b >0 
+ Range ( Eccentricity ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< Abs(LineSegmentOf(P, A)) = (c^2)/(2*a)
+< InscribedCircle(TriangleOf(P, F1, F2)) = M
+< IsTangent(LineSegmentOf(P, F1), M)
+---
+> Abs ( LineSegmentOf ( P , A ) ) = c ^2 /2 * a
+> HalfFocalLength ( C ) = c
+> IsInscribedCircle ( M , TriangleOf ( P , F1 , F2 ) ) = True
+> TangentPoint ( LineSegmentOf ( P , F1 ) , M ) = A
+
+Comparison Result:
+Common: 17
+Gold Sentences: 21
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$的一条渐近线方程为$l$ : $y =2 x$，且其实轴长小于$4$，则$C$的一个标准方程可以为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+l: Line
+Expression(l)=(y=2*x)
+Length(RealAxis(C))<4
+Expression(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ l : Line 
+ Expression ( l ) = ( y =2 * x ) 
+ Length ( RealAxis ( C ) ) <4 
+ OneOf ( Asymptote ( C ) ) = l 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+> OneOf ( Asymptote ( C ) ) = l
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 5
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左、右焦点分别是$F_ {1 } $、$F_ {2 } $、$P$为双曲线$C$上一点，以$F_ {1 } F_ {2 } $为直径的圆与双曲线的渐近线交于点$Q$ , $P$、$Q$均位于第一象限，且$P$为$Q F_ {2 } $的中点，则双曲线$C$的离心率为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+F1: Point
+F2: Point
+G: Circle
+P: Point
+Q: Point
+a: Number
+b: Number
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(G,Asymptote(C))=Q
+IsDiameter(LineSegmentOf(F1,F2),G)
+LeftFocus(C) = F1
+MidPoint(LineSegmentOf(P,Q)) = P
+PointOnCurve(P,C)
+Quadrant(P)=1
+Quadrant(Q)=1
+RightFocus(C) = F2
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ G : Circle 
+ P : Point 
+ Q : Point 
+ a : Number 
+ b : Number 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( G , Asymptote ( C ) ) = Q 
+ IsDiameter ( LineSegmentOf ( F1 , F2 ) , G ) = True 
+ LeftFocus ( C ) = F1 
+ MidPoint ( LineSegmentOf ( Q , F2 ) ) = P 
+ PointOnCurve ( P , C ) = True 
+ Quadrant ( P ) =1 
+ Quadrant ( Q ) =1 
+ RightFocus ( C ) = F2 
+ a >0 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< MidPoint(LineSegmentOf(P,Q)) = P
+---
+> MidPoint ( LineSegmentOf ( Q , F2 ) ) = P
+
+Comparison Result:
+Common: 19
+Gold Sentences: 20
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C_ {1 } $ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左准线为$l$，左、右焦点分别为$F_ {1 } $、$F_ {2 } $，抛物线$C_ {2 } $的准线为$l$，焦点为$F_ {2 } $ , $C_ {1 } $与$C_ {2 } $的交点为$M$，则$ \ frac { | F_ {1 } F_ {2 } | } { | M F_ {1 } | } - \ frac { | M F_ {1 } | } { | M F_ {2 } | } $ = ? 
+
+Predicted Annotation:
+C1: Hyperbola
+C2: Parabola
+F1: Point
+F2: Point
+M: Point
+a: Number
+b: Number
+l: Line
+Directrix(C2) = l
+Expression(C1) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(C2) = (-y^2/b^2 + x^2/a^2 = 1)
+Focus(C2) = F2
+Intersection(C1, C2) = M
+LeftDirectrix(C1) = l
+LeftFocus(C1) = F1
+RightFocus(C1) = F2
+a>0
+b>0
+-Abs(LineSegmentOf(M, F1))/Abs(LineSegmentOf(M, F2)) + Abs(LineSegmentOf(F1, F2))/Abs(LineSegmentOf(M, F1)) =?
+
+
+Gold Annotation:
+C1 : Hyperbola 
+ C2 : Parabola 
+ F1 : Point 
+ F2 : Point 
+ M : Point 
+ a : Number 
+ b : Number 
+ l : Line 
+ Directrix ( C2 ) = l 
+ Expression ( C1 ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Focus ( C2 ) = F2 
+ Intersection ( C1 , C2 ) = M 
+ LeftDirectrix ( C1 ) = l 
+ LeftFocus ( C1 ) = F1 
+ RightFocus ( C1 ) = F2 
+ a >0 
+ b >0 
+ Abs ( LineSegmentOf ( F1 , F2 ) ) / Abs ( LineSegmentOf ( M , F1 ) ) - Abs ( LineSegmentOf ( M , F1 ) ) / Abs ( LineSegmentOf ( M , F2 ) ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(C2) = (-y^2/b^2 + x^2/a^2 = 1)
+
+Comparison Result:
+Common: 18
+Gold Sentences: 18
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过抛物线$y ^ {2 } =4 x$的焦点，且被圆$x ^ {2 } + y ^ {2 } -4 x +2 y =0$截得弦最长的直线的方程是 ? 
+
+Predicted Annotation:
+G: Parabola
+H: Circle
+L: Line
+Expression(G) = (y^2 = 4*x)
+Expression(H) = (2*y - 4*x + x^2 + y^2 = 0)
+PointOnCurve(Focus(G),L)
+WhenMax(Length(InterceptChord(Focus(G),H)))
+Expression(L) =?
+
+
+Gold Annotation:
+G : Parabola 
+ H : Circle 
+ L : Line 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ Expression ( H ) = (2 * y -4 * x + x ^2 + y ^2 =0 ) 
+ PointOnCurve ( Focus ( G ) , L ) 
+ WhenMax ( Length ( InterceptChord ( L , H ) ) ) 
+ Expression ( L ) = ?
+
+Diff Result (< pred, > gold):
+< WhenMax(Length(InterceptChord(Focus(G),H)))
+---
+> WhenMax ( Length ( InterceptChord ( L , H ) ) )
+
+Comparison Result:
+Common: 7
+Gold Sentences: 8
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$y ^ {2 } =4 x$的顶点为$O$，点$A$的坐标为$ (2 ,0 ) $，倾斜角为$ \ frac { \ pi } {4 } $的直线$l$与线段$O A$相交 ( 经过点$O$和点$A$ ) 且交抛物线于$P$，$Q$两点，则$ | P Q | $的取值范围为 ? 
+
+Predicted Annotation:
+A: Point
+G: Parabola
+O: Point
+P: Point
+Q: Point
+l: Line
+Coordinate(A) = (2, 0)
+Expression(G) = (y^2 = 4*x)
+Inclination(l) = pi/4
+Intersection(l, G) = {P, Q}
+Intersection(l, LineSegmentOf(O, A)) = {O, A}
+PointOnCurve(A, l)
+PointOnCurve(O, l)
+Vertex(G) = O
+Range(Abs(LineSegmentOf(P, Q))) =?
+
+
+Gold Annotation:
+A : Point 
+ G : Parabola 
+ O : Point 
+ P : Point 
+ Q : Point 
+ l : Line 
+ Coordinate ( A ) = (2 ,0 ) 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ Inclination ( l ) = pi /4 
+ Intersection ( l , LineSegmentOf ( O , A ) ) = { P , Q } 
+ IsIntersect ( LineSegmentOf ( O , A ) , l ) 
+ PointOnCurve ( A , l ) 
+ PointOnCurve ( O , l ) 
+ Vertex ( G ) = O 
+ Range ( Abs ( LineSegmentOf ( P , Q ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< Intersection(l, G) = {P, Q}
+< Intersection(l, LineSegmentOf(O, A)) = {O, A}
+---
+> Intersection ( l , LineSegmentOf ( O , A ) ) = { P , Q }
+> IsIntersect ( LineSegmentOf ( O , A ) , l )
+
+Comparison Result:
+Common: 13
+Gold Sentences: 15
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } {4 } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( b >0 ) $的两个焦点分别为$F_ {1 } $、$F_ {2 } $，点$P ( x_ {0 } , y_ {0 } ) $是双曲线第一象限上一点，在点$P$处作双曲线$C$的切线$l$，若点$F_ {1 } $、$F_ {2 } $到切线$l$的距离之积为$3$，则双曲线$C$的离心率为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+F1: Point
+F2: Point
+P: Point
+b: Number
+l: Line
+x0: Number
+y0: Number
+Coordinate(P) = (x0, y0)
+Distance(F1, l)*Distance(F2, l) = 3
+Expression(C) = (x^2/4 - y^2/b^2 = 1)
+Focus(C) = {F1, F2}
+Quadrant(P) = 1
+TangentOfPoint(P, C) = l
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ P : Point 
+ b : Number 
+ l : Line 
+ x0 : Number 
+ y0 : Number 
+ Coordinate ( P ) = ( x0 , y0 ) 
+ Distance ( F1 , l ) * Distance ( F2 , l ) =3 
+ Expression ( C ) = ( x ^2 /4 - y ^2 / b ^2 =1 ) 
+ Focus ( C ) = { F1 , F2 } 
+ PointOnCurve ( P , C ) 
+ Quadrant ( P ) =1 
+ TangentOnPoint ( P , C ) = l 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< TangentOfPoint(P, C) = l
+---
+> PointOnCurve ( P , C )
+> TangentOnPoint ( P , C ) = l
+
+Comparison Result:
+Common: 15
+Gold Sentences: 17
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$M ( x_ {0 } , y_ {0 } ) $是双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1$上的一点，半焦距为$c$，若$ | M O | \ leq c$ ( 其中$O$为坐标原点 ) ，则$y_ {0 } ^ {2 } $的取值范围是 ? 
+
+Predicted Annotation:
+C: Hyperbola
+M: Point
+O: Origin
+a: Number
+b: Number
+c: Number
+x0: Number
+y0: Number
+Abs(LineSegmentOf(M, O)) <= c
+Coordinate(M) = (x0, y0)
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+HalfFocalLength(C) = c
+PointOnCurve(M, C)
+Range(y0^2) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ M : Point 
+ O : Origin 
+ a : Number 
+ b : Number 
+ c : Number 
+ x0 : Number 
+ y0 : Number 
+ Abs ( LineSegmentOf ( M , O ) ) < = c 
+ Coordinate ( M ) = ( x0 , y0 ) 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ HalfFocalLength ( C ) = c 
+ PointOnCurve ( M , C ) 
+ Range ( y0 ^2 ) = ?
+
+Diff Result (< pred, > gold):
+< Abs(LineSegmentOf(M, O)) <= c
+
+Comparison Result:
+Common: 13
+Gold Sentences: 13
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若双曲线$C$的方程为$ \ frac { x ^ {2 } } {4 } - \ frac { y ^ {2 } } {5 } =1$，记双曲线$C$的左、右顶点为$A$、$B$ . 弦$P Q \ perp x$轴，记直线$P A$与直线$Q B$交点为$M$，其轨迹为曲线$T$，则曲线$T$的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Hyperbola
+M: Point
+P: Point
+Q: Point
+T: Curve
+Expression(C) = (x^2/4 - y^2/5 = 1)
+Intersection(LineOf(P,A),LineOf(Q,B))=M
+IsChordOf(LineSegmentOf(P,Q),C)
+IsPerpendicular(LineSegmentOf(P,Q),xAxis)
+LeftVertex(C) = A
+Locus(P)=T
+RightVertex(C) = B
+Eccentricity(T) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Hyperbola 
+ M : Point 
+ P : Point 
+ Q : Point 
+ T : Curve 
+ Expression ( C ) = ( x ^2 /4 - y ^2 /5 =1 ) 
+ Intersection ( LineOf ( P , A ) , LineOf ( Q , B ) ) = M 
+ IsChordOf ( LineSegmentOf ( P , Q ) , C ) 
+ IsPerpendicular ( LineSegmentOf ( P , Q ) , xAxis ) 
+ LeftVertex ( C ) = A 
+ Locus ( M ) = T 
+ RightVertex ( C ) = B 
+ Eccentricity ( T ) = ?
+
+Diff Result (< pred, > gold):
+< Locus(P)=T
+---
+> Locus ( M ) = T
+
+Comparison Result:
+Common: 14
+Gold Sentences: 15
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$C$的顶点在原点，焦点$F$与双曲线$ \ frac { x ^ {2 } } {3 } - \ frac { y ^ {2 } } {6 } =1$的右焦点重合，过点$P (2 ,0 ) $且斜率为$1$的直线$l$与抛物线$C$交于$A$、$B$两点，则弦$A B$的中点到抛物线准线的距离为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Parabola
+F: Point
+G: Hyperbola
+O: Origin
+P: Point
+l: Line
+Coordinate(P) = (2, 0)
+Expression(G) = (x^2/3 - y^2/6 = 1)
+Focus(C) = F
+Intersection(l, C) = {A, B}
+IsChordOf(LineSegmentOf(A, B), C)
+PointOnCurve(F, RightFocus(G))
+PointOnCurve(P, l)
+Slope(l) = 1
+Vertex(C) = O
+Distance(MidPoint(LineSegmentOf(A, B)), Directrix(C)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ F : Point 
+ G : Hyperbola 
+ O : Origin 
+ P : Point 
+ l : Line 
+ Coordinate ( P ) = (2 ,0 ) 
+ Expression ( G ) = ( x ^2 /3 - y ^2 /6 =1 ) 
+ Focus ( C ) = F 
+ Intersection ( l , C ) = { A , B } 
+ IsChordOf ( LineSegmentOf ( A , B ) , C ) 
+ PointOnCurve ( P , l ) 
+ RightFocus ( G ) = F 
+ Slope ( l ) =1 
+ Vertex ( C ) = O 
+ Distance ( MidPoint ( LineSegmentOf ( A , B ) ) , Directrix ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(F, RightFocus(G))
+---
+> RightFocus ( G ) = F
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+曲线$C$是平面内到定点$A (1 ,0 ) $的距离与到定直线$x = -1$之和为$3$的动点$P$的轨迹，则曲线$C$与$y$轴的交点的坐标是 ? 
+
+Predicted Annotation:
+A: Point
+C: Curve
+G: Line
+P: Point
+Coordinate(A) = (1, 0)
+Distance(A,C)+Distance(A,G)=3
+Expression(G) = (x = -1)
+Locus(P)=C
+Coordinate(Intersection(C,yAxis)) =?
+
+
+Gold Annotation:
+A : Point 
+ C : Curve 
+ G : Line 
+ P : Point 
+ C = Locus ( P ) 
+ Coordinate ( A ) = (1 ,0 ) 
+ Distance ( P , A ) + Distance ( P , G ) =3 
+ Expression ( G ) = ( x = -1 ) 
+ Coordinate ( Intersection ( C , yAxis ) ) = ?
+
+Diff Result (< pred, > gold):
+< Distance(A,C)+Distance(A,G)=3
+---
+> Distance ( P , A ) + Distance ( P , G ) =3
+
+Comparison Result:
+Common: 8
+Gold Sentences: 9
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知点$P$是双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $右支上一点，$F_ {1 } $、$F_ {2 } $分别是双曲线的左，右焦点，$I$为$ \ Delta P F_ {1 } F_ {2 } $的内心，若$S_ { \ Delta I P F_ {1 } } = \ frac {1 } {2 } S_ { \ Delta I F_ {1 } F_ {2 } } + S_ { \ Delta I P F_ {2 } } $成立，则双曲线的离心率为 ? 
+
+Predicted Annotation:
+F1: Point
+F2: Point
+G: Hyperbola
+I: Point
+P: Point
+a: Number
+b: Number
+Area(TriangleOf(I,P,F1))=(1/2)*Area(TriangleOf(I,F1,F2))+Area(TriangleOf(I,P,F2))
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Incenter(TriangleOf(P, F1, F2)) = I
+LeftFocus(G) = F1
+PointOnCurve(P, RightPart(G))
+RightFocus(G) = F2
+a>0
+b>0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Hyperbola 
+ I : Point 
+ P : Point 
+ a : Number 
+ b : Number 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Incenter ( TriangleOf ( P , F1 , F2 ) ) = I 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( P , RightPart ( G ) ) 
+ RightFocus ( G ) = F2 
+ TriangleOf ( I , P , F1 ) = (1 /2 ) * TriangleOf ( I , F1 , F2 ) + TriangleOf ( I , P , F2 ) 
+ a >0 
+ b >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Area(TriangleOf(I,P,F1))=(1/2)*Area(TriangleOf(I,F1,F2))+Area(TriangleOf(I,P,F2))
+---
+> TriangleOf ( I , P , F1 ) = (1 /2 ) * TriangleOf ( I , F1 , F2 ) + TriangleOf ( I , P , F2 )
+
+Comparison Result:
+Common: 15
+Gold Sentences: 16
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设焦点在$x$轴上的双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1$的右准线与两条渐近线交于$A$、$B$两点，右焦点为$F$，且$ \ overrightarrow { F A } \ cdot \ overrightarrow { F B } =0$，则双曲线的离心率$e$ = ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+G: Hyperbola
+L1:Line
+L2:Line
+a: Number
+b: Number
+e: Number
+Asymptote(G)={L1,L2}
+DotProduct(VectorOf(F, A), VectorOf(F, B)) = 0
+Eccentricity(G) = e
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Focus(G) = F
+Intersection(RightDirectrix(G),L1)=A
+Intersection(RightDirectrix(G),L2)=B
+PointOnCurve(Focus(G), xAxis)
+RightFocus(G) = F
+e =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Hyperbola 
+ L1 : Line 
+ L2 : Line 
+ a : Number 
+ b : Number 
+ e : Number 
+ Asymptote ( G ) = { L1 , L2 } 
+ DotProduct ( VectorOf ( F , A ) , VectorOf ( F , B ) ) =0 
+ Eccentricity ( G ) = e 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( RightDirectrix ( G ) , L1 ) = A 
+ Intersection ( RightDirectrix ( G ) , L2 ) = B 
+ PointOnCurve ( Focus ( G ) , xAxis ) 
+ RightFocus ( G ) = F 
+ e = ?
+
+Diff Result (< pred, > gold):
+< Focus(G) = F
+
+Comparison Result:
+Common: 18
+Gold Sentences: 18
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1$左、右焦点分别为$F_ {1 } $ , $F_ {2 } $ , 若椭圆$C$上存在点$P$ , 使得$P F_ {1 } =2 e P F_ {2 } $ , ( $e$为椭圆的离心率 ) , 则椭圆$C$的离心率的取值范围为 ? 
+
+Predicted Annotation:
+C: Ellipse
+F1: Point
+F2: Point
+P: Point
+a: Number
+b: Number
+e: Number
+Eccentricity(C) = e
+Expression(C) = (y^2/b^2 + x^2/a^2 = 1)
+LeftFocus(C) = F1
+LineSegmentOf(P, F1) = 2*LineSegmentOf(P, F2)
+PointOnCurve(P, C)
+RightFocus(C) = F2
+Range(Eccentricity(C)) =?
+
+
+Gold Annotation:
+C : Ellipse 
+ F1 : Point 
+ F2 : Point 
+ P : Point 
+ a : Number 
+ b : Number 
+ e : Number 
+ Eccentricity ( C ) = e 
+ Expression ( C ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ LeftFocus ( C ) = F1 
+ LineSegmentOf ( P , F1 ) = (2 * e ) * LineSegmentOf ( P , F2 ) 
+ PointOnCurve ( P , C ) 
+ RightFocus ( C ) = F2 
+ Range ( Eccentricity ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< LineSegmentOf(P, F1) = 2*LineSegmentOf(P, F2)
+---
+> LineSegmentOf ( P , F1 ) = (2 * e ) * LineSegmentOf ( P , F2 )
+
+Comparison Result:
+Common: 13
+Gold Sentences: 14
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知圆$C$的圆心在抛物线$y ^ {2 } =4 x$上且与$x$轴和该抛物线的准线都相切，则圆$C$的标准方程为 ? 
+
+Predicted Annotation:
+C: Circle
+G: Parabola
+Center(C) = Vertex(G)
+Expression(G) = (y^2 = 4*x)
+IsTangent(C, xAxis)
+IsTangent(C, Directrix(G))
+PointOnCurve(Center(C), G)
+Expression(C) =?
+
+
+Gold Annotation:
+C : Circle 
+ G : Parabola 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ IsTangent ( C , Directrix ( G ) ) 
+ IsTangent ( C , xAxis ) 
+ PointOnCurve ( Center ( C ) , G ) 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Center(C) = Vertex(G)
+
+Comparison Result:
+Common: 7
+Gold Sentences: 7
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+$A B$是双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1$左支上过焦点$F_ {1 } $的弦，$ | A B | = m$ , $F_ {2 } $为右焦点，则$ \ triangle A B F_ {2 } $的周长 是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F1: Point
+F2: Point
+G: Hyperbola
+a: Number
+b: Number
+m:Number
+Abs(LineSegmentOf(A, B)) = m
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Focus(G)={F1,F2}
+IsChordOf(LineSegmentOf(A,B),G)
+LeftPart(G) =LineSegmentOf(A,B)
+PointOnCurve(F1,LineSegmentOf(A,B))
+RightFocus(G)=F2
+Perimeter(TriangleOf(A, B, F2)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Hyperbola 
+ a : Number 
+ b : Number 
+ m : Number 
+ Abs ( LineSegmentOf ( A , B ) ) = m 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Focus ( G ) = { F1 , F2 } 
+ IsChordOf ( LineSegmentOf ( A , B ) , LeftPart ( G ) ) 
+ PointOnCurve ( F1 , LineSegmentOf ( A , B ) ) 
+ RightFocus ( G ) = F2 
+ Perimeter ( TriangleOf ( A , B , F2 ) ) = ?
+
+Diff Result (< pred, > gold):
+< IsChordOf(LineSegmentOf(A,B),G)
+< LeftPart(G) =LineSegmentOf(A,B)
+---
+> IsChordOf ( LineSegmentOf ( A , B ) , LeftPart ( G ) )
+
+Comparison Result:
+Common: 14
+Gold Sentences: 15
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左顶点与抛物线$y ^ {2 } =2 p x ( p >0 ) $的焦点的距离为$4$，且双曲线的一条渐近线与拋物线准线的交点坐标为$ ( -2 , -1 ) $，则双曲线的焦距为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Parabola
+a: Number
+b: Number
+l: Line
+p: Number
+Coordinate(Intersection(l,Directrix(H))) = (-2, -1)
+Distance(LeftVertex(G), Focus(H)) = 4
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(H) = (y^2 = 2*(p*x))
+OneOf(Asymptote(G)) = l
+a>0
+b>0
+p>0
+FocalLength(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Parabola 
+ a : Number 
+ b : Number 
+ p : Number 
+ Coordinate ( Intersection ( OneOf ( Asymptote ( G ) ) , Directrix ( H ) ) ) = ( -2 , -1 ) 
+ Distance ( LeftVertex ( G ) , Focus ( H ) ) =4 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( H ) = ( y ^2 =2 * ( p * x ) ) 
+ a >0 
+ b >0 
+ p >0 
+ FocalLength ( G ) = ?
+
+Diff Result (< pred, > gold):
+< l: Line
+< Coordinate(Intersection(l,Directrix(H))) = (-2, -1)
+< OneOf(Asymptote(G)) = l
+---
+> Coordinate ( Intersection ( OneOf ( Asymptote ( G ) ) , Directrix ( H ) ) ) = ( -2 , -1 )
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过点$M ( -1 ,0 ) $的直线$l$与抛物线$C$ : $y ^ {2 } =4 x$交于$A$、$B$两点（$A$在$M$、$B$之间 ) ，$F$是$C$的焦点，点$N$满足$ \ overrightarrow { N F } =6 \ overrightarrow { A F } $，则$ \ Delta A B F$与$ \ Delta A M N$的面积之和的最小值是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Parabola
+F: Point
+M: Point
+N: Point
+l: Line
+Coordinate(M) = (-1, 0)
+Expression(C) = (y^2 = 4*x)
+Focus(C) = F
+Intersection(l, C) = {A, B}
+PointOnCurve(M, l)
+VectorOf(N, F) = 6*VectorOf(A, F)
+Min(Area(TriangleOf(A, B, F)) + Area(TriangleOf(A, M, N))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ F : Point 
+ M : Point 
+ N : Point 
+ l : Line 
+ Between ( A , M , B ) 
+ Coordinate ( M ) = ( -1 ,0 ) 
+ Expression ( C ) = ( y ^2 =4 * x ) 
+ Focus ( C ) = F 
+ Intersection ( l , C ) = { A , B } 
+ PointOnCurve ( M , l ) 
+ VectorOf ( N , F ) =6 * VectorOf ( A , F ) 
+ Min ( Area ( TriangleOf ( A , B , F ) ) + Area ( TriangleOf ( A , M , N ) ) ) = ?
+
+Diff Result (< pred, > gold):
+> Between ( A , M , B )
+
+Comparison Result:
+Common: 14
+Gold Sentences: 15
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$E$ : $y ^ {2 } =12 x$的焦点为$F$，准线为$l$，过$F$的直线$m$与$E$交于$A$、$B$两点，过$A$作$A M \ perp l$，垂足为$M$，$A M$的中点为$N$，若$A M \ perp F N$，则$ | A B | $ = ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+E: Parabola
+F: Point
+M: Point
+N: Point
+l: Line
+m: Line
+Directrix(E) = l
+Expression(E) = (y^2 = 12*x)
+Focus(E) = F
+FootPoint(LineSegmentOf(A, M), l) = M
+Intersection(m, E) = {A, B}
+IsPerpendicular(LineSegmentOf(A, M), LineSegmentOf(F, N))
+IsPerpendicular(LineSegmentOf(A, M), LineSegmentOf(F, N))
+MidPoint(LineSegmentOf(A, M)) = N
+PointOnCurve(A, LineSegmentOf(A, M))
+PointOnCurve(F, m)
+Abs(LineSegmentOf(A, B)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ E : Parabola 
+ F : Point 
+ M : Point 
+ N : Point 
+ l : Line 
+ m : Line 
+ Directrix ( E ) = l 
+ Expression ( E ) = ( y ^2 =12 * x ) 
+ Focus ( E ) = F 
+ FootPoint ( LineSegmentOf ( A , M ) , l ) = M 
+ Intersection ( m , E ) = { A , B } 
+ IsPerpendicular ( LineSegmentOf ( A , M ) , LineSegmentOf ( F , N ) ) 
+ IsPerpendicular ( LineSegmentOf ( A , M ) , l ) 
+ MidPoint ( LineSegmentOf ( A , M ) ) = N 
+ PointOnCurve ( A , LineSegmentOf ( A , M ) ) 
+ PointOnCurve ( F , m ) 
+ Abs ( LineSegmentOf ( A , B ) ) = ?
+
+Diff Result (< pred, > gold):
+< IsPerpendicular(LineSegmentOf(A, M), LineSegmentOf(F, N))
+---
+> IsPerpendicular ( LineSegmentOf ( A , M ) , l )
+
+Comparison Result:
+Common: 18
+Gold Sentences: 19
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+与椭圆$ \ frac { x ^ {2 } } {9 } + \ frac { y ^ {2 } } {5 } =1$有公共焦点，且两条渐近线互相垂直的双曲线方程为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Ellipse
+Expression(H) = (x^2/9 + y^2/5 = 1)
+Focus(G) = Focus(H)
+IsPerpendicular(Asymptote(G),Asymptote(H))
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Ellipse 
+ L1 : Line 
+ L2 : Line 
+ Asymptote ( G ) = { L1 , L2 } 
+ Expression ( H ) = ( x ^2 /9 + y ^2 /5 =1 ) 
+ Focus ( H ) = Focus ( G ) 
+ IsPerpendicular ( L1 , L2 ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< IsPerpendicular(Asymptote(G),Asymptote(H))
+---
+> L1 : Line
+> L2 : Line
+> Asymptote ( G ) = { L1 , L2 }
+> IsPerpendicular ( L1 , L2 )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 9
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+如果椭圆$ \ frac { x ^ {2 } } {8 } + \ frac { y ^ {2 } } {4 } =1$的弦被点$ (2 ,1 ) $平分，则这条弦所在的直线方程是 ? 
+
+Predicted Annotation:
+G: Ellipse
+H: LineSegment
+I: Point
+Coordinate(I) = (2, 1)
+Expression(G) = (x^2/8 + y^2/4 = 1)
+IsChordOf(H, G)
+MidPoint(H) = I
+Expression(OverlappingLine(H)) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ H : LineSegment 
+ Coordinate ( MidPoint ( H ) ) = (2 ,1 ) 
+ Expression ( G ) = ( x ^2 /8 + y ^2 /4 =1 ) 
+ IsChordOf ( H , G ) 
+ Expression ( OverlappingLine ( H ) ) = ?
+
+Diff Result (< pred, > gold):
+< I: Point
+< Coordinate(I) = (2, 1)
+< MidPoint(H) = I
+---
+> Coordinate ( MidPoint ( H ) ) = (2 ,1 )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+写出一个同时满足以下条件的抛物线$C$的方程为 ? ( $1$ ) $C$的顶点在坐标原点； ( $2$ ) $C$的对称轴为坐标轴； ( $3$ ) $C$的焦点到其准线的距离为$ \ frac {3 } {4 } $
+
+Predicted Annotation:
+C: Parabola
+O:Origin
+Distance(Focus(C),Directrix(C))=3/4
+SymmetryAxis(C)=axis
+Expression(C) =?
+
+
+Gold Annotation:
+C : Parabola 
+ O : Origin 
+ Distance ( Focus ( C ) , Directrix ( C ) ) =3 /4 
+ SymmetryAxis ( C ) = axis 
+ Vertex ( C ) = O 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+> Vertex ( C ) = O
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 5
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设点$O$是抛物线的顶点，$F$是焦点，$P Q$是过焦点的弦，已知$ | O F | =1$ , $ | P Q | =5$，则$ \ triangle O P Q$的面积是 ? 
+
+Predicted Annotation:
+F: Point
+G: Parabola
+O: Point
+P: Point
+Q: Point
+Abs(LineSegmentOf(O, F)) = 1
+Abs(LineSegmentOf(P, Q)) = 5
+Focus(G) = F
+IsChordOf(LineSegmentOf(P, Q), G)
+PointOnCurve(F, LineSegmentOf(P, Q))
+Vertex(G) = O
+Area(TriangleOf(O, P, Q)) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Parabola 
+ O : Origin 
+ P : Point 
+ Q : Point 
+ Abs ( LineSegmentOf ( O , F ) ) =1 
+ Abs ( LineSegmentOf ( P , Q ) ) =5 
+ Focus ( G ) = F 
+ IsChordOf ( LineSegmentOf ( P , Q ) , G ) 
+ PointOnCurve ( F , LineSegmentOf ( P , Q ) ) 
+ Vertex ( G ) = O 
+ Area ( TriangleOf ( O , P , Q ) ) = ?
+
+Diff Result (< pred, > gold):
+< O: Point
+< Abs(LineSegmentOf(O, F)) = 1
+< Vertex(G) = O
+< Area(TriangleOf(O, P, Q)) =?
+---
+> O : Origin
+> Abs ( LineSegmentOf ( O , F ) ) =1
+> Vertex ( G ) = O
+> Area ( TriangleOf ( O , P , Q ) ) = ?
+
+Comparison Result:
+Common: 8
+Gold Sentences: 12
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过抛物线$y ^ {2 } =2 p x ( p >0 ) $的焦点$F$的直线$l$交抛物线于$A$、$B$两点，点$A$在$x$轴上方，$O$为坐标原点，当$ | \ overrightarrow { O A } | \ geq | \ overrightarrow { F A } | $时，直线$l$斜率的取值范围是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+G: Parabola
+O: Origin
+l: Line
+p: Number
+Abs(VectorOf(O, A)) >= Abs(VectorOf(F, A))
+Expression(G) = (y^2 = 2*(p*x))
+Focus(G) = F
+Intersection(l, G) = {A, B}
+PointOnCurve(F, l)
+PointOnCurve(A, xAxis)
+p>0
+Range(Slope(l)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Parabola 
+ O : Origin 
+ l : Line 
+ p : Number 
+ Abs ( VectorOf ( O , A ) ) > = Abs ( VectorOf ( F , A ) ) 
+ Expression ( G ) = ( y ^2 =2 * ( p * x ) ) 
+ Focus ( G ) = F 
+ Intersection ( l , G ) = { A , B } 
+ PointOnCurve ( A , xAxis ) 
+ PointOnCurve ( F , l ) 
+ p >0 
+ Range ( Slope ( l ) ) = ?
+
+Diff Result (< pred, > gold):
+< Abs(VectorOf(O, A)) >= Abs(VectorOf(F, A))
+
+Comparison Result:
+Common: 14
+Gold Sentences: 14
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+一条渐近线方程为$y = \ sqrt {3 } x$，焦点$ (4 ,0 ) $，则双曲线的标准方程为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Point
+Coordinate(H) = (4, 0)
+Expression(OneOf(Asymptote(G))) = (y = sqrt(3)*x)
+Focus(G) = H
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ Coordinate ( Focus ( G ) ) = (4 ,0 ) 
+ Expression ( OneOf ( Asymptote ( G ) ) ) = ( y = sqrt (3 ) * x ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< H: Point
+< Coordinate(H) = (4, 0)
+< Focus(G) = H
+---
+> Coordinate ( Focus ( G ) ) = (4 ,0 )
+
+Comparison Result:
+Common: 3
+Gold Sentences: 4
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$M ( x1 , y1 ) $为曲线$C$ : $ \ sqrt { \ frac { x ^ {2 } } {16 } } + \ sqrt { \ frac { y ^ {2 } } {7 } } =1$上任意一点，$A ( -3 ,0 ) $ , $B (3 ,0 ) $，则$ | M A | + | M B | $的最大值是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Curve
+M: Point
+x1: Number
+y1: Number
+Coordinate(A) = (-3, 0)
+Coordinate(B) = (3, 0)
+Coordinate(M) = (x1, y1)
+Expression(C) = (x^2/16 + y^2/7 = 1)
+PointOnCurve(M, C)
+Max(Abs(LineSegmentOf(M, A)) + Abs(LineSegmentOf(M, B))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Curve 
+ M : Point 
+ x1 : Number 
+ y1 : Number 
+ Coordinate ( A ) = ( -3 ,0 ) 
+ Coordinate ( B ) = (3 ,0 ) 
+ Coordinate ( M ) = ( x1 , y1 ) 
+ Expression ( C ) = ( sqrt ( y ^2 /7 ) + sqrt ( x ^2 /16 ) =1 ) 
+ PointOnCurve ( M , C ) = True 
+ Max ( Abs ( LineSegmentOf ( M , A ) ) + Abs ( LineSegmentOf ( M , B ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(C) = (x^2/16 + y^2/7 = 1)
+---
+> Expression ( C ) = ( sqrt ( y ^2 /7 ) + sqrt ( x ^2 /16 ) =1 )
+
+Comparison Result:
+Common: 11
+Gold Sentences: 12
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线 $C$ 经过点 $C1$$ (1，1 ) $ ，它的一条渐近线方程为 $y = \ sqrt3 x$ . 则双曲线$C$ 的标准方程是？
+
+Predicted Annotation:
+C1: Point
+C: Hyperbola
+Coordinate(C1) = (1, 1)
+Expression(OneOf(Asymptote(C))) = (y = sqrt(3)*x)
+PointOnCurve(C1,C)
+Expression(C) =?
+
+
+Gold Annotation:
+C1 : Point 
+ C : Hyperbola 
+ Coordinate ( C1 ) = (1 ,1 ) 
+ Expression ( OneOf ( Asymptote ( C ) ) ) = ( y = sqrt (3 ) * x ) 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(C1,C)
+
+Comparison Result:
+Common: 5
+Gold Sentences: 5
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知定点$P ( -4 ,0 ) $和定圆$Q$ : $x ^ {2 } + y ^ {2 } =8 x$，动圆$M$和圆$Q$外切，且经过点$P$，求圆心$M$的轨迹方程 ? 
+
+Predicted Annotation:
+M: Point
+P: Point
+Q: Circle
+Center(Q) = M
+Coordinate(P) = (-4, 0)
+Expression(Q) = (x^2 + y^2 = 8*x)
+IsOutTangent(M, Q)
+PointOnCurve(P, M)
+LocusEquation(M) =?
+
+
+Gold Annotation:
+M1 : Point 
+ M : Circle 
+ P : Point 
+ Q : Circle 
+ Center ( M ) = M1 
+ Coordinate ( P ) = ( -4 ,0 ) 
+ Expression ( Q ) = ( x ^2 + y ^2 =8 * x ) 
+ IsOutTangent ( M , Q ) 
+ PointOnCurve ( P , M ) 
+ LocusEquation ( M1 ) = ?
+
+Diff Result (< pred, > gold):
+< Center(Q) = M
+< IsOutTangent(M, Q)
+< PointOnCurve(P, M)
+---
+> M : Circle
+> Center ( M ) = M1
+> IsOutTangent ( M , Q )
+> PointOnCurve ( P , M )
+
+Comparison Result:
+Common: 6
+Gold Sentences: 10
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$E$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的半焦距为$c$，且$c = \ sqrt {3 } b$，若椭圆$E$经过$A$、$B$两点，且$A B$是圆$M$ : $ ( x +2 ) ^ {2 } + ( y -1 ) ^ {2 } = r ^ {2 } $的一条直径，则直线$A B$的方程为 ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+E: Ellipse
+M: Circle
+a: Number
+b: Number
+c: Number
+r: Number
+Expression(E) = (y^2/b^2 + x^2/a^2 = 1)
+Expression(M) = ((x + 2)^2 + (y - 1)^2 = r^2)
+HalfFocalLength(E) = c
+IsDiameter(LineSegmentOf(A, B), M)
+PointOnCurve(A, E)
+PointOnCurve(B, E)
+a > b
+b > 0
+c = sqrt(3)*b
+Expression(LineOf(A, B)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ E : Ellipse 
+ M : Circle 
+ a : Number 
+ b : Number 
+ c : Number 
+ r : Number 
+ Expression ( E ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( M ) = ( ( x +2 ) ^2 + ( y -1 ) ^2 = r ^2 ) 
+ HalfFocalLength ( E ) = c 
+ OneOf ( Diameter ( LineSegmentOf ( A , B ) , M ) ) 
+ PointOnCurve ( A , E ) 
+ PointOnCurve ( B , E ) 
+ a > b 
+ b >0 
+ c = sqrt (3 ) * b 
+ Expression ( LineOf ( A , B ) ) = ?
+
+Diff Result (< pred, > gold):
+< IsDiameter(LineSegmentOf(A, B), M)
+---
+> OneOf ( Diameter ( LineSegmentOf ( A , B ) , M ) )
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的离心率为$ \ frac {1 } {2 } $，右焦点为$F_ {2 } $，点$M$在圆$x ^ {2 } + y ^ {2 } = b ^ {2 } $上，且$M$在第一象限，过$M$作圆$x ^ {2 } + y ^ {2 } = b ^ {2 } $的切线交椭圆于$P$，$Q$两点 . 若$ \ Delta P F_ {2 } Q$的周长为$4$，则椭圆$C$的方程为 ? 
+
+Predicted Annotation:
+C: Ellipse
+F2: Point
+G: Circle
+H: Circle
+M: Point
+P: Point
+Q: Point
+Z: Line
+a: Number
+b: Number
+Expression(C) = (y^2/b^2 + x^2/a^2 = 1)
+Expression(G) = (x^2 + y^2 = b^2)
+Intersection(Z, C) = {P, Q}
+Perimeter(TriangleOf(P, F2, Q)) = 4
+PointOnCurve(M, G)
+Quadrant(M) = 1
+RightFocus(C) = F2
+Eccentricity(C) = 1/2
+TangentOfPoint(M, H) = Z
+a > b
+b > 0
+Expression(C) =?
+
+
+Gold Annotation:
+C : Ellipse 
+ F2 : Point 
+ G : Circle 
+ M : Point 
+ P : Point 
+ Q : Point 
+ a : Number 
+ b : Number 
+ l : Line 
+ Eccentricity ( C ) =1 /2 
+ Expression ( C ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( G ) = ( x ^2 + y ^2 = b ^2 ) 
+ Intersection ( l , C ) = { P , Q } 
+ Perimeter ( TriangleOf ( P , F2 , Q ) ) =4 
+ PointOnCurve ( M , G ) = True 
+ Quadrant ( M ) =1 
+ RightFocus ( C ) = F2 
+ TangentOnPoint ( M , G ) = l 
+ a > b 
+ b >0 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< H: Circle
+< TangentOfPoint(M, H) = Z
+---
+> TangentOnPoint ( M , G ) = l
+
+Comparison Result:
+Common: 20
+Gold Sentences: 21
+Predicted Sentences: 22
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$C$的中心在坐标原点，长轴在$y$轴上，离心率为$ \ frac { \ sqrt {3 } } {2 } $，且$C$上一点$C$到的两个焦点的距离之和是$12$，则椭圆的方程是 ? 
+
+Predicted Annotation:
+C1:Point
+C2:Point
+C: Ellipse
+O:Origin
+P:Point
+Center(C)=O
+Distance(P,C1)+Distance(P,C2)=12
+Eccentricity(C)=sqrt(3)/2
+Focus(C)={C1,C2}
+OverlappingLine(MajorAxis(C),yAxis)
+PointOnCurve(P,C)
+Expression(C) =?
+
+
+Gold Annotation:
+C1 : Point 
+ C : Parabola 
+ F1 : Point 
+ F2 : Point 
+ O : Origin 
+ Center ( C ) = O 
+ Distance ( C1 , F1 ) + Distance ( C1 , F2 ) =12 
+ Eccentricity ( C ) = sqrt (3 ) /2 
+ Focus ( C ) = { F1 , F2 } 
+ OverlappingLine ( MajorAxis ( C ) , yAxis ) 
+ PointOnCurve ( C1 , C ) 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< C: Ellipse
+< Center(C)=O
+< Eccentricity(C)=sqrt(3)/2
+< Focus(C)={C1,C2}
+< OverlappingLine(MajorAxis(C),yAxis)
+< PointOnCurve(P,C)
+< Expression(C) =?
+---
+> C : Parabola
+> Center ( C ) = O
+> Eccentricity ( C ) = sqrt (3 ) /2
+> Focus ( C ) = { F1 , F2 }
+> OverlappingLine ( MajorAxis ( C ) , yAxis )
+> PointOnCurve ( C1 , C )
+> Expression ( C ) = ?
+
+Comparison Result:
+Common: 5
+Gold Sentences: 12
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+到点$ ( -2 ,1 ) $和$ (2 ,1 ) $的距离之和为$4$的点的轨迹方程是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Point
+D: Point
+P: Point
+Coordinate(A) = (-2, 1)
+Coordinate(B) = (2, 1)
+Coordinate(C) = (2, 1)
+Coordinate(D) = (2, 1)
+Distance(P, A) + Distance(P, B) = 4
+LocusEquation(P) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ P : Point 
+ Coordinate ( A ) = ( -2 ,1 ) 
+ Coordinate ( B ) = (2 ,1 ) 
+ Distance ( P , A ) + Distance ( P , B ) =4 
+ LocusEquation ( P ) = ?
+
+Diff Result (< pred, > gold):
+< C: Point
+< D: Point
+< Coordinate(C) = (2, 1)
+< Coordinate(D) = (2, 1)
+
+Comparison Result:
+Common: 7
+Gold Sentences: 7
+Predicted Sentences: 11
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $，其渐近线与圆$ ( x -2 ) ^ {2 } + y ^ {2 } =2$相交，且渐近线被圆截得的两条弦长都为$2$，则双曲线的离心率为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+G: Circle
+a: Number
+b: Number
+l1: Line
+l2: Line
+Asymptote(C) = G
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(G) = (y^2 + (x - 2)^2 = 2)
+Length(InterceptChord(l1,G))=2
+Length(InterceptChord(l2,G))=2
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ G : Circle 
+ L1 : Line 
+ L2 : Line 
+ a : Number 
+ b : Number 
+ Asymptote ( C ) = { L1 , L2 } 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( G ) = ( y ^2 + ( x -2 ) ^2 =2 ) 
+ IsIntersect ( Asymptote ( C ) , G ) 
+ Length ( InterceptChord ( L1 , G ) ) =2 
+ Length ( InterceptChord ( L2 , G ) ) =2 
+ a >0 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Asymptote(C) = G
+---
+> Asymptote ( C ) = { L1 , L2 }
+> IsIntersect ( Asymptote ( C ) , G )
+
+Comparison Result:
+Common: 13
+Gold Sentences: 15
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+点$P$在双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的右支上，其左、右焦点分别为$F_ {1 } $、$F_ {2 } $，直线$P F_ {1 } $与以坐标原点$O$为圆心，$a$为半径的圆相切于点$A$，线段$P F_ {1 } $的垂直平分线恰好过点$F_ {2 } $，$ \ frac { S_ { \ Delta O F_ {1 } A } } { S_ { \ triangle P F_ {1 } F_ {2 } } } $的值为 ? 
+
+Predicted Annotation:
+A: Point
+F1: Point
+F2: Point
+G: Hyperbola
+H: Circle
+O: Origin
+P: Point
+a: Number
+b: Number
+Center(H)=O
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+LeftFocus(G) = F1
+PointOnCurve(F2,PerpendicularBisector(LineSegmentOf(P,F1)))
+PointOnCurve(P, RightPart(G))
+Radius(H)=a
+RightFocus(G) = F2
+TangentPoint(LineOf(P,F1),H)=A
+a>0
+b>0
+Area(TriangleOf(O,F1,A))/Area(TriangleOf(P,F1,F2)) =?
+
+
+Gold Annotation:
+A : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Hyperbola 
+ H : Circle 
+ O : Origin 
+ P : Point 
+ a : Number 
+ b : Number 
+ Center ( H ) = O 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsTangent ( LineOf ( P , F1 ) , H ) = True 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( F2 , PerpendicularBisector ( LineSegmentOf ( P , F1 ) ) ) = True 
+ PointOnCurve ( P , RightPart ( G ) ) = True 
+ Radius ( H ) = a 
+ RightFocus ( G ) = F2 
+ TangentPoint ( LineOf ( P , F1 ) , H ) = A 
+ a >0 
+ b >0 
+ Area ( TriangleOf ( O , F1 , A ) ) / Area ( TriangleOf ( P , F1 , F2 ) ) = ?
+
+Diff Result (< pred, > gold):
+> IsTangent ( LineOf ( P , F1 ) , H ) = True
+
+Comparison Result:
+Common: 20
+Gold Sentences: 21
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若抛物线$x ^ {2 } =4 y$的顶点是抛物线上到点$A (0 , a ) $的距离最近的点，则实数$a$的取值范围是 ? 
+
+Predicted Annotation:
+A: Point
+G: Parabola
+a: Real
+Coordinate(A) = (0, a)
+Expression(G) = (x^2 = 4*y)
+PointOnCurve(A,G)
+WhenMin(Distance(A,G))
+Range(a) =?
+
+
+Gold Annotation:
+A : Point 
+ G : Parabola 
+ a : Real 
+ Coordinate ( A ) = (0 , a ) 
+ Expression ( G ) = ( x ^2 =4 * y ) 
+ WhenMin ( Distance ( Vertex ( G ) , A ) ) 
+ Range ( a ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(A,G)
+< WhenMin(Distance(A,G))
+---
+> WhenMin ( Distance ( Vertex ( G ) , A ) )
+
+Comparison Result:
+Common: 6
+Gold Sentences: 7
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+$ \ odot O$ : $x ^ {2 } + y ^ {2 } =16$ , $A ( -2 ,0 ) $ , $B (2 ,0 ) $为两个定点，$l$是$ \ odot O$的一条切线，若过$A$、$B$两点的抛物线以直线$l$为准线，则该抛物线的焦点的轨迹方程是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Parabola
+O: Circle
+l: Line
+Coordinate(A) = (-2, 0)
+Coordinate(B) = (2, 0)
+Directrix(G)=l
+Expression(O) = (x^2 + y^2 = 16)
+OneOf(TangentOnPoint(A,G))=l
+OneOf(TangentOnPoint(B,G))=l
+PointOnCurve(A,G)
+PointOnCurve(B,G)
+LocusEquation(Focus(G)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Parabola 
+ O : Circle 
+ l : Line 
+ Coordinate ( A ) = ( -2 ,0 ) 
+ Coordinate ( B ) = (2 ,0 ) 
+ Directrix ( G ) = l 
+ Expression ( O ) = ( x ^2 + y ^2 =16 ) 
+ IsTangent ( l , O ) = True 
+ PointOnCurve ( A , G ) = True 
+ PointOnCurve ( B , G ) = True 
+ LocusEquation ( Focus ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< OneOf(TangentOnPoint(A,G))=l
+< OneOf(TangentOnPoint(B,G))=l
+---
+> IsTangent ( l , O ) = True
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知线段$A B$的端点$B$的坐标为$ (4 ,0 ) $，端点$A$在圆$x ^ {2 } + y ^ {2 } =1$上运动，则线段$A B$的中点的轨迹方程为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Circle
+Coordinate(B) = (4, 0)
+Expression(G) = (x^2 + y^2 = 1)
+PointOnCurve(A, G)
+Endpoint(LineSegmentOf(A,B))=B
+LocusEquation(MidPoint(LineSegmentOf(A,B))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Circle 
+ Coordinate ( B ) = (4 ,0 ) 
+ Endpoint ( LineSegmentOf ( A , B ) ) = { A , B } 
+ Expression ( G ) = ( x ^2 + y ^2 =1 ) 
+ PointOnCurve ( A , G ) 
+ LocusEquation ( MidPoint ( LineSegmentOf ( A , B ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< Endpoint(LineSegmentOf(A,B))=B
+---
+> Endpoint ( LineSegmentOf ( A , B ) ) = { A , B }
+
+Comparison Result:
+Common: 7
+Gold Sentences: 8
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$E$ : $y ^ {2 } =4 x$的焦点为$F$，准线为$l$ , 过$F$的直线$m$与$E$交于$A$、$B$两点，$A F$的垂直平分线分别交$l$和$x$轴于$P$、$Q$两点若$ \ angle A F P = \ angle A F Q$ , 则$ | A B | $ = ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+E: Parabola
+F: Point
+P: Point
+Q: Point
+l1: Line
+l2: Line
+m: Line
+AngleOf(A, F, P) = AngleOf(A, F, Q)
+Directrix(E) = l
+Expression(E) = (y^2 = 4*x)
+Focus(E) = F
+Intersection(PerpendicularBisector(LineSegmentOf(A, F)), l) = P
+Intersection(PerpendicularBisector(LineSegmentOf(A, F)), xAxis) = Q
+Intersection(m, E) = {A, B}
+PointOnCurve(F, m)
+Abs(LineSegmentOf(A, B)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ E : Parabola 
+ F : Point 
+ P : Point 
+ Q : Point 
+ l : Line 
+ m : Line 
+ AngleOf ( A , F , P ) = AngleOf ( A , F , Q ) 
+ Directrix ( E ) = l 
+ Expression ( E ) = ( y ^2 =4 * x ) 
+ Focus ( E ) = F 
+ Intersection ( PerpendicularBisector ( LineSegmentOf ( A , F ) ) , l ) = P 
+ Intersection ( PerpendicularBisector ( LineSegmentOf ( A , F ) ) , xAxis ) = Q 
+ Intersection ( m , E ) = { A , B } 
+ PointOnCurve ( F , m ) 
+ Abs ( LineSegmentOf ( A , B ) ) = ?
+
+Diff Result (< pred, > gold):
+< l2: Line
+< Directrix(E) = l
+< Intersection(PerpendicularBisector(LineSegmentOf(A, F)), l) = P
+---
+> Directrix ( E ) = l
+> Intersection ( PerpendicularBisector ( LineSegmentOf ( A , F ) ) , l ) = P
+
+Comparison Result:
+Common: 15
+Gold Sentences: 17
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+以椭圆$ \ frac { x ^ {2 } } {25 } + \ frac { y ^ {2 } } {16 } =1$的顶点为焦点，焦点为顶点的双曲线方程的标准方程是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Ellipse
+Expression(H) = (x^2/25 + y^2/16 = 1)
+Focus(G)=Vertex(H)
+Vertex(H)=Focus(G)
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Ellipse 
+ Expression ( H ) = ( x ^2 /25 + y ^2 /16 =1 ) 
+ Focus ( H ) = Vertex ( G ) 
+ Vertex ( H ) = Focus ( G ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Vertex(H)=Focus(G)
+---
+> Focus ( H ) = Vertex ( G )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若斜率为$ \ frac { \ sqrt {2 } } {2 } $的直线$l$与椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $有两个不同的交点，且这两个交点在$x$轴上的射影恰好是椭圆的两个焦点，则该椭圆的离心率为 ? 
+
+Predicted Annotation:
+F1:Point
+F2:Point
+G: Ellipse
+a: Number
+b: Number
+l: Line
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+Focus(G)={F1,F2}
+Intersection(l,G)={F1,F2}
+Negation(F1=F2)
+Projection(F1,xAxis)=F1
+Projection(F2,xAxis)=F2
+Slope(l)=sqrt(2)/2
+a > b
+b > 0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Ellipse 
+ a : Number 
+ b : Number 
+ l : Line 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Focus ( G ) = { Projection ( A , xAxis ) , Projection ( B , xAxis ) } 
+ Intersection ( l , G ) = { A , B } 
+ Slope ( l ) = sqrt (2 ) /2 
+ a > b 
+ b >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Focus(G)={F1,F2}
+< Negation(F1=F2)
+< Projection(F1,xAxis)=F1
+< Projection(F2,xAxis)=F2
+---
+> Focus ( G ) = { Projection ( A , xAxis ) , Projection ( B , xAxis ) }
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $上任意一点$P$，作与实轴平行的直线，交两渐近线$M$ , $N$两点，若$ \ overrightarrow { P M } \ cdot \ overrightarrow { P N } =2 b ^ {2 } $，则该双曲线的离心率为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Line
+M: Point
+N: Point
+P: Point
+a: Number
+b: Number
+Asymptote(G) = {M, N}
+DotProduct(VectorOf(P, M), VectorOf(P, N)) = 2*b^2
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(H, M) = P
+Intersection(H, N) = P
+IsParallel(H, RealAxis(G))
+PointOnCurve(P, G)
+PointOnCurve(P, H)
+a>0
+b>0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ L1 : Line 
+ L2 : Line 
+ L : Line 
+ M : Point 
+ N : Point 
+ P : Point 
+ a : Number 
+ b : Number 
+ Asymptote ( G ) = { L1 , L2 } 
+ DotProduct ( VectorOf ( P , M ) , VectorOf ( P , N ) ) =2 * b ^2 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( L , L1 ) = M 
+ Intersection ( L , L2 ) = N 
+ IsParallel ( L , RealAxis ( G ) ) 
+ PointOnCurve ( P , G ) 
+ PointOnCurve ( P , L ) 
+ a >0 
+ b >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Asymptote(G) = {M, N}
+< Intersection(H, M) = P
+< Intersection(H, N) = P
+---
+> L1 : Line
+> L2 : Line
+> Asymptote ( G ) = { L1 , L2 }
+> Intersection ( L , L1 ) = M
+> Intersection ( L , L2 ) = N
+
+Comparison Result:
+Common: 15
+Gold Sentences: 20
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$E$ : $ \ frac { x ^ {2 } } {2 } + y ^ {2 } =1$点$P (2 , t ) $ , $F$为椭圆的左焦点，过点$P$作椭圆的切线$P A$ , $P B$，切点分别为$A$、$B$，则$ \ triangle A B F$面积的范围是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+E: Ellipse
+F: Point
+P: Point
+t:Number
+Coordinate(P) = (2, t)
+Expression(E) = (x^2/2 + y^2 = 1)
+LeftFocus(E) = F
+PointOnCurve(P,LineOf(P,A))
+PointOnCurve(P,LineOf(P,B))
+TangentOfPoint(P,E)={LineOf(P,A),LineOf(P,B)}
+TangentPoint(LineOf(P,A),E)=A
+TangentPoint(LineOf(P,B),E)=B
+Range(Area(TriangleOf(A, B, F))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ E : Ellipse 
+ F : Point 
+ P : Point 
+ t : Number 
+ Coordinate ( P ) = (2 , t ) 
+ Expression ( E ) = ( x ^2 /2 + y ^2 =1 ) 
+ LeftFocus ( E ) = F 
+ TangentOfPoint ( P , E ) = { LineOf ( P , A ) , LineOf ( P , B ) } 
+ TangentPoint ( LineOf ( P , A ) , E ) = B 
+ TangentPoint ( LineOf ( P , B ) , E ) = A 
+ Range ( Area ( TriangleOf ( A , B , F ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(P,LineOf(P,A))
+< PointOnCurve(P,LineOf(P,B))
+< TangentPoint(LineOf(P,A),E)=A
+< TangentPoint(LineOf(P,B),E)=B
+---
+> TangentPoint ( LineOf ( P , A ) , E ) = B
+> TangentPoint ( LineOf ( P , B ) , E ) = A
+
+Comparison Result:
+Common: 11
+Gold Sentences: 13
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+在平面直角坐标系$x O y$中，双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } {16 } =1 ( a >0 ) $的右顶点到双曲线的一条渐近线的距离为$ \ frac {4 \ sqrt {5 } } {3 } $，则双曲线$C$的方程为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+L:Line
+O:Origin
+a: Number
+Distance(RightVertex(C),L)=4*sqrt(5)/3
+Expression(C) = (-y^2/16 + x^2/a^2 = 1)
+OneOf(Asymptote(C))=L
+a>0
+Expression(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ a : Number 
+ Distance ( RightVertex ( C ) , OneOf ( Asymptote ( C ) ) ) =4 * sqrt (5 ) /3 
+ Expression ( C ) = ( x ^2 / a ^2 - y ^2 /16 =1 ) 
+ a >0 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< L:Line
+< O:Origin
+< Distance(RightVertex(C),L)=4*sqrt(5)/3
+< OneOf(Asymptote(C))=L
+---
+> Distance ( RightVertex ( C ) , OneOf ( Asymptote ( C ) ) ) =4 * sqrt (5 ) /3
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$C_ {1 } $ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $与双曲线$C_ {2 } $ : $ x ^ {2 } - y ^ {2 } =4$有相同的右焦点$F_ {2 } $，点$P$是椭圆$C_ {1 } $与双曲线$C_ {2 } $在第一象限的公共点，若$ | P F_ {2 } | =2$，则椭圆$C_ {1 } $的离心率等于 ? 
+
+Predicted Annotation:
+C1: Ellipse
+C2: Hyperbola
+F2: Point
+P: Point
+a: Number
+b: Number
+Abs(LineSegmentOf(P, F2)) = 2
+Expression(C1) = (y^2/b^2 + x^2/a^2 = 1)
+Expression(C2) = (x^2 - y^2 = 4)
+RightFocus(C1) = RightFocus(C2)
+Quadrant(P) = 1
+a > b
+b > 0
+Eccentricity(C1) =?
+
+
+Gold Annotation:
+C1 : Ellipse 
+ C2 : Hyperbola 
+ F2 : Point 
+ P : Point 
+ a : Number 
+ b : Number 
+ Abs ( LineSegmentOf ( P , F2 ) ) =2 
+ Expression ( C1 ) = ( x ^2 / a ^2 + y ^2 / b ^2 =1 ) 
+ Expression ( C2 ) = ( x ^2 - y ^2 =4 ) 
+ Intersection ( C1 , C2 ) = P 
+ Quadrant ( P ) =1 
+ RightFocus ( C1 ) = F2 
+ RightFocus ( C2 ) = F2 
+ a > b 
+ b >0 
+ Eccentricity ( C1 ) = ?
+
+Diff Result (< pred, > gold):
+< RightFocus(C1) = RightFocus(C2)
+---
+> Intersection ( C1 , C2 ) = P
+> RightFocus ( C1 ) = F2
+> RightFocus ( C2 ) = F2
+
+Comparison Result:
+Common: 13
+Gold Sentences: 16
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+点$A$是椭圆$C_ {1 } $ : $ \ frac { x ^ {2 } } {9 } + \ frac { y ^ {2 } } {4 } =1$与双曲线$C_ {2 } $ : $ \ frac { x ^ {2 } } {4 } - y ^ {2 } =1$的一个交点，且点$A$与椭圆$C_ {1 } $两焦点距离之和为$m$，距离之差的绝对值为$n$，则$m + n$的值为 ? 
+
+Predicted Annotation:
+A: Point
+C1:Ellipse
+C2:Hyperbola
+F1:Point
+F2:Point
+m:Number
+n:Number
+Distance(A,F1)+Distance(A,F2)=m
+Distance(A,F1)-Distance(A,F2)=n
+Expression(C1)=(x^2/9+y^2/4=1)
+Expression(C2)=(x^2/4-y^2=1)
+Focus(C1)={F1,F2}
+OneOf(Intersection(C1,C2))=A
+m+n =?
+
+
+Gold Annotation:
+A : Point 
+ C1 : Ellipse 
+ C2 : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ m : Number 
+ n : Number 
+ Abs ( Distance ( A , F1 ) - Distance ( A , F2 ) ) = n 
+ Distance ( A , F1 ) + Distance ( A , F2 ) = m 
+ Expression ( C1 ) = ( x ^2 /9 + y ^2 /4 =1 ) 
+ Expression ( C2 ) = ( x ^2 /4 - y ^2 =1 ) 
+ Focus ( C1 ) = { F1 , F2 } 
+ OneOf ( Intersection ( C1 , C2 ) ) = A 
+ m + n = ?
+
+Diff Result (< pred, > gold):
+< Distance(A,F1)-Distance(A,F2)=n
+---
+> Abs ( Distance ( A , F1 ) - Distance ( A , F2 ) ) = n
+
+Comparison Result:
+Common: 13
+Gold Sentences: 14
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1$与$ - \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $离心率分别为$e_ {1 } $ , $e_ {2 } $，则当$a$ , $b$变化 时，$e_ {1 } + e_ {2 } $最小值为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Curve
+a: Number
+b: Number
+e1: Number
+e2: Number
+Eccentricity(G) = e2
+Eccentricity(H) = e1
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(H) = (y^2/b^2 - x^2/a^2 = 1)
+WhenVariation(a, b) = True
+a>0
+b>0
+Min(e1 + e2) =?
+
+
+Gold Annotation:
+G1 : Hyperbola 
+ G2 : Hyperbola 
+ a : Number 
+ b : Number 
+ e1 : Number 
+ e2 : Number 
+ Eccentricity ( G1 ) = e1 
+ Eccentricity ( G2 ) = e2 
+ Expression ( G1 ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( G2 ) = ( y ^2 / b ^2 - x ^2 / a ^2 =1 ) 
+ a >0 
+ b >0 
+ Min ( e1 + e2 ) = ?
+
+Diff Result (< pred, > gold):
+< H: Curve
+< Eccentricity(H) = e1
+< Expression(H) = (y^2/b^2 - x^2/a^2 = 1)
+< WhenVariation(a, b) = True
+---
+> G2 : Hyperbola
+> Eccentricity ( G2 ) = e2
+> Expression ( G2 ) = ( y ^2 / b ^2 - x ^2 / a ^2 =1 )
+
+Comparison Result:
+Common: 10
+Gold Sentences: 13
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+以抛物线$C$的顶点为圆心的圆交$C$于$M$、$N$两点，交$C$的准线于$A$、$B$两点$ | M N | =4 \ sqrt {2 } $ , $ | A B | =2 \ sqrt {11 } $，则$C$的焦点到准线的距离为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Parabola
+G: Circle
+M: Point
+N: Point
+Abs(LineSegmentOf(A, B)) = 2*sqrt(11)
+Abs(LineSegmentOf(M, N)) = 4*sqrt(2)
+Center(G)=Vertex(C)
+Expression(Directrix(C))=(A,B)
+Intersection(G,C)={M,N}
+PointOnCurve(Focus(C),Directrix(C))
+Distance(Focus(C),Directrix(C)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ G : Circle 
+ M : Point 
+ N : Point 
+ Abs ( LineSegmentOf ( A , B ) ) =2 * sqrt (11 ) 
+ Abs ( LineSegmentOf ( M , N ) ) =4 * sqrt (2 ) 
+ Intersection ( G , C ) = { M , N } 
+ Intersection ( G , Directrix ( C ) ) = { A , B } 
+ Vertex ( C ) = Center ( G ) 
+ Distance ( Focus ( C ) , Directrix ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(Directrix(C))=(A,B)
+< PointOnCurve(Focus(C),Directrix(C))
+---
+> Intersection ( G , Directrix ( C ) ) = { A , B }
+
+Comparison Result:
+Common: 11
+Gold Sentences: 12
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过点$ (2 ,2 ) $的双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a , b >0 ) $的左右焦点为$F_ {1 } $、$F_ {2 } $，过$F_ {2 } $作$x$轴的垂线与$C$相交于$A$、$B$两点，$F_ {1 } B$与$y$轴相交于$D$ . 若$A D \ perp F_ {1 } B$，则双曲线$C$的方程为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Hyperbola
+D: Point
+F1: Point
+F2: Point
+G: Line
+a: Number
+b: Number
+Coordinate(G) = (2, 2)
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(G, C) = {A, B}
+Intersection(LineSegmentOf(F1, B), yAxis) = D
+IsPerpendicular(G, xAxis)
+IsPerpendicular(LineSegmentOf(A, D), LineSegmentOf(F1, B))
+LeftFocus(C) = F1
+PointOnCurve(F2, G)
+PointOnCurve(F2, xAxis)
+RightFocus(C) = F2
+a>0
+b>0
+Expression(C) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Hyperbola 
+ D : Point 
+ F1 : Point 
+ F2 : Point 
+ L : Line 
+ P : Point 
+ a : Number 
+ b : Number 
+ Coordinate ( P ) = (2 ,2 ) 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( L , C ) = { A , B } 
+ Intersection ( LineSegmentOf ( F1 , B ) , yAxis ) = D 
+ IsPerpendicular ( L , xAxis ) 
+ IsPerpendicular ( LineSegmentOf ( A , D ) , LineSegmentOf ( F1 , B ) ) 
+ LeftFocus ( C ) = F1 
+ PointOnCurve ( F2 , L ) 
+ PointOnCurve ( P , C ) 
+ RightFocus ( C ) = F2 
+ a >0 
+ b >0 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(G) = (2, 2)
+< PointOnCurve(F2, xAxis)
+---
+> P : Point
+> Coordinate ( P ) = (2 ,2 )
+> PointOnCurve ( P , C )
+
+Comparison Result:
+Common: 20
+Gold Sentences: 23
+Predicted Sentences: 22
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知圆$C$ : $x ^ {2 } + y ^ {2 } =25$，过点$M ( -2 ,3 ) $作直线$l$交圆$C$于$A$、$B$两点，分别过$A$、$B$两点作圆的切线，当两条切线相交于点$N$时，则点$N$的轨迹方程为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Circle
+L1:Line
+L2:Line
+M: Point
+N: Point
+l: Line
+Coordinate(M) = (-2, 3)
+Expression(C) = (x^2 + y^2 = 25)
+Intersection(l, C) = {A, B}
+Intersection(L1,L2)=N
+PointOnCurve(A,L1)
+PointOnCurve(B,L2)
+TangentOfPoint(A,C)=L1
+TangentOfPoint(B,C)=L2
+LocusEquation(N) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Circle 
+ L1 : Line 
+ L2 : Line 
+ M : Point 
+ N : Point 
+ l : Line 
+ Coordinate ( M ) = ( -2 ,3 ) 
+ Expression ( C ) = ( x ^2 + y ^2 =25 ) 
+ Intersection ( L1 , L2 ) = N 
+ Intersection ( l , C ) = { A , B } 
+ PointOnCurve ( M , l ) 
+ TangentOnPoint ( A , C ) = L1 
+ TangentOnPoint ( B , C ) = L2 
+ LocusEquation ( N ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(A,L1)
+< PointOnCurve(B,L2)
+< TangentOfPoint(A,C)=L1
+< TangentOfPoint(B,C)=L2
+---
+> PointOnCurve ( M , l )
+> TangentOnPoint ( A , C ) = L1
+> TangentOnPoint ( B , C ) = L2
+
+Comparison Result:
+Common: 13
+Gold Sentences: 16
+Predicted Sentences: 17
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线的方程为$ \ frac { x ^ {2 } } {9 } - \ frac { y ^ {2 } } {16 } =1$，点$F_ {1 } $、$F_ {2 } $是其左右焦点，$A$是圆$x ^ {2 } + ( y -6 ) ^ {2 } =4$上的一点，点$M$在双曲线的右支上，则$ | M F_ {1 } | + | M A | $的取值范围为 ? 
+
+Predicted Annotation:
+A: Point
+F1: Point
+F2: Point
+G: Hyperbola
+H: Circle
+M: Point
+Expression(G) = (x^2/9 - y^2/16 = 1)
+Expression(H) = (x^2 + (y - 6)^2 = 4)
+LeftFocus(G) = F1
+PointOnCurve(A, G)
+PointOnCurve(M, RightPart(G))
+RightFocus(G) = F2
+Range(Abs(LineSegmentOf(M, A)) + Abs(LineSegmentOf(M, F1))) =?
+
+
+Gold Annotation:
+A : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Hyperbola 
+ H : Circle 
+ M : Point 
+ Expression ( G ) = ( x ^2 /9 - y ^2 /16 =1 ) 
+ Expression ( H ) = ( x ^2 + ( y -6 ) ^2 =4 ) 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( A , H ) 
+ PointOnCurve ( M , RightPart ( G ) ) 
+ RightFocus ( G ) = F2 
+ Range ( Abs ( LineSegmentOf ( M , A ) ) + Abs ( LineSegmentOf ( M , F1 ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(A, G)
+---
+> PointOnCurve ( A , H )
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若实数$a$ , $b$ , $c$ , $d$满足$ \ frac {3 \ sqrt {16 - a ^ {2 } } } {4 b } = \ frac {9 - c } { d } =1$，则$ \ sqrt { ( a - c ) ^ {2 } + ( b - d ) ^ {2 } } $的最小值为 ? 
+
+Predicted Annotation:
+a: Real
+b: Real
+c: Real
+d: Real
+(3*sqrt(16 - a^2))/(4*b) = (9 - c)/d
+a = d
+b = c
+Min(sqrt((a - c)^2 + (b - d)^2)) =?
+
+
+Gold Annotation:
+a : Real 
+ b : Real 
+ c : Real 
+ d : Real 
+ (9 - c ) / d =1 
+3 * sqrt (16 - a ^2 ) /4 * b = (9 - c ) / d 
+ Min ( sqrt ( ( a - c ) ^2 + ( b - d ) ^2 ) ) = ?
+
+Diff Result (< pred, > gold):
+< (3*sqrt(16 - a^2))/(4*b) = (9 - c)/d
+< a = d
+< b = c
+---
+> (9 - c ) / d =1
+> 3 * sqrt (16 - a ^2 ) /4 * b = (9 - c ) / d
+
+Comparison Result:
+Common: 5
+Gold Sentences: 7
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$ \ triangle A B C$的周长为$20$，且顶点$B (0 , -3 ) $ , $C (0 ,3 ) $，则顶点$A$的轨迹方程是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Point
+Coordinate(B) = (0, -3)
+Coordinate(C) = (0, 3)
+Perimeter(TriangleOf(A, B, C)) = 20
+Vertex(TriangleOf(A, B, C)) = {B, C}
+LocusEquation(A) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Point 
+ Coordinate ( B ) = (0 , -3 ) 
+ Coordinate ( C ) = (0 ,3 ) 
+ Perimeter ( TriangleOf ( A , B , C ) ) =20 
+ LocusEquation ( A ) = ?
+
+Diff Result (< pred, > gold):
+< Vertex(TriangleOf(A, B, C)) = {B, C}
+
+Comparison Result:
+Common: 7
+Gold Sentences: 7
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知点$A (1 ,0 ) $，直线$l$ : $x = -1$，两个动圆均过点$A$且与$l$相切，其圆心分别为$C_ {1 } $、$C_ {2 } $，若动点$M$满足$2 \ overrightarrow { C_ {2 } M } = \ overrightarrow { C_ {2 } C_ {1 } } + \ overrightarrow { C_ {2 } A } $，则$M$的轨迹方程为 ? 
+
+Predicted Annotation:
+A: Point
+C1: Point
+C2: Point
+M: Point
+l: Line
+Center(CircleOf(A,C1))=C1
+Center(CircleOf(A,C2))=C2
+Coordinate(A) = (1, 0)
+Expression(l)=(x=-1)
+IsTangent(l,CircleOf(A,C2))
+IsTangent(l,CircleOf(A,C1))
+PointOnCurve(A,CircleOf(A,C1))
+PointOnCurve(A,CircleOf(A,C2))
+VectorOf(C2,M)=VectorOf(C2,C1)+VectorOf(C2,A)
+LocusEquation(M) =?
+
+
+Gold Annotation:
+A : Point 
+ C1 : Point 
+ C2 : Point 
+ D : Circle 
+ M : Point 
+ Z : Circle 
+ l : Line 
+2 * VectorOf ( C2 , M ) = VectorOf ( C2 , A ) + VectorOf ( C2 , C1 ) 
+ Center ( D ) = C1 
+ Center ( Z ) = C2 
+ Coordinate ( A ) = (1 ,0 ) 
+ Expression ( l ) = ( x = -1 ) 
+ IsTangent ( D , l ) 
+ IsTangent ( Z , l ) 
+ PointOnCurve ( A , D ) 
+ PointOnCurve ( A , Z ) 
+ LocusEquation ( M ) = ?
+
+Diff Result (< pred, > gold):
+< Center(CircleOf(A,C1))=C1
+< Center(CircleOf(A,C2))=C2
+< IsTangent(l,CircleOf(A,C2))
+< IsTangent(l,CircleOf(A,C1))
+< PointOnCurve(A,CircleOf(A,C1))
+< PointOnCurve(A,CircleOf(A,C2))
+< VectorOf(C2,M)=VectorOf(C2,C1)+VectorOf(C2,A)
+---
+> D : Circle
+> Z : Circle
+> 2 * VectorOf ( C2 , M ) = VectorOf ( C2 , A ) + VectorOf ( C2 , C1 )
+> Center ( D ) = C1
+> Center ( Z ) = C2
+> IsTangent ( D , l )
+> IsTangent ( Z , l )
+> PointOnCurve ( A , D )
+> PointOnCurve ( A , Z )
+
+Comparison Result:
+Common: 8
+Gold Sentences: 17
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+双曲线的实轴长、虚轴长与焦距的和为$8$，则半焦距的取值范围是 ( 答案用区间表示 ) ? 
+
+Predicted Annotation:
+G: Hyperbola
+FocalLength(G) + Length(ImageinaryAxis(G)) = 8
+Range(HalfFocalLength(G)) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ Length ( RealAxis ( G ) ) + Length ( ImageinaryAxis ( G ) ) + FocalLength ( G ) =8 
+ Range ( HalfFocalLength ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< FocalLength(G) + Length(ImageinaryAxis(G)) = 8
+---
+> Length ( RealAxis ( G ) ) + Length ( ImageinaryAxis ( G ) ) + FocalLength ( G ) =8
+
+Comparison Result:
+Common: 2
+Gold Sentences: 3
+Predicted Sentences: 3
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的渐近线方程为$y = \ pm x$且一个焦点为$ (4 \ sqrt {2 } ,0 ) $，则$a$ = ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Point
+a: Number
+b: Number
+Coordinate(H) = (4*sqrt(2), 0)
+Expression(Asymptote(G)) = (y = pm*x)
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+OneOf(Focus(G)) = H
+a>0
+b>0
+a =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ a : Number 
+ b : Number 
+ Coordinate ( OneOf ( Focus ( G ) ) ) = (4 * sqrt (2 ) ,0 ) 
+ Expression ( Asymptote ( G ) ) = ( y = pm * x ) 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ a >0 
+ b >0 
+ a = ?
+
+Diff Result (< pred, > gold):
+< H: Point
+< Coordinate(H) = (4*sqrt(2), 0)
+< OneOf(Focus(G)) = H
+---
+> Coordinate ( OneOf ( Focus ( G ) ) ) = (4 * sqrt (2 ) ,0 )
+
+Comparison Result:
+Common: 8
+Gold Sentences: 9
+Predicted Sentences: 11
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若椭圆$ \ frac { x ^ {2 } } { m } + \ frac { y ^ {2 } } { n } =1 ( m > n >0 ) $和双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $有相同的左、右焦点$F_ {1 } $、$F_ {2 } $、$P$是两条曲线的一个交点，则$P F_ {1 } \ cdot P F_ {2 } $的值是 ? 
+
+Predicted Annotation:
+F1: Point
+F2: Point
+G: Hyperbola
+H: Ellipse
+P: Point
+a: Number
+b: Number
+m: Number
+n: Number
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(H) = (y^2/n + x^2/m = 1)
+LeftFocus(G) = F2
+LeftFocus(H) = F1
+OneOf(Intersection(H, G)) = P
+RightFocus(G) = F1
+RightFocus(H) = F2
+a>0
+b>0
+m > n
+n > 0
+LineSegmentOf(P, F1)*LineSegmentOf(P, F2) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Hyperbola 
+ H : Ellipse 
+ P : Point 
+ a : Number 
+ b : Number 
+ m : Number 
+ n : Number 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( H ) = ( y ^2 / n + x ^2 / m =1 ) 
+ LeftFocus ( G ) = F1 
+ LeftFocus ( H ) = F1 
+ OneOf ( Intersection ( H , G ) ) = P 
+ RightFocus ( G ) = F2 
+ RightFocus ( H ) = F2 
+ a >0 
+ b >0 
+ m > n 
+ n >0 
+ LineSegmentOf ( P , F1 ) * LineSegmentOf ( P , F2 ) = ?
+
+Diff Result (< pred, > gold):
+< LeftFocus(G) = F2
+< RightFocus(G) = F1
+---
+> LeftFocus ( G ) = F1
+> RightFocus ( G ) = F2
+
+Comparison Result:
+Common: 19
+Gold Sentences: 21
+Predicted Sentences: 21
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+以椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的左焦点$F ( - c ,0 ) $为圆心，$c$为半径的圆与椭圆的左准线交 于不同的两点，则该椭圆的离心率的取值范围是 ? 
+
+Predicted Annotation:
+C:Circle
+F: Point
+G: Ellipse
+a: Number
+b: Number
+c:Number
+Center(C)=F
+Coordinate(F) = (-c, 0)
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+Intersection(C,LeftDirectrix(G))={A,B}
+LeftFocus(G)=F
+Radius(C)=c
+a > b
+b > 0
+Range(Eccentricity(G)) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Ellipse 
+ H : Circle 
+ a : Number 
+ b : Number 
+ c : Number 
+ Center ( H ) = F 
+ Coordinate ( F ) = ( - c ,0 ) 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ LeftFocus ( G ) = F 
+ NumIntersection ( H , LeftDirectrix ( G ) ) =2 
+ Radius ( H ) = c 
+ a > b 
+ b >0 
+ Range ( Eccentricity ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< Intersection(C,LeftDirectrix(G))={A,B}
+---
+> NumIntersection ( H , LeftDirectrix ( G ) ) =2
+
+Comparison Result:
+Common: 14
+Gold Sentences: 15
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$C$ : $y ^ {2 } =2 p x ( p >0 ) $，圆心在$C$上的圆过原点且与抛物线$C$的准线相切，若该圆截直线$x - \ sqrt {2 } y =0$所得弦长为$2 \ sqrt {6 } $，则$C$的方程为 ? 
+
+Predicted Annotation:
+C: Parabola
+G: Circle
+H: Line
+O:Origin
+p: Number
+Center(G)=O
+Expression(C) = (y^2 = 2*(p*x))
+Expression(H) = (x - sqrt(2)*y = 0)
+IsTangent(Directrix(C),G)
+Length(InterceptChord(H,G))=2*sqrt(6)
+PointOnCurve(O,G)
+PointOnCurve(Center(G),C)
+p>0
+Expression(C) =?
+
+
+Gold Annotation:
+C : Parabola 
+ G : Circle 
+ H : Line 
+ O : Origin 
+ p : Number 
+ Expression ( C ) = ( y ^2 =2 * ( p * x ) ) 
+ Expression ( H ) = ( x - sqrt (2 ) * y =0 ) 
+ IsTangent ( G , Directrix ( C ) ) 
+ Length ( InterceptChord ( H , G ) ) =2 * sqrt (6 ) 
+ PointOnCurve ( Center ( G ) , C ) 
+ PointOnCurve ( O , G ) 
+ p >0 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Center(G)=O
+
+Comparison Result:
+Common: 13
+Gold Sentences: 13
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过抛物线$y = \ frac { x ^ {2 } } {8 } $焦点$F$，向圆 : $ ( x +3 ) ^ {2 } + ( y +3 ) ^ {2 } =16$作切线，切点为$P$ , $ | F P | $ = ? 
+
+Predicted Annotation:
+F: Point
+G: Parabola
+H: Circle
+P: Point
+Expression(G) = (y = x^2/8)
+Expression(H) = ((x + 3)^2 + (y + 3)^2 = 16)
+Focus(G)=F
+PointOnCurve(F,G)
+TangentOfPoint(F,H)=Line
+TangentPoint(Line,H)=P
+Abs(LineSegmentOf(F, P)) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Parabola 
+ H : Circle 
+ L : Line 
+ P : Point 
+ Expression ( G ) = ( y = x ^2 /8 ) 
+ Expression ( H ) = ( ( x +3 ) ^2 + ( y +3 ) ^2 =16 ) 
+ Focus ( G ) = F 
+ TangentOfPoint ( F , H ) = L 
+ TangentPoint ( H , L ) = P 
+ Abs ( LineSegmentOf ( F , P ) ) = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(F,G)
+---
+> L : Line
+> TangentOfPoint ( F , H ) = L
+> TangentPoint ( H , L ) = P
+
+Comparison Result:
+Common: 8
+Gold Sentences: 11
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+点$P ( x_ {0 } ,1 ) $为椭圆$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } {4 } =1 ( a >2 ) $在上一点，以点$P$以及焦点$F_ {1 } $、$F_ {2 } $为顶点的三角形的面积为$1$，则椭圆$C$的长轴长是 ? 
+
+Predicted Annotation:
+C: Ellipse
+F1: Point
+F2: Point
+P: Point
+a: Number
+x0:Number
+Coordinate(P) = (x0, 1)
+Expression(C) = (y^2/4 + x^2/a^2 = 1)
+Focus(C)={F1,F2}
+Area(TriangleOf(P,F1,F2))=1
+PointOnCurve(P,C)
+Vertex(TriangleOf(P,F1,F2))={P,F1,F2}
+a>2
+Length(MajorAxis(C)) =?
+
+
+Gold Annotation:
+C : Ellipse 
+ F1 : Point 
+ F2 : Point 
+ P : Point 
+ a : Number 
+ x0 : Number 
+ Area ( TriangleOf ( P , F1 , F2 ) ) =1 
+ Coordinate ( P ) = ( x0 ,1 ) 
+ Expression ( C ) = ( y ^2 /4 + x ^2 / a ^2 =1 ) 
+ Focus ( C ) = { F1 , F2 } 
+ PointOnCurve ( P , C ) 
+ a >2 
+ Length ( MajorAxis ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< Vertex(TriangleOf(P,F1,F2))={P,F1,F2}
+
+Comparison Result:
+Common: 13
+Gold Sentences: 13
+Predicted Sentences: 14
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$y ^ {2 } = x$的弦$A B$与$x$轴不垂直，则$A B$的中垂线与$x$轴交点的横坐标的取值范围为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Parabola
+Expression(G) = (y^2 = x)
+IsChordOf(LineSegmentOf(A, B), G)
+IsPerpendicular(LineSegmentOf(A, B), xAxis)
+Range(XCoordinate(Intersection(PerpendicularBisector(LineSegmentOf(A, B)), xAxis))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Parabola 
+ Expression ( G ) = ( y ^2 = x ) 
+ IsChordOf ( LineSegmentOf ( A , B ) , G ) 
+ Negation ( IsPerpendicular ( LineSegmentOf ( A , B ) , xAxis ) ) 
+ Range ( XCoordinate ( Intersection ( PerpendicularBisector ( LineSegmentOf ( A , B ) ) , xAxis ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< IsPerpendicular(LineSegmentOf(A, B), xAxis)
+---
+> Negation ( IsPerpendicular ( LineSegmentOf ( A , B ) , xAxis ) )
+
+Comparison Result:
+Common: 6
+Gold Sentences: 7
+Predicted Sentences: 7
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 , (0 < a < b ) $的半焦距为$c$，直线$l$过点$ ( a ,0 ) $，$ (0 , b ) $两点已知原点到直线$l$的距离为$ \ frac {3 } {4 } c$ , 则双曲线的离心率为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Point
+I: Point
+O:Origin
+a: Number
+b: Number
+c: Number
+l: Line
+Coordinate(H) = (a, 0)
+Coordinate(I) = (0, b)
+Distance(O, l) = (3/4)*c
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+HalfFocalLength(G) = c
+PointOnCurve(H, l)
+PointOnCurve(I, l)
+a<b
+a>0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Point 
+ I : Point 
+ O : Origin 
+ a : Number 
+ b : Number 
+ c : Number 
+ l : Line 
+0 < a 
+ Coordinate ( H ) = ( a ,0 ) 
+ Coordinate ( I ) = (0 , b ) 
+ Distance ( O , l ) = (3 /4 ) * c 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ HalfFocalLength ( G ) = c 
+ PointOnCurve ( H , l ) 
+ PointOnCurve ( I , l ) 
+ a < b 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< a>0
+---
+> 0 < a
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若点$ ( a , \ frac { a } {2 } ) $在方程$y =3 x ^ {2 } + x$所表示的曲线上，则$a$ = ? 
+
+Predicted Annotation:
+G: Curve
+H: Point
+a: Number
+Coordinate(H) = (a, a/2)
+Expression(G) = (y = x^2 + 3*x)
+PointOnCurve(H, G)
+a =?
+
+
+Gold Annotation:
+G : Curve 
+ H : Point 
+ a : Number 
+ Coordinate ( H ) = ( a , a /2 ) 
+ Expression ( G ) = ( y =3 * x ^2 + x ) 
+ PointOnCurve ( H , G ) 
+ a = ?
+
+Diff Result (< pred, > gold):
+< Expression(G) = (y = x^2 + 3*x)
+---
+> Expression ( G ) = ( y =3 * x ^2 + x )
+
+Comparison Result:
+Common: 6
+Gold Sentences: 7
+Predicted Sentences: 7
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+对于抛物线$y ^ {2 } =4 x$上任意一点$Q$，点$P ( a ,0 ) $都满足$ | P Q | \ geq | a | $，则$a$的取值范围是 ? 
+
+Predicted Annotation:
+G: Parabola
+P: Point
+Q: Point
+a:Number
+Abs(LineSegmentOf(P,Q))>=Abs(a)
+Coordinate(P) = (a, 0)
+Expression(G) = (y^2 = 4*x)
+PointOnCurve(Q,G)
+Range(a) =?
+
+
+Gold Annotation:
+G : Parabola 
+ P : Point 
+ Q : Point 
+ a : Number 
+ Abs ( LineSegmentOf ( P , Q ) ) > = Abs ( a ) 
+ Coordinate ( P ) = ( a ,0 ) 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ PointOnCurve ( Q , G ) 
+ Range ( a ) = ?
+
+Diff Result (< pred, > gold):
+< Abs(LineSegmentOf(P,Q))>=Abs(a)
+
+Comparison Result:
+Common: 8
+Gold Sentences: 8
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若$F$为双曲线$M$ : $ \ frac { x ^ {2 } } {9 } - \ frac { y ^ {2 } } {16 } =1$的左焦点，过原点的直线$l$与双曲线$M$的左、右两支各交于$A$、$B$两点，则$ \ frac {1 } { | F A | } - \ frac {9 } { | F B | } $的取值范围是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+M: Hyperbola
+O:Origin
+l: Line
+Expression(M) = (x^2/9 - y^2/16 = 1)
+Intersection(l,LeftPart(M))={A,B}
+LeftFocus(M) = F
+PointOnCurve(O,l)
+Range(1/Abs(LineSegmentOf(F, A)) - 9/Abs(LineSegmentOf(F, B))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ M : Hyperbola 
+ O : Origin 
+ l : Line 
+ Expression ( M ) = ( x ^2 /9 - y ^2 /16 =1 ) 
+ Intersection ( l , RightPart ( M ) ) = B 
+ Intersection ( l , LeftPart ( M ) ) = A 
+ LeftFocus ( M ) = F 
+ PointOnCurve ( O , l ) = True 
+ Range ( -9 / Abs ( LineSegmentOf ( F , B ) ) +1 / Abs ( LineSegmentOf ( F , A ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< Intersection(l,LeftPart(M))={A,B}
+< Range(1/Abs(LineSegmentOf(F, A)) - 9/Abs(LineSegmentOf(F, B))) =?
+---
+> Intersection ( l , RightPart ( M ) ) = B
+> Intersection ( l , LeftPart ( M ) ) = A
+> Range ( -9 / Abs ( LineSegmentOf ( F , B ) ) +1 / Abs ( LineSegmentOf ( F , A ) ) ) = ?
+
+Comparison Result:
+Common: 9
+Gold Sentences: 12
+Predicted Sentences: 11
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$F$是抛物线$C$ : $y ^ {2 } =2 p x ( p >0 ) $的焦点，$C$的准线与$x$轴交于点$A$，过点$A$作曲线$C$的一条切线$A B$，若切点$B$在第一象限内，$D$为$C$上第四象限内的一点，且$D F / / A B$，则$ \ frac { | A B | } { | D F | } $ = ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Parabola
+D: Point
+F: Point
+p: Number
+Expression(C) = (y^2 = 2*(p*x))
+Focus(C) = F
+Intersection(Directrix(C), xAxis) = A
+PointOnCurve(D,C)
+Quadrant(B)=1
+TangentOfPoint(A,C)=LineOf(A,B)
+TangentPoint(LineOf(A,B),C)=B
+p>0
+Abs(LineSegmentOf(A, B))/Abs(LineSegmentOf(D, F)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ D : Point 
+ F : Point 
+ p : Number 
+ Expression ( C ) = ( y ^2 =2 * ( p * x ) ) 
+ Focus ( C ) = F 
+ Intersection ( Directrix ( C ) , xAxis ) = A 
+ IsParallel ( LineSegmentOf ( D , F ) , LineSegmentOf ( A , B ) ) 
+ PointOnCurve ( D , C ) 
+ Quadrant ( B ) =1 
+ Quadrant ( D ) =4 
+ TangentOfPoint ( A , C ) = LineOf ( A , B ) 
+ TangentPoint ( LineOf ( A , B ) , C ) = B 
+ p >0 
+ Abs ( LineSegmentOf ( A , B ) ) / Abs ( LineSegmentOf ( D , F ) ) = ?
+
+Diff Result (< pred, > gold):
+> IsParallel ( LineSegmentOf ( D , F ) , LineSegmentOf ( A , B ) )
+> Quadrant ( D ) =4
+
+Comparison Result:
+Common: 15
+Gold Sentences: 17
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$E$的中心为原点，$P (3 ,0 ) $是$E$的焦点，过$F$的直线$l$与$E$相交于$A$，$B$两点，且$A B$的中点为$N ( -12 , -15 ) $，则$E$的方程式为 ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+E: Hyperbola
+F: Point
+N: Point
+O: Origin
+P: Point
+l: Line
+Center(E) = O
+Coordinate(F) = (3, 0)
+Coordinate(N) = (-12, -15)
+Intersection(l, E) = {A, B}
+MidPoint(LineSegmentOf(A, B)) = N
+OneOf(Focus(E)) = P
+PointOnCurve(F, l)
+Expression(E) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ E : Hyperbola 
+ F : Point 
+ N : Point 
+ O : Origin 
+ P : Point 
+ l : Line 
+ Center ( E ) = O 
+ Coordinate ( N ) = ( -12 , -15 ) 
+ Coordinate ( P ) = (3 ,0 ) 
+ Focus ( E ) = P 
+ Intersection ( l , E ) = { A , B } 
+ MidPoint ( LineSegmentOf ( A , B ) ) = N 
+ PointOnCurve ( F , l ) 
+ Expression ( E ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(F) = (3, 0)
+< OneOf(Focus(E)) = P
+---
+> Coordinate ( P ) = (3 ,0 )
+> Focus ( E ) = P
+
+Comparison Result:
+Common: 14
+Gold Sentences: 16
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$F_ {1 } $、$F_ {2 } $是双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a , b >0 ) $的左、右焦点，过$F_ {2 } $的直线交双曲线的右支于$A$、$B$两点，且$ | A F_ {1 } | =2 | A F_ {2 } | $，$ \ angle A F_ {1 } F_ {2 } = \ angle F_ {1 } B F_ {2 } $，则双曲线$C$的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Hyperbola
+F1: Point
+F2: Point
+G: Line
+a: Number
+b: Number
+Abs(LineSegmentOf(A, F1)) = 2*Abs(LineSegmentOf(A, F2))
+AngleOf(A, F1, F2) = AngleOf(F1, B, F2)
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(G, RightPart(C)) = {A, B}
+LeftFocus(C) = F1
+PointOnCurve(F2, G)
+RightFocus(C) = F2
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ G : Line 
+ a : Number 
+ b : Number 
+ Abs ( LineSegmentOf ( A , F1 ) ) =2 * Abs ( LineSegmentOf ( A , F2 ) ) 
+ AngleOf ( A , F1 , F2 ) = AngleOf ( F1 , B , F2 ) 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( G , RightPart ( C ) ) = { A , B } 
+ LeftFocus ( C ) = F1 
+ PointOnCurve ( F2 , G ) 
+ RightFocus ( C ) = F2 
+ a > b 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< a>0
+---
+> a > b
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$F$是双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1$的右焦点，点$A$、$B$分别在其两条渐近线上，且满足$ \ overrightarrow { B F } =2 \ overrightarrow { F A } $ , $ \ overrightarrow { O A } \ cdot \ overrightarrow { A B } =0 $（ $O$为坐标原点），则该双曲线的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+G: Hyperbola
+L1:Line
+L2:Line
+O: Origin
+Asymptote(G)={L1,L2}
+DotProduct(VectorOf(O, A), VectorOf(A, B)) = 0
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+PointOnCurve(A,L1)
+PointOnCurve(B,L2)
+RightFocus(G) = F
+VectorOf(B, F) = 2*VectorOf(F, A)
+Eccentricity(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Hyperbola 
+ L1 : Line 
+ L2 : Line 
+ O : Origin 
+ a : Number 
+ b : Number 
+ Asymptote ( G ) = { L1 , L2 } 
+ DotProduct ( VectorOf ( O , A ) , VectorOf ( A , B ) ) =0 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ PointOnCurve ( A , L1 ) 
+ PointOnCurve ( B , L2 ) 
+ RightFocus ( G ) = F 
+ VectorOf ( B , F ) =2 * VectorOf ( F , A ) 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+---
+> a : Number
+> b : Number
+> Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 )
+
+Comparison Result:
+Common: 14
+Gold Sentences: 17
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C : \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左右焦点分别为$F_ {1 } $、$F_ {2 } $，过$F_ {1 } $的直线与$C$的两条渐近线分别交于$A$ 、 $B$两点，若$3 \ overrightarrow { F_ {1 } A } =2 \ overrightarrow { A B } $ , $ \ overrightarrow { F_ {1 } B } \ cdot \ overrightarrow { F_ {2 } B } =0$，则$C$的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Hyperbola
+F1: Point
+F2: Point
+G: Line
+L1:Line
+L2:Line
+a: Number
+b: Number
+Asymptote(C)={L1,L2}
+DotProduct(VectorOf(F1, B), VectorOf(F2, B)) = 0
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(G,L1)=A
+Intersection(G,L2)=B
+LeftFocus(C) = F1
+PointOnCurve(F1,G)
+RightFocus(C) = F2
+VectorOf(F1, A) = 3*VectorOf(A, B)
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ a : Number 
+ b : Number 
+ l1 , l2 : Line 
+ l : Line 
+3 * VectorOf ( F1 , A ) =2 * VectorOf ( A , B ) 
+ Asymptote ( C ) = { l1 , l2 } 
+ DotProduct ( VectorOf ( F1 , B ) , VectorOf ( F2 , B ) ) =0 
+ Expression ( C ) = ( x ^2 / a ^2 - y ^2 / b ^2 =1 ) 
+ Intersection ( l , l1 ) = A 
+ Intersection ( l , l2 ) = B 
+ LeftFocus ( C ) = F1 
+ PointOnCurve ( F1 , l ) 
+ RightFocus ( C ) = F2 
+ a >0 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< VectorOf(F1, A) = 3*VectorOf(A, B)
+---
+> 3 * VectorOf ( F1 , A ) =2 * VectorOf ( A , B )
+
+Comparison Result:
+Common: 21
+Gold Sentences: 22
+Predicted Sentences: 22
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的左、右焦点分别为$F_ {1 } $、$F_ {2 } $，点$M$、$N$分别在双曲线的左右两支上，且$M N / / F_ {1 } F_ {2 } $ , $ | M N | = \ frac {1 } {2 } | F_ {1 } F_ {2 } | $ , 线段$F_ {1 } N$交双曲线$C$于点$Q$，$ | F_ {1 } Q | = \ frac {2 } {5 } | F_ {1 } N | $，则该双曲线的离心率是 ? 
+
+Predicted Annotation:
+C: Hyperbola
+F1: Point
+F2: Point
+M: Point
+N: Point
+Q: Point
+a: Number
+b: Number
+Abs(LineSegmentOf(M, N)) = Abs(LineSegmentOf(F1, Q))/2*Abs(LineSegmentOf(F1, N))
+Abs(LineSegmentOf(F1, Q)) = 2*Abs(LineSegmentOf(F1, N))/5
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(LineSegmentOf(F1, N), C) = Q
+LeftFocus(C) = F1
+LeftPart(C) = LineSegmentOf(M, N)
+PointOnCurve(M, LeftPart(C))
+PointOnCurve(N, RightPart(C))
+RightFocus(C) = F2
+a>0
+b>0
+Eccentricity(C) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ M : Point 
+ N : Point 
+ Q : Point 
+ a : Number 
+ b : Number 
+ Abs ( LineSegmentOf ( F1 , Q ) ) = (2 /5 ) * Abs ( LineSegmentOf ( F1 , N ) ) 
+ Abs ( LineSegmentOf ( M , N ) ) = Abs ( LineSegmentOf ( F1 , F2 ) ) /2 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( LineSegmentOf ( F1 , N ) , C ) = Q 
+ IsParallel ( LineSegmentOf ( M , N ) , LineSegmentOf ( F1 , F2 ) ) = True 
+ LeftFocus ( C ) = F1 
+ PointOnCurve ( M , LeftPart ( C ) ) = True 
+ PointOnCurve ( N , RightPart ( C ) ) = True 
+ RightFocus ( C ) = F2 
+ a >0 
+ b >0 
+ Eccentricity ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Abs(LineSegmentOf(M, N)) = Abs(LineSegmentOf(F1, Q))/2*Abs(LineSegmentOf(F1, N))
+< LeftPart(C) = LineSegmentOf(M, N)
+---
+> Abs ( LineSegmentOf ( M , N ) ) = Abs ( LineSegmentOf ( F1 , F2 ) ) /2
+> IsParallel ( LineSegmentOf ( M , N ) , LineSegmentOf ( F1 , F2 ) ) = True
+
+Comparison Result:
+Common: 18
+Gold Sentences: 20
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$C_ {1 } $ : $ \ frac { x ^ {2 } } {36 } + \ frac { y ^ {2 } } { b ^ {2 } } =1$的焦点分别为$F_ {1 } $、$F_ {2 } $，且$F_ {2 } $是抛物线$C_ {2 } $ : $y ^ {2 } =2 p x ( p >0 ) $焦点，若$P$是$C_ {1 } $与$C_ {2 } $的交点，且$ | P F_ {1 } | =7$ , 则$ \ cos \ angle P F_ {1 } F_ {2 } $的值为 ? 
+
+Predicted Annotation:
+C1: Ellipse
+C2: Parabola
+F1: Point
+F2: Point
+P: Point
+b: Number
+p: Number
+Abs(LineSegmentOf(P, F1)) = 7
+Expression(C1) = (x^2/36 + y^2/b^2 = 1)
+Expression(C2) = (y^2 = 2*(p*x))
+Focus(C1) = F1
+Focus(C2) = F2
+Intersection(C1, C2) = P
+p>0
+Cos(AngleOf(P, F1, F2)) =?
+
+
+Gold Annotation:
+C1 : Ellipse 
+ C2 : Parabola 
+ F1 : Point 
+ F2 : Point 
+ P : Point 
+ b : Number 
+ p : Number 
+ Abs ( LineSegmentOf ( P , F1 ) ) =7 
+ Expression ( C1 ) = ( x ^2 /36 + y ^2 / b ^2 =1 ) 
+ Expression ( C2 ) = ( y ^2 =2 * p * x ) 
+ Focus ( C1 ) = { F1 , F2 } 
+ Focus ( C2 ) = F2 
+ Intersection ( C1 , C2 ) = P 
+ p >0 
+ Cos ( AngleOf ( P , F1 , F2 ) ) = ?
+
+Diff Result (< pred, > gold):
+< Focus(C1) = F1
+---
+> Focus ( C1 ) = { F1 , F2 }
+
+Comparison Result:
+Common: 14
+Gold Sentences: 15
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$E$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $ , $ A $ , $B$分别是它的右顶点和上顶点，$M$是椭圆$E$上的一点，过$M$向$x$轴作垂线恰好通过椭圆的左焦点$F_ {1 } $，若$A B / / O M$，则椭圆$E$的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+E: Ellipse
+F1: Point
+L:Line
+M: Point
+a: Number
+b: Number
+Expression(E) = (y^2/b^2 + x^2/a^2 = 1)
+IsPerpendicular(L,xAxis)
+LeftFocus(E)=F1
+PointOnCurve(M, E)
+PointOnCurve(F1,L)
+RightVertex(E)=A
+UpperVertex(E)=B
+a > b
+b > 0
+Eccentricity(E) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ E : Ellipse 
+ F1 : Point 
+ L : Line 
+ M : Point 
+ O : Origin 
+ a : Number 
+ b : Number 
+ Expression ( E ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsParallel ( LineSegmentOf ( A , B ) , LineSegmentOf ( O , M ) ) 
+ IsPerpendicular ( L , xAxis ) 
+ LeftFocus ( E ) = F1 
+ PointOnCurve ( F1 , L ) 
+ PointOnCurve ( M , E ) 
+ PointOnCurve ( M , L ) 
+ RightVertex ( E ) = A 
+ UpperVertex ( E ) = B 
+ a > b 
+ b >0 
+ Eccentricity ( E ) = ?
+
+Diff Result (< pred, > gold):
+> O : Origin
+> IsParallel ( LineSegmentOf ( A , B ) , LineSegmentOf ( O , M ) )
+> PointOnCurve ( M , L )
+
+Comparison Result:
+Common: 18
+Gold Sentences: 21
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+直线$l$的方程为$y = x +3$，在$l$上任意取一点$P$，若过点$P$且以双曲线$12 x ^ {2 } -4 y ^ {2 } =3$的焦点为椭圆的焦点作椭圆，那么具有最短长轴的椭圆方程为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Ellipse
+P: Point
+l: Line
+Expression(G) = (12*x^2 - 4*y^2 = 3)
+Expression(l) = (y = x + 3)
+Focus(G) = Focus(H)
+PointOnCurve(P, l)
+PointOnCurve(P, H)
+Expression(MinorAxis(H)) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Ellipse 
+ P : Point 
+ l : Line 
+ Expression ( G ) = (12 * x ^2 -4 * y ^2 =3 ) 
+ Expression ( l ) = ( y = x +3 ) 
+ Focus ( G ) = Focus ( H ) 
+ PointOnCurve ( P , H ) 
+ PointOnCurve ( P , l ) 
+ WhenMin ( MajorAxis ( H ) ) 
+ Expression ( H ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(MinorAxis(H)) =?
+---
+> WhenMin ( MajorAxis ( H ) )
+> Expression ( H ) = ?
+
+Comparison Result:
+Common: 9
+Gold Sentences: 11
+Predicted Sentences: 10
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若点$O$和点$F$分别为椭圆$ \ frac { x ^ {2 } } {4 } + \ frac { y ^ {2 } } {3 } =1$的中心和左焦点，点$P$为椭圆上任意一点，则$ \ overrightarrow { O P } \ cdot \ overrightarrow { F P } $的取值范围 ( 答案用区间形式表示 ) ? 
+
+Predicted Annotation:
+F: Point
+G: Ellipse
+O: Origin
+P: Point
+Center(G)=O
+Expression(G) = (x^2/4 + y^2/3 = 1)
+LeftFocus(G)=F
+PointOnCurve(P, G)
+Range(DotProduct(VectorOf(O, P), VectorOf(F, P))) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Ellipse 
+ O : Point 
+ P : Point 
+ Center ( G ) = O 
+ Expression ( G ) = ( x ^2 /4 + y ^2 /3 =1 ) 
+ LeftFocus ( G ) = F 
+ PointOnCurve ( P , G ) 
+ Range ( DotProduct ( VectorOf ( O , P ) , VectorOf ( F , P ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< O: Origin
+< Center(G)=O
+< Range(DotProduct(VectorOf(O, P), VectorOf(F, P))) =?
+---
+> O : Point
+> Center ( G ) = O
+> Range ( DotProduct ( VectorOf ( O , P ) , VectorOf ( F , P ) ) ) = ?
+
+Comparison Result:
+Common: 6
+Gold Sentences: 9
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$m ( x ^ {2 } + y ^ {2 } +2 y +1 ) = ( x -2 y +3 ) ^2$表示的曲线为一个椭圆，则$m$的取值范围是 ? 
+
+Predicted Annotation:
+G: Ellipse
+H: Curve
+m:Number
+Expression(H)=(x-2*y+3)^2
+Expression(G)=(m+(2*y)+x^2+y^2+1)=0
+H=G
+Range(m) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ H : Curve 
+ m : Number 
+ Expression ( H ) = ( m * ( x ^2 + y ^2 +2 * y +1 ) = ( x -2 * y +3 ) ^2 ) 
+ G = H 
+ Range ( m ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(H)=(x-2*y+3)^2
+< Expression(G)=(m+(2*y)+x^2+y^2+1)=0
+---
+> Expression ( H ) = ( m * ( x ^2 + y ^2 +2 * y +1 ) = ( x -2 * y +3 ) ^2 )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 7
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设$F_ {1 } $、$F_ {2 } $分别是椭圆$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的左右焦点，$B$为椭圆的下顶点，$P$为过点$F_ {1 } $、$F_ {2 } $、$B$的圆与椭圆$C$的一个交点，且$P F_ {1 } \ perp F_ {1 } F_ {2 } $，则$ \ frac { b } { a } $的值为 ? 
+
+Predicted Annotation:
+B: Point
+C: Ellipse
+F1: Point
+F2: Point
+G: Circle
+P: Point
+a: Number
+b: Number
+Expression(C) = (y^2/b^2 + x^2/a^2 = 1)
+IsPerpendicular(LineSegmentOf(P, F1), LineSegmentOf(F1, F2))
+LeftFocus(C) = F1
+LowerVertex(C) = B
+PointOnCurve(B, G)
+PointOnCurve(F1, G)
+PointOnCurve(F2, G)
+PointOnCurve(P, G)
+RightFocus(C) = F2
+a > b
+b > 0
+b/a =?
+
+
+Gold Annotation:
+B : Point 
+ C : Ellipse 
+ F1 : Point 
+ F2 : Point 
+ G : Circle 
+ P : Point 
+ a : Number 
+ b : Number 
+ Expression ( C ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( G , C ) = P 
+ IsPerpendicular ( LineSegmentOf ( P , F1 ) , LineSegmentOf ( F1 , F2 ) ) 
+ LeftFocus ( C ) = F1 
+ LowerVertex ( C ) = B 
+ PointOnCurve ( B , G ) 
+ PointOnCurve ( F1 , G ) 
+ PointOnCurve ( F2 , G ) 
+ RightFocus ( C ) = F2 
+ a > b 
+ b >0 
+ b / a = ?
+
+Diff Result (< pred, > gold):
+< PointOnCurve(P, G)
+---
+> Intersection ( G , C ) = P
+
+Comparison Result:
+Common: 19
+Gold Sentences: 20
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$P$是双曲线$C_ {1 } $ : $ \ frac { x ^ {2 } } { a ^ {2 } } - y ^ {2 } =1 ( a >0 ) $右支上的任意一点，$Q$是圆$C_ {2 } : x ^ {2 } + y ^ {2 } -6 y +8 =0$上任意一点，若$ | P Q | $最短时，点$P$的纵坐标为$1$，则双曲线的离心率为 ? 
+
+Predicted Annotation:
+C1: Hyperbola
+C2: Circle
+P: Point
+Q: Point
+a: Number
+Expression(C1) = (-y^2 + x^2/a^2 = 1)
+Expression(C2) = (-6*y + x^2 + y^2 + 8 = 0)
+PointOnCurve(P, RightPart(C1))
+PointOnCurve(Q, C2)
+WhenMin(Abs(LineSegmentOf(P, Q)))
+YCoordinate(P) = 1
+a>0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+C1 : Hyperbola 
+ C2 : Circle 
+ P : Point 
+ Q : Point 
+ a : Number 
+ Expression ( C1 ) = ( x ^2 / a ^2 - y ^2 =1 ) 
+ Expression ( C2 ) = ( x ^2 + y ^2 -6 * y +8 =0 ) 
+ PointOnCurve ( P , RightPart ( C1 ) ) = True 
+ PointOnCurve ( Q , C2 ) = True 
+ WhenMin ( Abs ( LineSegmentOf ( P , Q ) ) ) = True 
+ YCoordinate ( P ) =1 
+ a >0 
+ Eccentricity ( C1 ) = ?
+
+Diff Result (< pred, > gold):
+< Eccentricity(G) =?
+---
+> Eccentricity ( C1 ) = ?
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆中心在原点，一个焦点为$ ( \ sqrt {3 } ,0 ) $，且长轴长是短轴长的$2$倍，则该椭圆的标准方程是 ? 
+
+Predicted Annotation:
+G: Ellipse
+O: Origin
+Center(G) = O
+Coordinate(OneOf(Focus(G))) = (sqrt(3), 0)
+Length(MajorAxis(G)) = 2*Length(MinorAxis(G))
+Expression(G) =?
+
+
+Gold Annotation:
+F : Point 
+ G : Ellipse 
+ O : Origin 
+ Center ( G ) = O 
+ Coordinate ( F ) = ( sqrt (3 ) ,0 ) 
+ Length ( MajorAxis ( G ) ) = Length ( MinorAxis ( G ) ) *2 
+ OneOf ( Focus ( G ) ) = F 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(OneOf(Focus(G))) = (sqrt(3), 0)
+---
+> F : Point
+> Coordinate ( F ) = ( sqrt (3 ) ,0 )
+> OneOf ( Focus ( G ) ) = F
+
+Comparison Result:
+Common: 5
+Gold Sentences: 8
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若双曲线的一条渐近线为$x +2 y =0$，且双曲线与抛物线$y = x ^ {2 } $的准线仅有一个公共点，则此双曲线的标准方程为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Parabola
+Expression(Directrix(G)) = (y = x^2)
+Expression(OneOf(Asymptote(G))) = (x + 2*y = 0)
+NumIntersection(G, Directrix(H)) = 1
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ H : Parabola 
+ Expression ( H ) = ( y = x ^2 ) 
+ Expression ( OneOf ( Asymptote ( G ) ) ) = ( x +2 * y =0 ) 
+ NumIntersection ( G , Directrix ( H ) ) =1 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Expression(Directrix(G)) = (y = x^2)
+---
+> Expression ( H ) = ( y = x ^2 )
+
+Comparison Result:
+Common: 5
+Gold Sentences: 6
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设$m >0$，点$A (4 , m ) $为抛物线$y ^ {2 } =2 p x ( p >0 ) $上一点，$F$为焦点，以$A$为圆心$ | A F | $为半径的圆$C$被$y$轴截得的弦长为$6$，则圆$C$的标准方程为 ? 
+
+Predicted Annotation:
+A: Point
+C: Circle
+F: Point
+G: Parabola
+m: Number
+p: Number
+Center(C)=A
+Coordinate(A) = (4, m)
+Expression(G) = (y^2 = 2*(p*x))
+Focus(G) = F
+Length(InterceptChord(yAxis,C))=6
+PointOnCurve(A, G)
+Radius(C)=Abs(LineSegmentOf(A,F))
+m>0
+p>0
+Expression(C) =?
+
+
+Gold Annotation:
+A : Point 
+ C : Circle 
+ F : Point 
+ G : Parabola 
+ m : Number 
+ p : Number 
+ Center ( C ) = A 
+ Coordinate ( A ) = (4 , m ) 
+ Expression ( G ) = ( y ^2 =2 * ( p * x ) ) 
+ Focus ( G ) = F 
+ Length ( InterceptChord ( C , yAxis ) ) =6 
+ PointOnCurve ( A , G ) 
+ Radius ( C ) = Abs ( LineSegmentOf ( A , F ) ) 
+ m >0 
+ p >0 
+ Expression ( C ) = ?
+
+Diff Result (< pred, > gold):
+< Length(InterceptChord(yAxis,C))=6
+---
+> Length ( InterceptChord ( C , yAxis ) ) =6
+
+Comparison Result:
+Common: 15
+Gold Sentences: 16
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的两条渐近线均与圆$C$ : $x ^ {2 } + y ^ {2 } -8 x +12 =0$相切，且双曲线的右焦点为圆$C$的圆心，则双曲线的方程为 ? 
+
+Predicted Annotation:
+C: Circle
+G: Hyperbola
+a: Number
+b: Number
+l1: Line
+l2: Line
+Asymptote(G) = {l1, l2}
+Expression(C) = (-8*x + x^2 + y^2 + 12 = 0)
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+IsTangent(l1, C)
+IsTangent(l2, C)
+RightFocus(G) = Center(C)
+a>0
+b>0
+Expression(G) =?
+
+
+Gold Annotation:
+C : Circle 
+ G : Hyperbola 
+ a : Number 
+ b : Number 
+ Expression ( C ) = ( -8 * x + x ^2 + y ^2 +12 =0 ) 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsTangent ( Asymptote ( G ) , C ) 
+ RightFocus ( G ) = Center ( C ) 
+ a >0 
+ b >0 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< l1: Line
+< l2: Line
+< Asymptote(G) = {l1, l2}
+< IsTangent(l1, C)
+< IsTangent(l2, C)
+---
+> IsTangent ( Asymptote ( G ) , C )
+
+Comparison Result:
+Common: 10
+Gold Sentences: 11
+Predicted Sentences: 15
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设抛物线$K$ : $x ^ {2 } =4 y$的焦点为$F$、$A$、$B$为$K$上纵坐标不相等的两点，满足$ | A F | + | B F | =4$，则线段$A B$的中垂线被$y$轴截得的截距为 ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+F: Point
+K: Parabola
+Abs(LineSegmentOf(A, F)) + Abs(LineSegmentOf(B, F)) = 4
+Expression(K) = (x^2 = 4*y)
+Focus(K) = F
+Negation(A = B)
+PointOnCurve(A, K)
+PointOnCurve(B, K)
+PerpendicularBisector(LineSegmentOf(A, B)) = yAxis
+Intercept(yAxis, LineSegmentOf(A, B)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ K : Parabola 
+ Abs ( LineSegmentOf ( A , F ) ) + Abs ( LineSegmentOf ( B , F ) ) =4 
+ Expression ( K ) = ( x ^2 =4 * y ) 
+ Focus ( K ) = F 
+ Negation ( YCoordinate ( A ) = YCoordinate ( B ) ) 
+ PointOnCurve ( A , K ) 
+ PointOnCurve ( B , K ) 
+ Length ( Intercept ( PerpendicularBisector ( LineSegmentOf ( A , B ) ) , yAxis ) ) = ?
+
+Diff Result (< pred, > gold):
+< Negation(A = B)
+< PerpendicularBisector(LineSegmentOf(A, B)) = yAxis
+< Intercept(yAxis, LineSegmentOf(A, B)) =?
+---
+> Negation ( YCoordinate ( A ) = YCoordinate ( B ) )
+> Length ( Intercept ( PerpendicularBisector ( LineSegmentOf ( A , B ) ) , yAxis ) ) = ?
+
+Comparison Result:
+Common: 9
+Gold Sentences: 11
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知点$F$为双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a , b >0 ) $的右焦点，直线$y = k x$ , $k \ in [ \ frac { \ sqrt {3 } } {3 } , \ sqrt {3 } ] $与双曲线$C$，交于$A$、$B$两点，若$A F \ perp B F$，则该双曲线的离心率的取值范围是 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Hyperbola
+F: Point
+G: Line
+a: Number
+b: Number
+k: Number
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(G) = (y = k*x)
+Intersection(G, C) = {A, B}
+IsPerpendicular(LineSegmentOf(A, F), LineSegmentOf(B, F))
+RightFocus(C) = F
+a>0
+b>0
+k = (sqrt(3)/3)*(1 - 1/3)
+Range(Eccentricity(C)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Hyperbola 
+ F : Point 
+ G : Line 
+ a : Number 
+ b : Number 
+ k : Number 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( G ) = ( y = k * x ) 
+ In ( k , [ sqrt (3 ) /3 , sqrt (3 ) ] ) 
+ Intersection ( G , C ) = { A , B } 
+ IsPerpendicular ( LineSegmentOf ( A , F ) , LineSegmentOf ( B , F ) ) 
+ RightFocus ( C ) = F 
+ a >0 
+ b >0 
+ Range ( Eccentricity ( C ) ) = ?
+
+Diff Result (< pred, > gold):
+< k = (sqrt(3)/3)*(1 - 1/3)
+---
+> In ( k , [ sqrt (3 ) /3 , sqrt (3 ) ] )
+
+Comparison Result:
+Common: 16
+Gold Sentences: 17
+Predicted Sentences: 17
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若一个圆的圆心是抛物线$x ^ {2 } =4 y$的焦点，且被直线$y = x +3$截得的弦长为$2$，则该圆的标准方程是 ? 
+
+Predicted Annotation:
+G: Parabola
+H: Circle
+L: Line
+Center(H)=Focus(G)
+Expression(G) = (x^2 = 4*y)
+Expression(L) = (y = x + 3)
+Length(InterceptChord(L,G))=2
+Expression(H) =?
+
+
+Gold Annotation:
+G : Parabola 
+ H : Circle 
+ I : Line 
+ Center ( H ) = Focus ( G ) 
+ Expression ( G ) = ( x ^2 =4 * y ) 
+ Expression ( I ) = ( y = x +3 ) 
+ Length ( InterceptChord ( I , H ) ) =2 
+ Expression ( H ) = ?
+
+Diff Result (< pred, > gold):
+< Length(InterceptChord(L,G))=2
+---
+> Length ( InterceptChord ( I , H ) ) =2
+
+Comparison Result:
+Common: 7
+Gold Sentences: 8
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } { t } + y ^ {2 } =1 ( t >1 ) $的一焦点与短轴两端点形成的三角形的面积为$1$，则$t$ = ? 
+
+Predicted Annotation:
+G: Ellipse
+P1: Point
+P2: Point
+P: Point
+t: Number
+Endpoint(MinorAxis(G)) = {P1, P2}
+Expression(G) = (y^2 + x^2/t = 1)
+Area(TriangleOf(OneOf(Focus(G)), P1, P2)) = 1
+t>1
+t =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Ellipse 
+ t : Number 
+ Area ( TriangleOf ( F , A , B ) ) =1 
+ Endpoint ( MinorAxis ( G ) ) = { A , B } 
+ Expression ( G ) = ( y ^2 + x ^2 / t =1 ) 
+ OneOf ( Focus ( G ) ) = F 
+ t >1 
+ t = ?
+
+Diff Result (< pred, > gold):
+< Area(TriangleOf(OneOf(Focus(G)), P1, P2)) = 1
+---
+> Area ( TriangleOf ( F , A , B ) ) =1
+> OneOf ( Focus ( G ) ) = F
+
+Comparison Result:
+Common: 9
+Gold Sentences: 11
+Predicted Sentences: 10
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$O$为坐标原点，双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的右焦点为$F$，以$O F$为直径的圆交双曲线的一条渐近线于异于原点的$A$，若点$A$与$O F$中点的连线与$O F$垂直，则双曲线的离心率$e$为 ? 
+
+Predicted Annotation:
+A: Point
+F: Point
+G: Hyperbola
+H: Circle
+O: Origin
+a: Number
+b: Number
+e: Number
+Eccentricity(G) = e
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Intersection(H, OneOf(Asymptote(G))) = A
+IsDiameter(LineSegmentOf(O,F),H)
+IsPerpendicular(LineSegmentOf(A,O),LineSegmentOf(O,F))
+Negation(A=O)
+RightFocus(G) = F
+a>0
+b>0
+e =?
+
+
+Gold Annotation:
+A : Point 
+ F : Point 
+ G : Hyperbola 
+ H : Circle 
+ O : Origin 
+ a : Number 
+ b : Number 
+ e : Number 
+ Eccentricity ( G ) = e 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Intersection ( OneOf ( Asymptote ( G ) ) , H ) = A 
+ IsDiameter ( LineSegmentOf ( O , F ) , H ) 
+ IsPerpendicular ( LineSegmentOf ( A , MidPoint ( LineSegmentOf ( O , F ) ) ) , LineSegmentOf ( O , F ) ) 
+ Negation ( A = O ) 
+ RightFocus ( G ) = F 
+ a >0 
+ b >0 
+ e = ?
+
+Diff Result (< pred, > gold):
+< IsPerpendicular(LineSegmentOf(A,O),LineSegmentOf(O,F))
+---
+> IsPerpendicular ( LineSegmentOf ( A , MidPoint ( LineSegmentOf ( O , F ) ) ) , LineSegmentOf ( O , F ) )
+
+Comparison Result:
+Common: 17
+Gold Sentences: 18
+Predicted Sentences: 18
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+抛物线$y ^ {2 } =2 p x ( p >0 ) $的焦点为$F$，已知点$A$ , $B$为抛物线上的两个动点，且满足$ \ angle A F B =60 ^ { \ circ } $ . 过弦$AB$的中点$M$作拋物线准线的垂线$MN$，垂足为$N$，则$ \ frac { | M N | } { | A B | } $的最大值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F: Point
+G: Parabola
+M: Point
+N: Point
+p: Number
+AngleOf(A, F, B) = ApplyUnit(60, degree)
+Expression(G) = (y^2 = 2*(p*x))
+Focus(G) = F
+FootPoint(Directrix(G),LineOf(M,N))=N
+IsChordOf(LineSegmentOf(A,B),G)
+IsPerpendicular(Directrix(G),LineOf(M,N))
+MidPoint(LineSegmentOf(A,B))=M
+PointOnCurve(A,G)
+PointOnCurve(B,G)
+PointOnCurve(M,LineOf(M,N))
+p>0
+Max(Abs(LineSegmentOf(M, N))/Abs(LineSegmentOf(A, B))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Parabola 
+ M : Point 
+ N : Point 
+ p : Number 
+ AngleOf ( A , F , B ) = ApplyUnit (60 , degree ) 
+ Expression ( G ) = ( y ^2 =2 * p * x ) 
+ Focus ( G ) = F 
+ FootPoint ( LineSegmentOf ( M , N ) , Directrix ( G ) ) = N 
+ IsChordOf ( LineSegmentOf ( A , B ) , G ) 
+ IsPerpendicular ( LineSegmentOf ( M , N ) , Directrix ( G ) ) 
+ MidPoint ( LineSegmentOf ( A , B ) ) = M 
+ PointOnCurve ( A , G ) 
+ PointOnCurve ( B , G ) 
+ PointOnCurve ( M , LineSegmentOf ( M , N ) ) 
+ p >0 
+ Max ( Abs ( LineSegmentOf ( M , N ) ) / Abs ( LineSegmentOf ( A , B ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< FootPoint(Directrix(G),LineOf(M,N))=N
+< IsPerpendicular(Directrix(G),LineOf(M,N))
+< PointOnCurve(M,LineOf(M,N))
+---
+> FootPoint ( LineSegmentOf ( M , N ) , Directrix ( G ) ) = N
+> IsPerpendicular ( LineSegmentOf ( M , N ) , Directrix ( G ) )
+> PointOnCurve ( M , LineSegmentOf ( M , N ) )
+
+Comparison Result:
+Common: 16
+Gold Sentences: 19
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知圆$ ( x -2 ) ^ {2 } + y ^ {2 } =4$ , 则过抛物线$y ^ {2 } =4 x$焦点的直线与已知圆相交的最短弦长等于 ? 
+
+Predicted Annotation:
+G: Parabola
+H: Circle
+L: Line
+Expression(G) = (y^2 = 4*x)
+Expression(H) = (y^2 + (x - 2)^2 = 4)
+IsChordOf(L,H)
+PointOnCurve(Focus(G),L)
+Min(Length(InterceptChord(L,G))) =?
+
+
+Gold Annotation:
+C : Line 
+ G : Parabola 
+ H : Circle 
+ Expression ( G ) = ( y ^2 =4 * x ) 
+ Expression ( H ) = ( y ^2 + ( x -2 ) ^2 =4 ) 
+ PointOnCurve ( Focus ( G ) , C ) 
+ Min ( Length ( InterceptChord ( C , H ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< IsChordOf(L,H)
+< Min(Length(InterceptChord(L,G))) =?
+---
+> Min ( Length ( InterceptChord ( C , H ) ) ) = ?
+
+Comparison Result:
+Common: 6
+Gold Sentences: 7
+Predicted Sentences: 8
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+定长为$2$的线段$A B$的两个端点在抛物线$C$ : $y = x ^ {2 } $上运动，点$M$为线段$A B$的中点，则点$M$的轨迹方程为 ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+C: Parabola
+M: Point
+Endpoint(LineSegmentOf(A,B))={A,B}
+Expression(C) = (y = x^2)
+Length(LineSegmentOf(A,B)) = 2
+MidPoint(LineSegmentOf(A,B)) = M
+PointOnCurve(A,C)
+PointOnCurve(B,C)
+LocusEquation(M) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ M : Point 
+ P1 : Point 
+ P2 : Point 
+ Endpoint ( LineSegmentOf ( A , B ) ) = { P1 , P2 } 
+ Expression ( C ) = ( y = x ^2 ) 
+ Length ( LineSegmentOf ( A , B ) ) =2 
+ MidPoint ( LineSegmentOf ( A , B ) ) = M 
+ PointOnCurve ( P1 , C ) 
+ PointOnCurve ( P2 , C ) 
+ LocusEquation ( M ) = ?
+
+Diff Result (< pred, > gold):
+< Endpoint(LineSegmentOf(A,B))={A,B}
+< PointOnCurve(A,C)
+< PointOnCurve(B,C)
+---
+> P1 : Point
+> P2 : Point
+> Endpoint ( LineSegmentOf ( A , B ) ) = { P1 , P2 }
+> PointOnCurve ( P1 , C )
+> PointOnCurve ( P2 , C )
+
+Comparison Result:
+Common: 8
+Gold Sentences: 13
+Predicted Sentences: 11
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若双曲线的渐近线方程为$y = \ pm3 x$，它的一个焦点是$ ( \ sqrt {10 } ,0 ) $，则双曲线的方程是 ? 
+
+Predicted Annotation:
+G: Hyperbola
+H: Point
+Coordinate(H) = (sqrt(10), 0)
+Expression(Asymptote(G)) = (y = pm*(3*x))
+OneOf(Focus(G)) = H
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ Coordinate ( OneOf ( Focus ( G ) ) ) = ( sqrt (10 ) ,0 ) 
+ Expression ( Asymptote ( G ) ) = ( y = pm * (3 * x ) ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< H: Point
+< Coordinate(H) = (sqrt(10), 0)
+< OneOf(Focus(G)) = H
+---
+> Coordinate ( OneOf ( Focus ( G ) ) ) = ( sqrt (10 ) ,0 )
+
+Comparison Result:
+Common: 3
+Gold Sentences: 4
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的中心在原点，$F_ {1 } $、$F_ {2 } $分别为左、右焦点，$A$、$B$分别是椭圆的上顶点和右顶点，$P$是椭圆上一点，且$P F_ {1 } \ perp x$轴，$P F_ {2 } / / A B$，则此椭圆的离心率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F1: Point
+F2: Point
+G: Ellipse
+O: Origin
+P: Point
+a: Number
+b: Number
+Center(G) = O
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+IsPerpendicular(LineSegmentOf(P, F1), xAxis)
+IsPerpendicular(LineSegmentOf(P, F2), LineSegmentOf(A, B))
+LeftFocus(G) = F1
+PointOnCurve(P, G)
+RightFocus(G) = F2
+RightVertex(G) = B
+UpperVertex(G) = A
+a > b
+b > 0
+Eccentricity(G) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ O : Origin 
+ P : Point 
+ a : Number 
+ b : Number 
+ Center ( G ) = O 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ IsParallel ( LineSegmentOf ( P , F2 ) , LineSegmentOf ( A , B ) ) 
+ IsPerpendicular ( LineSegmentOf ( P , F1 ) , xAxis ) 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( P , G ) 
+ RightFocus ( G ) = F2 
+ RightVertex ( G ) = B 
+ UpperVertex ( G ) = A 
+ a > b 
+ b >0 
+ Eccentricity ( G ) = ?
+
+Diff Result (< pred, > gold):
+< IsPerpendicular(LineSegmentOf(P, F2), LineSegmentOf(A, B))
+---
+> IsParallel ( LineSegmentOf ( P , F2 ) , LineSegmentOf ( A , B ) )
+
+Comparison Result:
+Common: 20
+Gold Sentences: 21
+Predicted Sentences: 21
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过抛物线$y ^ {2 } = m x ( m >0 ) $的焦点$F$作斜率为$2 \ sqrt {2 } $的直线交抛物线于$A$、$B$两点，以$A B$为直径的圆与准线$l$有公共点$M$，若$ | M F | = \ sqrt {2 } $，则$ | A B | $ = ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+F: Point
+G: Parabola
+H: Circle
+L: Line
+M: Point
+l: Line
+m: Number
+Abs(LineSegmentOf(M, F)) = sqrt(2)
+Directrix(G) = l
+Expression(G) = (y^2 = m*x)
+Focus(G) = F
+Intersection(L, G) = {A, B}
+Intersection(L, H) = M
+IsDiameter(LineSegmentOf(A, B), H)
+PointOnCurve(F, L)
+Slope(L) = 2*sqrt(2)
+m>0
+Abs(LineSegmentOf(A, B)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Parabola 
+ H : Circle 
+ M : Point 
+ Z : Line 
+ l : Line 
+ m : Number 
+ Abs ( LineSegmentOf ( M , F ) ) = sqrt (2 ) 
+ Directrix ( G ) = l 
+ Expression ( G ) = ( y ^2 = m * x ) 
+ Focus ( G ) = F 
+ Intersection ( H , l ) = M 
+ Intersection ( Z , G ) = { A , B } 
+ IsDiameter ( LineSegmentOf ( A , B ) , H ) 
+ PointOnCurve ( F , Z ) 
+ Slope ( Z ) =2 * sqrt (2 ) 
+ m >0 
+ Abs ( LineSegmentOf ( A , B ) ) = ?
+
+Diff Result (< pred, > gold):
+< Intersection(L, H) = M
+---
+> Intersection ( H , l ) = M
+
+Comparison Result:
+Common: 19
+Gold Sentences: 20
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知$A (2 ,0 ) $ , $B (0 ,1 ) $是椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1$的两个顶点，直线$y = k x ( k >0 ) $与直线$A B$相交于点$D$，与椭圆相交于$E$、$F$两点，若$ \ overrightarrow { E D } =6 \ overrightarrow { D F } $，则斜率$k$的值为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+D: Point
+E: Point
+F: Point
+G: Ellipse
+H: Line
+a: Number
+b: Number
+k: Number
+Coordinate(A) = (2, 0)
+Coordinate(B) = (0, 1)
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+Expression(H) = (y = k*x)
+Intersection(H, LineOf(A, B)) = D
+Intersection(H, G) = {E, F}
+Vertex(G) = {A, B}
+VectorOf(E, D) = 6*VectorOf(D, F)
+k>0
+Slope(H) = k
+k =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ D : Point 
+ E : Point 
+ F : Point 
+ G : Ellipse 
+ H : Line 
+ a : Number 
+ b : Number 
+ k : Number 
+ Coordinate ( A ) = (2 ,0 ) 
+ Coordinate ( B ) = (0 ,1 ) 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( H ) = ( y = k * x ) 
+ In ( A , Vertex ( G ) ) 
+ In ( B , Vertex ( G ) ) 
+ Intersection ( H , G ) = { E , F } 
+ Intersection ( H , LineOf ( A , B ) ) = D 
+ Slope ( H ) = k 
+ VectorOf ( E , D ) =6 * VectorOf ( D , F ) 
+ k >0 
+ k = ?
+
+Diff Result (< pred, > gold):
+< Vertex(G) = {A, B}
+---
+> In ( A , Vertex ( G ) )
+> In ( B , Vertex ( G ) )
+
+Comparison Result:
+Common: 20
+Gold Sentences: 22
+Predicted Sentences: 21
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知三角形$A B C$的周长是$8$，顶点$B$、$C$的坐标分别为$ ( -1 ,0 ) $ , $ (1 ,0 ) $，则顶点$A$的轨迹方程为 ? 
+
+Predicted Annotation:
+ A: Point
+B: Point
+C: Point
+Coordinate(A) = (1, 0)
+Coordinate(B) = (-1, 0)
+Coordinate(C) = (1, 0)
+Perimeter(TriangleOf(A, B, C)) = 8
+Vertex(TriangleOf(A, B, C)) = {B, C}
+LocusEquation(A) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Point 
+ Coordinate ( B ) = ( -1 ,0 ) 
+ Coordinate ( C ) = (1 ,0 ) 
+ Perimeter ( TriangleOf ( A , B , C ) ) =8 
+ LocusEquation ( A ) = ?
+
+Diff Result (< pred, > gold):
+< Coordinate(A) = (1, 0)
+< Vertex(TriangleOf(A, B, C)) = {B, C}
+
+Comparison Result:
+Common: 7
+Gold Sentences: 7
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+若椭圆$ \ frac { x ^ {2 } } { m +2 } - \ frac { y ^ {2 } } { m } =1 ( -1 < m <0 ) $上的点到两焦点距离之和为$ \ frac {8 } {3 } $，则该椭圆的短轴长为 ? 
+
+Predicted Annotation:
+F1:Point
+F2:Point
+G: Ellipse
+P:Point
+m:Number
+-1<m
+Distance(P,F1)+Distance(P,F2)=8/3
+Expression(G) = (x^2/(m + 2) - y^2/m = 1)
+Focus(G)={F1,F2}
+PointOnCurve(P,G)
+m<0
+Length(MinorAxis(G)) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ P : Point 
+ m : Number 
+ Distance ( P , F1 ) + Distance ( P , F2 ) =8 /3 
+ Expression ( G ) = ( x ^2 / ( m +2 ) - y ^2 / m =1 ) 
+ Focus ( G ) = { F1 , F2 } 
+ PointOnCurve ( P , G ) 
+ m <0 
+ m > -1 
+ Length ( MinorAxis ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< -1<m
+---
+> m > -1
+
+Comparison Result:
+Common: 11
+Gold Sentences: 12
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$x ^ {2 } +3 y ^ {2 } =9$的左焦点为$F_ {1 } $，点$P$是椭圆上异于顶点的任意一点，$O$为坐标原点．若点$D$是线段$P F_ {1 } $的中点，则$ \ Delta F_ {1 } O D$的周长为 ? 
+
+Predicted Annotation:
+D: Point
+F1: Point
+G: Ellipse
+O: Origin
+P: Point
+Expression(G) = (x^2 + 3*y^2 = 9)
+LeftFocus(G) = F1
+MidPoint(LineSegmentOf(P,F1)) = D
+Negation(P=Vertex(G))
+PointOnCurve(P, G)
+Perimeter(TriangleOf(F1, O, D)) =?
+
+
+Gold Annotation:
+D : Point 
+ F1 : Point 
+ G : Ellipse 
+ O : Origin 
+ P : Point 
+ Expression ( G ) = ( x ^2 +3 * y ^2 =9 ) 
+ LeftFocus ( G ) = F1 
+ MidPoint ( LineSegmentOf ( P , F1 ) ) = D 
+ Negation ( In ( P , Vertex ( G ) ) ) 
+ PointOnCurve ( P , G ) 
+ Perimeter ( TriangleOf ( F1 , O , D ) ) = ?
+
+Diff Result (< pred, > gold):
+< Negation(P=Vertex(G))
+---
+> Negation ( In ( P , Vertex ( G ) ) )
+
+Comparison Result:
+Common: 10
+Gold Sentences: 11
+Predicted Sentences: 11
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+一动点到$y$轴距离比到点$ (2 ,0 ) $的距离小$2$ , 则此动点的轨迹方程为 ? 
+
+Predicted Annotation:
+G: Point
+H: Point
+P: Point
+Coordinate(G) = (2, 0)
+Distance(P, yAxis) = Distance(P, G) - 2
+LocusEquation(P) =?
+
+
+Gold Annotation:
+G : Point 
+ P : Point 
+ Coordinate ( G ) = (2 ,0 ) 
+ Distance ( P , G ) = Distance ( P , yAxis ) +2 
+ LocusEquation ( P ) = ?
+
+Diff Result (< pred, > gold):
+< H: Point
+< Distance(P, yAxis) = Distance(P, G) - 2
+---
+> Distance ( P , G ) = Distance ( P , yAxis ) +2
+
+Comparison Result:
+Common: 4
+Gold Sentences: 5
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+过点$M ( -1 ,0 ) $的直线$l$与抛物线$C$ : $y ^ {2 } =4 x$交于$A$、$B$两点 ( $A$在$M$、$B$之间 ) , $F$是抛物线$C$的焦点，若$S_ { \ triangle M B F } =4 S_ { \ triangle M A F } $，则$ \ triangle A B F$的面积为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Parabola
+F: Point
+M: Point
+l: Line
+Area(TriangleOf(M, B, F)) = 4*Area(TriangleOf(M, A, F))
+Coordinate(M) = (-1, 0)
+Expression(C) = (y^2 = 4*x)
+Focus(C) = F
+Intersection(l, C) = {A, B}
+PointOnCurve(M, l)
+Area(TriangleOf(A, B, F)) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Parabola 
+ F : Point 
+ M : Point 
+ l : Line 
+ Area ( TriangleOf ( M , B , F ) ) =4 * Area ( TriangleOf ( M , A , F ) ) 
+ Between ( A , M , B ) = True 
+ Coordinate ( M ) = ( -1 ,0 ) 
+ Expression ( C ) = ( y ^2 =4 * x ) 
+ Focus ( C ) = F 
+ Intersection ( l , C ) = { A , B } 
+ PointOnCurve ( M , l ) = True 
+ Area ( TriangleOf ( A , B , F ) ) = ?
+
+Diff Result (< pred, > gold):
+> Between ( A , M , B ) = True
+
+Comparison Result:
+Common: 13
+Gold Sentences: 14
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $的两条渐近线方程为$y = \ pm \ frac { \ sqrt {3 } } {3 } x$，若顶点到渐近线的距离为$1$，则双曲线方程为 ? 
+
+Predicted Annotation:
+G: Hyperbola
+a: Number
+b: Number
+l1:Line
+l2:Line
+Asymptote(G)={l1,l2}
+Distance(Vertex(G),l1)=1
+Expression(G) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(l1)=(y=pm*(sqrt(3)/3)*x)
+Expression(l2)=(y=pm*(sqrt(3)/3)*x)
+a>0
+b>0
+Expression(G) =?
+
+
+Gold Annotation:
+G : Hyperbola 
+ a : Number 
+ b : Number 
+ Distance ( Vertex ( G ) , Asymptote ( G ) ) =1 
+ Expression ( Asymptote ( G ) ) = ( y = pm * ( ( sqrt (3 ) /3 ) * x ) ) 
+ Expression ( G ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ a >0 
+ b >0 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< l1:Line
+< l2:Line
+< Asymptote(G)={l1,l2}
+< Distance(Vertex(G),l1)=1
+< Expression(l1)=(y=pm*(sqrt(3)/3)*x)
+< Expression(l2)=(y=pm*(sqrt(3)/3)*x)
+---
+> Distance ( Vertex ( G ) , Asymptote ( G ) ) =1
+> Expression ( Asymptote ( G ) ) = ( y = pm * ( ( sqrt (3 ) /3 ) * x ) )
+
+Comparison Result:
+Common: 7
+Gold Sentences: 9
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+圆心在抛物线$y = \ frac {1 } {2 } x ^ {2 } ( x <0 ) $上，并且和该抛物线的准线及$y$轴都相切的圆的标准方程为 ? 
+
+Predicted Annotation:
+C:Circle
+G: Parabola
+H: Circle
+Expression(G) = (y = x^2/2)
+IsTangent(Directrix(G),H)
+IsTangent(yAxis,H)
+PointOnCurve(Center(H),G)
+PointOnCurve(Vertex(G),H)
+x<0
+Expression(H) =?
+
+
+Gold Annotation:
+G : Parabola 
+ H : Circle 
+ Expression ( G ) = ( y = x ^2 /2 ) & ( x <0 ) 
+ IsTangent ( Directrix ( G ) , H ) 
+ IsTangent ( yAxis , H ) 
+ PointOnCurve ( Center ( H ) , G ) 
+ Expression ( H ) = ?
+
+Diff Result (< pred, > gold):
+< C:Circle
+< Expression(G) = (y = x^2/2)
+< PointOnCurve(Vertex(G),H)
+< x<0
+---
+> Expression ( G ) = ( y = x ^2 /2 ) & ( x <0 )
+
+Comparison Result:
+Common: 6
+Gold Sentences: 7
+Predicted Sentences: 10
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线的对称轴为$x = -1$，它与$x$轴的交点间的距离等于$4$，它在$y$轴上的截距是$ -6$，则它的解析式为 ? 
+
+Predicted Annotation:
+G: Parabola
+Distance(Intersection(G, xAxis), xCoordinate(-1)) = 4
+Intercept(G, yAxis) = -6
+SymmetryAxis(G) = xAxis
+Expression(G) = (x = -1)
+Expression(G) =?
+
+
+Gold Annotation:
+D1 : Point 
+ D2 : Point 
+ G : Parabola 
+ Distance ( D1 , D2 ) =4 
+ Expression ( SymmetryAxis ( G ) ) = ( x = -1 ) 
+ Intercept ( G , yAxis ) = -6 
+ Intersection ( G , xAxis ) = { D1 , D2 } 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Distance(Intersection(G, xAxis), xCoordinate(-1)) = 4
+< SymmetryAxis(G) = xAxis
+< Expression(G) = (x = -1)
+---
+> D1 : Point
+> D2 : Point
+> Distance ( D1 , D2 ) =4
+> Expression ( SymmetryAxis ( G ) ) = ( x = -1 )
+> Intersection ( G , xAxis ) = { D1 , D2 }
+
+Comparison Result:
+Common: 3
+Gold Sentences: 8
+Predicted Sentences: 6
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+直线$l$过双曲线$ \ frac { x ^ {2 } } {16 } - \ frac { y ^ {2 } } {4 } =1$的右焦点且与双曲线的右支交与$A$，$B$两点，$ | A B | =4$，则$A$ , $B$与双曲线的左焦点所得三角形的周长为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Hyperbola
+l: Line
+Abs(LineSegmentOf(A, B)) = 4
+Expression(G) = (x^2/16 - y^2/4 = 1)
+Intersection(l, RightPart(G)) = {A, B}
+PointOnCurve(RightFocus(G), l)
+Perimeter(TriangleOf(A, B, LeftFocus(G))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F : Point 
+ G : Hyperbola 
+ l : Line 
+ Abs ( LineSegmentOf ( A , B ) ) =4 
+ Expression ( G ) = ( x ^2 /16 - y ^2 /4 =1 ) 
+ Intersection ( l , RightPart ( G ) ) = { A , B } 
+ LeftFocus ( G ) = F 
+ PointOnCurve ( RightFocus ( G ) , l ) 
+ Perimeter ( TriangleOf ( A , B , F ) ) = ?
+
+Diff Result (< pred, > gold):
+< Perimeter(TriangleOf(A, B, LeftFocus(G))) =?
+---
+> F : Point
+> LeftFocus ( G ) = F
+> Perimeter ( TriangleOf ( A , B , F ) ) = ?
+
+Comparison Result:
+Common: 8
+Gold Sentences: 11
+Predicted Sentences: 9
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } { a ^ {2 } } - \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a >0 , b >0 ) $与椭圆$ \ frac { x ^ {2 } } {16 } + \ frac { y ^ {2 } } {12 } =1$的焦点重合，离心率互为倒数，设$F_ {1 } $、$F_ {2 } $分别为双曲线$C$的左，右焦点，$P$为右支上任意一点，则$ \ frac { P F_ {1 } ^ {2 } } { P F_ {2 } } $的最小值为 ? 
+
+Predicted Annotation:
+C: Hyperbola
+F1: Point
+F2: Point
+G: Ellipse
+P: Point
+a: Number
+b: Number
+Expression(C) = (-y^2/b^2 + x^2/a^2 = 1)
+Expression(G) = (x^2/16 + y^2/12 = 1)
+InterReciprocal(Eccentricity(C), Eccentricity(G))
+LeftFocus(C) = F1
+PointOnCurve(P, RightPart(C))
+RightFocus(C) = F2
+a>0
+b>0
+Min((LineSegmentOf(P, F1))^2/(LineSegmentOf(P, F2))) =?
+
+
+Gold Annotation:
+C : Hyperbola 
+ F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ P : Point 
+ a : Number 
+ b : Number 
+ Expression ( C ) = ( - y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ Expression ( G ) = ( x ^2 /16 + y ^2 /12 =1 ) 
+ Focus ( C ) = Focus ( G ) 
+ InterReciprocal ( Eccentricity ( C ) , Eccentricity ( G ) ) 
+ LeftFocus ( C ) = F1 
+ PointOnCurve ( P , RightPart ( C ) ) 
+ RightFocus ( C ) = F2 
+ a >0 
+ b >0 
+ Min ( LineSegmentOf ( P , F1 ) ^2 / LineSegmentOf ( P , F2 ) ) = ?
+
+Diff Result (< pred, > gold):
+> Focus ( C ) = Focus ( G )
+
+Comparison Result:
+Common: 16
+Gold Sentences: 17
+Predicted Sentences: 16
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知抛物线$C_ {1 } $ : $y ^ {2 } =2 p x ( p >0 ) $的焦点$F$与双曲线$C_ {2 } $ : $ \ frac { x ^ {2 } } {3 } - \ frac { y ^ {2 } } { b ^ {2 } } =1$的一个焦点重合，若点$F$到双曲线$C_ {2 } $的一条渐近线的距离为$1$，则$C_ {1 } $的焦点$F$到其准线的距离为 ? 
+
+Predicted Annotation:
+C1: Parabola
+C2: Hyperbola
+F: Point
+b: Number
+p: Number
+Distance(F, OneOf(Asymptote(C2))) = 1
+Expression(C1) = (y^2 = 2*(p*x))
+Expression(C2) = (x^2/3 - y^2/b^2 = 1)
+Focus(C1) = F
+OneOf(Focus(C1)) = F
+p>0
+Distance(F, Directrix(C1)) =?
+
+
+Gold Annotation:
+C1 : Parabola 
+ C2 : Hyperbola 
+ F : Point 
+ p : Number 
+ Distance ( F , OneOf ( Asymptote ( C2 ) ) ) =1 
+ Expression ( C1 ) = ( y ^2 =2 * p * x ) 
+ Expression ( C2 ) = ( x ^2 /3 - y ^2 / b ^2 =1 ) 
+ Focus ( C1 ) = F 
+ OneOf ( Focus ( C2 ) ) = F 
+ p >0 
+ Distance ( F , Directrix ( C1 ) ) = ?
+
+Diff Result (< pred, > gold):
+< b: Number
+< Expression(C2) = (x^2/3 - y^2/b^2 = 1)
+< OneOf(Focus(C1)) = F
+---
+> Expression ( C2 ) = ( x ^2 /3 - y ^2 / b ^2 =1 )
+> OneOf ( Focus ( C2 ) ) = F
+
+Comparison Result:
+Common: 9
+Gold Sentences: 11
+Predicted Sentences: 12
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$m x ^ {2 } + n y ^ {2 } =1 ( m >0 , n >0 ) $与直线$x + y -1 =0$交于$A$、$B$两点，若$ \ frac { n } { m } = \ sqrt {2 } $，则过原点与线段$A B$的中点$M$的连线的斜率为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+G: Ellipse
+H: Line
+L:Line
+M:Point
+O:Origin
+m: Number
+n: Number
+Expression(G) = (m*x^2 + n*y^2 = 1)
+Expression(H) = (x + y - 1 = 0)
+Intersection(G, H) = {A, B}
+MidPoint(LineSegmentOf(A,B))=M
+PointOnCurve(M,L)
+Slope(L)=n/m
+m>0
+n>0
+sqrt(n/m)=2
+PointOnCurve(O,L)
+Slope(L) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ G : Ellipse 
+ H : Line 
+ M : Point 
+ O : Origin 
+ m : Number 
+ n : Number 
+ Expression ( G ) = ( m * x ^2 + n * y ^2 =1 ) 
+ Expression ( H ) = ( x + y -1 =0 ) 
+ Intersection ( G , H ) = { A , B } 
+ MidPoint ( LineSegmentOf ( A , B ) ) = M 
+ m >0 
+ n / m = sqrt (2 ) 
+ n >0 
+ Slope ( LineSegmentOf ( O , M ) ) = ?
+
+Diff Result (< pred, > gold):
+< L:Line
+< PointOnCurve(M,L)
+< Slope(L)=n/m
+< sqrt(n/m)=2
+< PointOnCurve(O,L)
+< Slope(L) =?
+---
+> n / m = sqrt (2 )
+> Slope ( LineSegmentOf ( O , M ) ) = ?
+
+Comparison Result:
+Common: 14
+Gold Sentences: 16
+Predicted Sentences: 20
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+设椭圆$ \ frac { x ^ {2 } } { a ^ {2 } } + \ frac { y ^ {2 } } { b ^ {2 } } =1 ( a > b >0 ) $的左右焦点分别为$F_ {1 } $ , $F_ {2 } $，点$P$在椭圆上运动，$ | \ overrightarrow { P F_ {1 } } | | \ overrightarrow { P F_ {2 } } | $的最大值为$m$ , $ \ overrightarrow { P F_ {1 } } \ cdot \ overrightarrow { P F_ {2 } } $的最小值为$n$，且$m \ geq2 n$，则该椭圆的离心率的取值范围为 ? 
+
+Predicted Annotation:
+F1: Point
+F2: Point
+G: Ellipse
+P: Point
+a: Number
+b: Number
+m: Number
+n: Number
+DotProduct(VectorOf(P, F1), VectorOf(P, F2)) = n
+Expression(G) = (y^2/b^2 + x^2/a^2 = 1)
+LeftFocus(G) = F1
+Max(Abs(VectorOf(P, F1))) = m
+Min(DotProduct(VectorOf(P, F1), VectorOf(P, F2))) = n
+PointOnCurve(P, G)
+RightFocus(G) = F2
+a > b
+b > 0
+m >= 2*n
+Range(Eccentricity(G)) =?
+
+
+Gold Annotation:
+F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ P : Point 
+ a : Number 
+ b : Number 
+ m : Number 
+ n : Number 
+ Expression ( G ) = ( y ^2 / b ^2 + x ^2 / a ^2 =1 ) 
+ LeftFocus ( G ) = F1 
+ Max ( Abs ( VectorOf ( P , F1 ) ) * Abs ( VectorOf ( P , F2 ) ) ) = m 
+ Min ( DotProduct ( VectorOf ( P , F1 ) , VectorOf ( P , F2 ) ) ) = n 
+ PointOnCurve ( P , G ) 
+ RightFocus ( G ) = F2 
+ a > b 
+ b >0 
+ m > =2 * n 
+ Range ( Eccentricity ( G ) ) = ?
+
+Diff Result (< pred, > gold):
+< DotProduct(VectorOf(P, F1), VectorOf(P, F2)) = n
+< Max(Abs(VectorOf(P, F1))) = m
+< m >= 2*n
+---
+> Max ( Abs ( VectorOf ( P , F1 ) ) * Abs ( VectorOf ( P , F2 ) ) ) = m
+
+Comparison Result:
+Common: 16
+Gold Sentences: 17
+Predicted Sentences: 19
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知双曲线$C$ : $ \ frac { x ^ {2 } } {3 } - y ^ {2 } = \ lambda ( \ lambda >0 ) $右支上的一点$P$，经过点$P$的直线与双曲线$C$的两条渐近线分别相交于$A$、$B$两点，若点$A$、$B$分别位于第一、第四象限，$O$为坐标原点，当$ \ overrightarrow { A P } = \ frac {1 } {2 } \ overrightarrow { P B } $时，$ \ triangle A O B$的面积为$ \ sqrt {3 } $，则$ \ lambda$ = ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+C: Hyperbola
+L1:Line
+L2:Line
+L:Line
+O: Origin
+P: Point
+lambda:Number
+Area(TriangleOf(A, O, B)) = sqrt(3)
+Asymptote(C)={L1,L2}
+Expression(C) = (x^2/3 - y^2 = lambda)
+Intersection(L,L1)=A
+Intersection(L,L2)=B
+PointOnCurve(P,RightPart(C))
+PointOnCurve(P,L)
+Quadrant(A)=1
+Quadrant(B)=4
+VectorOf(A, P) = VectorOf(P, B)/2
+lambda>0
+lambda =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ C : Hyperbola 
+ G : Line 
+ L1 : Line 
+ L2 : Line 
+ O : Origin 
+ P : Point 
+ lambda : Number 
+ Area ( TriangleOf ( A , O , B ) ) = sqrt (3 ) 
+ Asymptote ( C ) = { L1 , L2 } 
+ Expression ( C ) = ( x ^2 /3 - y ^2 = lambda ) 
+ Intersection ( G , L1 ) = A 
+ Intersection ( G , L2 ) = B 
+ PointOnCurve ( P , G ) 
+ PointOnCurve ( P , RightPart ( C ) ) 
+ Quadrant ( A ) =1 
+ Quadrant ( B ) =4 
+ VectorOf ( A , P ) = (1 /2 ) * VectorOf ( P , B ) 
+ lambda >0 
+ lambda = ?
+
+Diff Result (< pred, > gold):
+< VectorOf(A, P) = VectorOf(P, B)/2
+---
+> VectorOf ( A , P ) = (1 /2 ) * VectorOf ( P , B )
+
+Comparison Result:
+Common: 20
+Gold Sentences: 21
+Predicted Sentences: 21
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+椭圆的焦距为$2 \ sqrt {5 } $，准线之间的距离是$ \ frac {18 \ sqrt {5 } } {5 } $，则椭圆的标准方程是 ? 
+
+Predicted Annotation:
+G: Ellipse
+Distance(Directrix(G),Focus(G))=18*sqrt(5)/5
+FocalLength(G)=2*sqrt(5)
+Expression(G) =?
+
+
+Gold Annotation:
+G : Ellipse 
+ L1 : Line 
+ L2 : Line 
+ Directrix ( G ) = { L1 , L2 } 
+ Distance ( L1 , L2 ) =18 * sqrt (5 ) /5 
+ FocalLength ( G ) =2 * sqrt (5 ) 
+ Expression ( G ) = ?
+
+Diff Result (< pred, > gold):
+< Distance(Directrix(G),Focus(G))=18*sqrt(5)/5
+---
+> L1 : Line
+> L2 : Line
+> Directrix ( G ) = { L1 , L2 }
+> Distance ( L1 , L2 ) =18 * sqrt (5 ) /5
+
+Comparison Result:
+Common: 3
+Gold Sentences: 7
+Predicted Sentences: 4
+Correct: False
+
+=== End of Record ===
+
+=== Beginning of Record ===
+
+Question:
+已知椭圆$ \ frac { x ^ {2 } } {25 } + \ frac { y ^ {2 } } {9 } =1$的左、右焦点分别为$F_ {1 } $ , $F_ {2 } $ , 过$F_ {1 } $且垂直于长轴的直线交椭圆于$A$、$B$两点，则$A B F_ {2 } $内切圆的半径为 ? 
+
+Predicted Annotation:
+A: Point
+B: Point
+F1: Point
+F2: Point
+G: Ellipse
+H: Line
+Expression(G) = (x^2/25 + y^2/9 = 1)
+Intersection(H, G) = {A, B}
+IsPerpendicular(H,MajorAxis(G))
+LeftFocus(G) = F1
+PointOnCurve(F1, H)
+RightFocus(G) = F2
+Radius(InscribedCircle(LineSegmentOf(A,B))) =?
+
+
+Gold Annotation:
+A : Point 
+ B : Point 
+ F1 : Point 
+ F2 : Point 
+ G : Ellipse 
+ H : Line 
+ Expression ( G ) = ( x ^2 /25 + y ^2 /9 =1 ) 
+ Intersection ( H , G ) = { A , B } 
+ IsPerpendicular ( H , MajorAxis ( G ) ) 
+ LeftFocus ( G ) = F1 
+ PointOnCurve ( F1 , H ) 
+ RightFocus ( G ) = F2 
+ Radius ( InscribedCircle ( TriangleOf ( A , B , F2 ) ) ) = ?
+
+Diff Result (< pred, > gold):
+< Radius(InscribedCircle(LineSegmentOf(A,B))) =?
+---
+> Radius ( InscribedCircle ( TriangleOf ( A , B , F2 ) ) ) = ?
+
+Comparison Result:
+Common: 12
+Gold Sentences: 13
+Predicted Sentences: 13
+Correct: False
+
+=== End of Record ===
+
+
+accuracy: 0.8396135265700483
+mi-f1: 0.9723731035774489
+ma-f1: 0.9744471950903687

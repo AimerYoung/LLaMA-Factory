@@ -1,0 +1,28 @@
+export USE_MODELSCOPE_HUB=1
+CUDA_VISIBLE_DEVICES=3 python /home/zcl/LLaMA-Factory/src/train_bash.py \
+    --stage sft \
+    --do_train \
+    --do_eval \
+    --model_name_or_path AI-ModelScope/phi-2 \
+    --dataset math_problem \
+    --eval_dataset math_problem \
+    --dataset_dir /home/zcl/LLaMA-Factory/data \
+    --template default \
+    --finetuning_type lora \
+    --lora_target Wqkv,fc1,fc2 \
+    --output_dir /home/zcl/LLaMA-Factory/saves/phi-2_6k/lora/sft \
+    --overwrite_cache \
+    --overwrite_output_dir \
+    --per_device_train_batch_size 4 \
+    --per_device_eval_batch_size 4 \
+    --gradient_accumulation_steps 4 \
+    --save_strategy epoch \
+    --evaluation_strategy epoch \
+    --lr_scheduler_type cosine \
+    --logging_steps 10 \
+    --warmup_steps 20 \
+    --load_best_model_at_end \
+    --learning_rate 1e-4 \
+    --num_train_epochs 6.0 \
+    --plot_loss \
+    --fp16
